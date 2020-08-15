@@ -54,3 +54,11 @@
   color: black;
   line-height: 1em;
 }
+
+.SubPageNav {
+  list-style: none;
+}
+
+a:not([href]):not([tabindex]){
+  cursor: pointer;
+}
