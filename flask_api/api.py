@@ -13,13 +13,15 @@ APP_DIR = os.path.split(__file__)[0]
 @api.route("/api/page_data")
 def fetch_page_data():
     all_pages = {}
+    page_data_dir = os.path.join(APP_DIR, 'static/page_data')
 
-    for page_file in os.listdir(os.path.join(APP_DIR, 'pages')):
+    for page_file in os.listdir(page_data_dir):
         page_key = os.path.splitext(page_file)[0]
-        page_data = yaml.safe_load(open(os.path.join(APP_DIR, 'pages', page_file), 'r'))
+        page_data = yaml.safe_load(open(os.path.join(page_data_dir, page_file), 'r'))
         all_pages[page_key] = page_data
 
     for page_key in all_pages.keys():
+        all_pages[page_key]['key'] = page_key
         all_pages[page_key]['html'] = markdown.markdown(
             all_pages[page_key]['content'],
             extensions=['extra', 'smarty'],

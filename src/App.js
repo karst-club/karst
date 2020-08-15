@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.css";
-// import headerImage from './woodcuts_13.jpg';
 
 function PageHeader(props) {
-  const imgUrl = require("../flask_api/static/" + props.image)
+  const imgUrl = require("../flask_api/static/media/" + props.image)
   return (
     <header>
       <div className="Page-header">
@@ -23,7 +22,8 @@ function PageIcon(props) {
   )
 }
 
-class ParentPageNav extends React.Component {
+class ParentPageNavLink extends React.Component {
+
   constructor(props) {
     super(props);
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -33,17 +33,35 @@ class ParentPageNav extends React.Component {
     this.props.onPageChange(page);
   }
 
-  render() {
-    return (
-      <div className="ParentPageNav">
-        <a onClick={() =>
-          this.handlePageChange(this.props.parentPage)}>{this.props.parentPage}</a>
-           ->
-        <a onClick={() =>
-          this.handlePageChange(this.props.currentPage)}>{this.props.currentPage}</a>
-      </div>
-    );
+  render () {
+    if (this.props.pageData) {
+      return (
+        <div>
+           {this.props.pageData.icon}
+           <a onClick={() =>
+             this.handlePageChange(this.props.pageData.key)
+           }>{this.props.pageData.title}</a>
+        </div>
+      )
+    }
+    return ( <div /> )
   }
+}
+
+function ParentPageNav(props) {
+  return (
+    <div className="ParentPageNav">
+      <ParentPageNavLink
+        pageData={props.parentPageData}
+        onPageChange={props.onPageChange}
+      />
+
+      <ParentPageNavLink
+        pageData={props.currentPageData}
+        onPageChange={props.onPageChange}
+      />
+    </div>
+  );
 }
 
 class SubPageNav extends React.Component {
@@ -73,14 +91,15 @@ class SubPageNav extends React.Component {
 }
 
 function Page(props) {
+  const parentPageData = props.allPageData[props.pageData.parent_page];
   return (
     <div className="Page">
       <PageHeader image={props.pageData.image} />
       <div className="Page-content">
         <PageIcon emoji={props.pageData.icon} />
         <ParentPageNav
-          currentPage={props.page}
-          parentPage={props.pageData.parent_page}
+          currentPageData={props.pageData}
+          parentPageData={parentPageData}
           onPageChange={props.onPageChange}
         />
         <div dangerouslySetInnerHTML={{__html: props.pageData.html}} />
@@ -98,7 +117,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       pageData: {},
-      currentPage: 'home',
+      currentPage: 'karst',
       currentPageData: {'subpages': [], 'image': 'woodcuts_13.jpg'},
     }
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -116,7 +135,7 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState({pageData: data.pages});
-        this.handlePageChange('home');
+        this.handlePageChange('karst');
       });
   }
 
@@ -126,6 +145,7 @@ class App extends React.Component {
         <Page
           page={this.state.currentPage}
           pageData={this.state.currentPageData}
+          allPageData={this.state.pageData}
           onPageChange={this.handlePageChange}
         />
       </div>
