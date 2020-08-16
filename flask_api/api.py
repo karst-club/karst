@@ -17,7 +17,6 @@ def csv_to_html(table_id):
     """
     Looks for tables by name in static/tables, reads CSV and returns HTML
     """
-    print("processing csv_to_html for table_id {}".format(table_id))
     if not table_id:
         return
 
@@ -59,7 +58,6 @@ def fetch_page_data():
 
     for page_key in all_pages.keys():
         all_pages[page_key]['key'] = page_key
-        print("processing content for page {}".format(page_key))
         all_pages[page_key]['html'] = process_content(
             all_pages[page_key]['content'])
         all_pages[page_key]['subpages'] = sorted([
