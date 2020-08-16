@@ -82,11 +82,16 @@ class SubPageNav extends React.Component {
           this.handlePageChange(subpage.key)}>{subpage.title}</a>
       </li>
     );
-    return (
-      <div className="SubPageNav">
-        <ul className="SubPageNav">{listItems}</ul>
-      </div>
-    );
+    if (this.props.subpages.length > 0) {
+      return (
+        <div className="SubPageNav">
+          <hr />
+          <h1>Subpages</h1>
+          <ul className="SubPageNav">{listItems}</ul>
+        </div>
+      );
+    }
+    return <div />
   }
 }
 
@@ -102,7 +107,10 @@ function Page(props) {
           parentPageData={parentPageData}
           onPageChange={props.onPageChange}
         />
-        <div dangerouslySetInnerHTML={{__html: props.pageData.html}} />
+        <h1>{props.pageData.title}</h1>
+        <div
+          className="Page-data-html"
+          dangerouslySetInnerHTML={{__html: props.pageData.html}} />
         <SubPageNav
           subpages={props.pageData.subpages}
           onPageChange={props.onPageChange}

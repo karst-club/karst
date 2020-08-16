@@ -1,0 +1,68 @@
+﻿Name,Effect,Level,Category
+HP+,Gain an additional +2 HP. May be taken once per level.,Basic,The Fundamentals
+Focus,Your Focus grows by 1. May be taken once per level.,Basic,The Fundamentals
+Spell Slot,The number of spells you can memorize is increased by one. May be taken once per level.,Basic,The Fundamentals
+Heavy Weapons,You can wield heavy weapons,Basic,Combat Capabilities
+"Heavy Armor ",You are able to wear heavy armor,Basic,Combat Capabilities
+Shields,You can use a shield and a weapon at the same time without penalty. You can also perform a shield bash.,Basic,Combat Capabilities
+Shield Expert,Shields give you +2 AC and your shield bash damage increases,Expert,Combat Capabilities
+Savage Strike,,Basic,Combat Capabilities
+Dodge,You may allocate Focus to increase your AC for the round on a one for one basis,Basic,Combat Capabilities
+Readiness,You may allocate Focus to increase your initiative roll on a one for one basis,Basic,Combat Capabilities
+Dual Wielding,You gain 1 Focus when wielding two one-handed weapons. Flip a coin to determine which weapon is used to do damage after hitting.,Basic,Combat Capabilities
+Throwing Weapons,You may attack twice per turn with thrown weapons or once at a +2 to-hit bonus,Basic,Combat Capabilities
+Steady Aim,"If you spend 1 round aiming, you gain +2 To-Hit for your next ranged attack. If you know how to Backstab, you may now do so with ranged weapons.",Basic,Combat Capabilities
+Weapon Training,+1 To-Hit and Damage when using weapons of this type.,Basic,Combat Capabilities
+Weapon Expert,An additional +2 To-Hit and Damage when using weapons of this type (Requires Weapon Training),Expert,Combat Capabilities
+Deftness,Double your Dexterity Bonus to AC (up to +4),Basic,Combat Capabilities
+Agility,+1 AC when unarmored. Can be taken once per level.,Basic,Combat Capabilities
+I could do this Blindfolded,You only have a -2 penalty when you are incapable of seeing your target.,Basic,Fighting Dirty
+Backstab,You do 2x damage and get +4 To-Hit when attacking an unsuspecting opponent with a Pointy 1-handed melee weapon,Basic,Fighting Dirty
+Assassinate,"When you successfully backstab, your enemy must save vs death +/- the difference between your respective HD.",Expert,Fighting Dirty
+Lights Out,Can perform knockout attacks.,Basic,Fighting Dirty
+Beat a Hasty Retreat,Can retreat without enemies getting a +2 free attack (or something),Basic,Fighting Dirty
+Sworn Enemy,+2 To-Hit a specific type of enemy (or +1 To-Hit and Damage?) (Can be taken at an expert level and for multiple enemies),Basic,Hero Suff
+Bravery,+4 to saves against fear spells and effects and +1 to initiative rolls,Basic,Hero Suff
+Fury,"In combat, you are prone to entering an uncontrollable rage.",Basic,Hero Suff
+Adversorcery,"Can’t use magic weapons, +4 to magic saves, get to / have to save against all magic including healing spells. 2 in 6 chance of detect magic.",Basic,Hero Suff
+Terrifying Presence,-2 to enemy morale checks,Basic,Hero Suff
+Vigilance,+2 to magic elemental saves,Basic,Hero Suff
+Fitness,+4 to Death/Poison & Petrify saves,Basic,Hero Suff
+Sharpness,Strike invulnerable monsters,Expert,Hero Suff
+Clear-Eyed,?Anti-charm / charm immunity (prerequisite Adversorcery or Vigilance),Expert,Hero Suff
+Spellcasting,"You can create, learn, memorize, and cast spells of the School of your choice",Basic,What Sorcery is This?
+Spellsword,Your Spirit Blade can memorize and cast a spell,Basic,What Sorcery is This?
+Spirit Blade,You can imbue your weapon with part of your spiritual essence doing... TODO,Basic,What Sorcery is This?
+Channel Essence,"Hurt yourself to do damage. Can be channeled through your Spirit Weapon, if you have one.",Basic,What Sorcery is This?
+Call Blade (maybe),Summon your Spirit Blade to you,Basic,What Sorcery is This?
+Healing Hands,Heal 2 HP/lvl/day (or 1d4/lvl in increments/day)?,Basic,What Sorcery is This?
+Banishing,"It’s Turn Undead, but also works on some Spirits.",Basic,What Sorcery is This?
+Bard Song,,Basic,What Sorcery is This?
+Sense Magic,3 in 6 chance to Detect Magic,Basic,What Sorcery is This?
+Combat Casting,Can cast spells in normal armor. Maybe expert/master level knacks to cast in heavy armor or on the move or maybe that’s a separate skill?,Basic,What Sorcery is This?
+Use Any Scroll,You can cast any scroll you can somewhat read. Only a 1 in 6 chance of something happening instead.,Expert,What Sorcery is This?
+Read Any Script,Int check to read a script. (Or 1 in 6 chance of wrong? 2 in 6?),Basic,The Learned Arts
+Identify Poisons and Potions,5 in 6 chance. Maybe less if it’s super esoteric and automatic if it’s well known.,Basic,The Learned Arts
+Alchemy,You can craft Potions,Expert,The Learned Arts
+Poisonry,You can create Poisons,Expert,The Learned Arts
+Alertness,Your chance of surprise decreases to 1 in 6,Basic,A Rogue’s Gallery
+Sharp Ears,"Your chance of hearing through doors, etc is increased by 1 in 6",Basic,A Rogue’s Gallery
+Nimble Fingers,Pick Pockets and Sleight of Hand Tricks,Basic,A Rogue’s Gallery
+Technically Minded (Mechanical Inclination?),Pick Locks and Disable Small Mechanisms (3 in 6 chance to do so under duress),Basic,A Rogue’s Gallery
+Stealth,Quiet Movement and Hide (plus 2 in 6 chance?),Basic,A Rogue’s Gallery
+Silent Footsteps,6 in 6 chance of quiet movement,Expert,A Rogue’s Gallery
+Hide in Shadows,"6 in 6 chance to hide, even in shadows",Expert,A Rogue’s Gallery
+Disguise*,6 in 6 chance of disguising as a member of the same species and gender. -1 in 6 for every deviation further or if target is close with the individual being impersonated,Basic,A Rogue’s Gallery
+Escape Bonds*,Break free of constraints using a Dex check. Might also need a Str check and/or lock picking depending on the circumstances.,Basic,A Rogue’s Gallery
+Find Doors and Mechanisms*,+2 in 6 chance of finding hidden doors and secret mechanisms,Basic,A Rogue’s Gallery
+Tightrope waliking*,Part of climbing?,Basic,A Rogue’s Gallery
+Jumping & Tumbling,"You can jump further and higher than most, especially with help from a pole or a running start. You also take less damage when falling and can make a tumbling attack.",Basic,A Rogue’s Gallery
+Climbing,6 in 6 chance to climb surfaces with some handholds. +1 in 6 to climb sheer surfaces,Basic,A Rogue’s Gallery
+Climb Sheer Surfaces,6 in 6 chance to climb sheer surfaces,Expert,A Rogue’s Gallery
+Hunting & Gathering,Improve group hunting chance by 2 in 6 (stacking -1),Basic,Outdoorsy Activities
+Tracking*,"You have a 5 in 6 base chance of tracking, adjusted as appropriate.",Basic,Outdoorsy Activities
+"Navigation ",Less chance of getting lost.,Basic,Outdoorsy Activities
+"Natural Knowledge ","Identify All Plants & Animals, fresh water, etc.",Basic,Outdoorsy Activities
+Friend to Animals,"Like the spell, but better. ",Basic,Outdoorsy Activities
+Leave No Trace,You are virtually impossible to track.,Basic,Outdoorsy Activities
+Song,,,
