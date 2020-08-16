@@ -52,9 +52,16 @@ def fetch_page_data():
 
     for path, _, files in os.walk(page_data_dir):
         for page_file in files:
-            page_key = os.path.splitext(page_file)[0]
-            page_data = yaml.safe_load(open(os.path.join(page_data_dir, path, page_file), 'r'))
-            all_pages[page_key] = page_data
+
+            page_key, ext = os.path.splitext(page_file)
+            if ext == '.yml':
+                page_data = yaml.safe_load(open(os.path.join(page_data_dir, path, page_file), 'r'))
+                all_pages[page_key] = page_data
+                markdown_path = os.path.join(page_data_dir, path, "{}.md".format(page_key))
+                if os.path.exists(markdown_path):
+                    all_pages[page_key]['content'] = open(markdown_path, 'r').read()
+                else:
+                    all_pages[page_key]['content'] = ''
 
     for page_key in all_pages.keys():
         all_pages[page_key]['key'] = page_key
