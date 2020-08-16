@@ -35,24 +35,18 @@ sudo apt-get install \
     python3-venv \
     virtualenv
 
-# Set up NGINX and SSL
-# Following https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-10
-# Edited hash bucket size value at /etc/nginx/nginx.conf
 sudo ufw allow 'Nginx Full'
 
 git clone git@github.com:sarah-johnson/karst.git
 
 cd karst
+
 python3 -m venv karst
 source karst/bin/activate
 pip install -r requirements.txt
 pip install gunicorn
 
-# Followed this tutorial
-# https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
-# Created a virtual environment
-# Created a /etc/systemd/system/karst_api.service
-# Created an nginx site
-
 npm install
 npm run build
+
+ln -s . /var/www/karst

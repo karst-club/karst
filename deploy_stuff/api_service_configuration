@@ -1,0 +1,15 @@
+# /etc/systemd/system/karst_api.service
+
+[Unit]
+Description=Gunicorn instance to serve karst_api
+After=network.target
+
+[Service]
+User=karst
+Group=www-data
+WorkingDirectory=/home/karst/karst
+Environment="PATH=/home/karst/karst/karst/bin"
+ExecStart=/home/karst/karst/karst/bin/gunicorn --workers 3 --bind unix:karst_api.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
