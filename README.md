@@ -1,4 +1,4 @@
-# Karst
+# 🏞️ Karst
 [Visit karst.club](https://www.karst.club)
 
 Adapted from [Karst on Notion](https://www.notion.so/Karst-46333cc7df17498b8c153746cba259aa)
