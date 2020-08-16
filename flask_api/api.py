@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import yaml
 
-from flask import Blueprint, request
+from flask import Blueprint
 from jinja2 import Template
 
 logger = logging.getLogger(__name__)
