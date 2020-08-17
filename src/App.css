@@ -22,6 +22,12 @@
   width: 900px;
 }
 
+.Page-portrait-container {
+  display: flex;
+  flex-direction: row;
+  fex-wrap: wrap;
+}
+
 .Page-header-image {
   display: block;
   object-fit: cover;

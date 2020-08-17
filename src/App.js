@@ -97,9 +97,20 @@ class SubPageNav extends React.Component {
 
 function Page(props) {
   const parentPageData = props.allPageData[props.pageData.parent_page];
+  let portraitImageContent;
+  let headerImageName;
+  if (props.pageData.layout == 'portrait') {
+    const imgUrl = require("../flask_api/static/media/" + props.pageData.image);
+    portraitImageContent = ( <div>
+        <img src={imgUrl} className="Page-portrait-image" alt="header" />
+      </div>);
+    headerImageName = 'woodcuts_13.jpg'
+  } else {
+    headerImageName = props.pageData.image
+  }
   return (
     <div className="Page">
-      <PageHeader image={props.pageData.image} />
+      <PageHeader image={headerImageName} />
       <div className="Page-content">
         <PageIcon emoji={props.pageData.icon} />
         <ParentPageNav
@@ -107,10 +118,15 @@ function Page(props) {
           parentPageData={parentPageData}
           onPageChange={props.onPageChange}
         />
-        <h1>{props.pageData.title}</h1>
-        <div
-          className="Page-data-html"
-          dangerouslySetInnerHTML={{__html: props.pageData.html}} />
+        <div className="Page-portrait-container">
+          <div>
+            <h1>{props.pageData.title}</h1>
+            <div
+              className="Page-data-html"
+              dangerouslySetInnerHTML={{__html: props.pageData.html}} />
+          </div>
+          {portraitImageContent}
+        </div>
         <SubPageNav
           subpages={props.pageData.subpages}
           onPageChange={props.onPageChange}
