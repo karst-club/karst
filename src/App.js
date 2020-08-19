@@ -85,6 +85,7 @@ function SubPageNav(props) {
 
 function Page(props) {
   let { pageId } = useParams();
+  pageId = pageId || 'karst';
   const currentPageData = props.allPageData[pageId] || {};
   const parentPageData = props.allPageData[currentPageData.parent_page];
   let portraitImageContent;
