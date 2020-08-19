@@ -86,7 +86,14 @@ function SubPageNav(props) {
 function Page(props) {
   let { pageId } = useParams();
   pageId = pageId || 'karst';
-  const currentPageData = props.allPageData[pageId] || {};
+  const currentPageData = props.allPageData[pageId];
+
+  if (!currentPageData) {
+    return (
+      <div><h1>Page {pageId} Not Found</h1></div>
+    )
+  }
+
   const parentPageData = props.allPageData[currentPageData.parent_page];
   let portraitImageContent;
   let headerImageName;
@@ -129,7 +136,7 @@ function Page(props) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {pageData: {}}
+    this.state = {pageData: {"karst": {"html": "<h1>Karst</h1>"}}}
   }
 
   componentDidMount() {
