@@ -1,8 +1,18 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Link,
+  Route,
+  useParams
+} from "react-router-dom";
+
 import "./App.css";
 
+
 function PageHeader(props) {
-  const imgUrl = require("../flask_api/static/media/" + props.image)
+  const img = props.image || 'woodcuts_13.jpg';;
+  const imgUrl = require("../flask_api/static/media/" + img)
   return (
     <header>
       <div className="Page-header">
@@ -22,30 +32,18 @@ function PageIcon(props) {
   )
 }
 
-class ParentPageNavLink extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.handlePageChange = this.handlePageChange.bind(this);
+function ParentPageNavLink(props) {
+  if (props.pageData) {
+    const linkUrl = "/" + props.pageData.key
+    return (
+      <div>
+        <Link className="NavLink" to={linkUrl}>
+          {props.pageData.icon} {props.pageData.title}
+        </Link>
+      </div>
+    )
   }
-
-  handlePageChange(page) {
-    this.props.onPageChange(page);
-  }
-
-  render () {
-    if (this.props.pageData) {
-      return (
-        <div>
-           {this.props.pageData.icon}
-           <a onClick={() =>
-             this.handlePageChange(this.props.pageData.key)
-           }>{this.props.pageData.title}</a>
-        </div>
-      )
-    }
-    return ( <div /> )
-  }
+  return ( <div /> )
 }
 
 function ParentPageNav(props) {
@@ -64,72 +62,71 @@ function ParentPageNav(props) {
   );
 }
 
-class SubPageNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handlePageChange = this.handlePageChange.bind(this);
-  }
-
-  handlePageChange(page) {
-    this.props.onPageChange(page);
-  }
-
-  render() {
-    const subpages = this.props.subpages;
-    const listItems = subpages.map((subpage) =>
-      <li key={subpage.title}>
-        {subpage.icon} <a onClick={() =>
-          this.handlePageChange(subpage.key)}>{subpage.title}</a>
-      </li>
+function SubPageNav(props) {
+  const subpages = props.subpages || [];
+  const listItems = subpages.map((subpage) =>
+    <li key={subpage.title}>
+      <Link className="NavLink" to={subpage.key}>
+        {subpage.icon} {subpage.title}
+      </Link>
+    </li>
+  );
+  if (subpages.length > 0) {
+    return (
+      <div className="SubPageNav">
+        <hr />
+        <h1>Subpages</h1>
+        <ul className="SubPageNav">{listItems}</ul>
+      </div>
     );
-    if (this.props.subpages.length > 0) {
-      return (
-        <div className="SubPageNav">
-          <hr />
-          <h1>Subpages</h1>
-          <ul className="SubPageNav">{listItems}</ul>
-        </div>
-      );
-    }
-    return <div />
   }
+  return <div />
 }
 
 function Page(props) {
-  const parentPageData = props.allPageData[props.pageData.parent_page];
+  let { pageId } = useParams();
+  pageId = pageId || 'karst';
+  const currentPageData = props.allPageData[pageId];
+
+  if (!currentPageData) {
+    return (
+      <div><h1>Page {pageId} Not Found</h1></div>
+    )
+  }
+
+  const parentPageData = props.allPageData[currentPageData.parent_page];
   let portraitImageContent;
   let headerImageName;
-  if (props.pageData.layout == 'portrait') {
-    const imgUrl = require("../flask_api/static/media/" + props.pageData.image);
+
+  if (currentPageData.layout == 'portrait') {
+    const imgUrl = require("../flask_api/static/media/" + currentPageData.image);
     portraitImageContent = ( <div>
         <img src={imgUrl} className="Page-portrait-image" alt="header" />
       </div>);
     headerImageName = 'woodcuts_13.jpg'
   } else {
-    headerImageName = props.pageData.image
+    headerImageName = currentPageData.image
   }
   return (
     <div className="Page">
       <PageHeader image={headerImageName} />
       <div className="Page-content">
-        <PageIcon emoji={props.pageData.icon} />
+        <PageIcon emoji={currentPageData.icon} />
         <ParentPageNav
-          currentPageData={props.pageData}
+          currentPageData={currentPageData}
           parentPageData={parentPageData}
-          onPageChange={props.onPageChange}
         />
         <div className="Page-portrait-container">
           <div>
-            <h1>{props.pageData.title}</h1>
+            <h1>{currentPageData.title}</h1>
             <div
               className="Page-data-html"
-              dangerouslySetInnerHTML={{__html: props.pageData.html}} />
+              dangerouslySetInnerHTML={{__html: currentPageData.html}} />
           </div>
           {portraitImageContent}
         </div>
         <SubPageNav
-          subpages={props.pageData.subpages}
-          onPageChange={props.onPageChange}
+          subpages={currentPageData.subpages}
         />
       </div>
     </div>
@@ -139,19 +136,7 @@ function Page(props) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      pageData: {},
-      currentPage: 'karst',
-      currentPageData: {'subpages': [], 'image': 'woodcuts_13.jpg'},
-    }
-    this.handlePageChange = this.handlePageChange.bind(this);
-  }
-
-  handlePageChange(page) {
-    this.setState({currentPage: page});
-    this.setState({
-      currentPageData: this.state.pageData[page]
-    });
+    this.state = {pageData: {"karst": {"html": "<h1>Karst</h1>"}}}
   }
 
   componentDidMount() {
@@ -159,20 +144,24 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState({pageData: data.pages});
-        this.handlePageChange('karst');
       });
   }
 
   render() {
     return (
-      <div className="App">
-        <Page
-          page={this.state.currentPage}
-          pageData={this.state.currentPageData}
-          allPageData={this.state.pageData}
-          onPageChange={this.handlePageChange}
-        />
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+          <Route exact path="/">
+            <Page allPageData={this.state.pageData} />
+          </Route>
+            <Route
+              path="/:pageId"
+              children={<Page allPageData={this.state.pageData} />}
+            />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

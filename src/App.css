@@ -65,8 +65,9 @@
   list-style: none;
 }
 
-a:not([href]):not([tabindex]){
-  cursor: pointer;
+.NavLink {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .dataframe {
