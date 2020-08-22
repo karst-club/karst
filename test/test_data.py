@@ -2,6 +2,8 @@
 Tests for page yaml conformation
 """
 import anytree
+import emoji
+import os
 import unittest
 from flask_api.util import build_page_data
 
@@ -21,6 +23,42 @@ class TestData(unittest.TestCase):
         # print(anytree.RenderTree(self.page_data['tree']))
         self.assertEqual(2+2, 4)
 
+    def test_required_page_metadata(self):
+        required_keys = [
+            'title',
+            'icon',
+            'image',
+            'content',
+        ]
+        for page_name, page_info in self.page_data['pages'].items():
+            for k in required_keys:
+                self.assertIsNotNone(page_info.get(k),
+                    "page {} missing required key {}".format(page_name, k))
 
-# TODO Assert that certain attributes belong on certain elements
-  # levels, xp, knacks and such
+    def test_media_references_resolve(self):
+        media_folder = 'flask_api/static/media'
+        media = [f for f in os.listdir(media_folder)]
+        media_keys = [
+            'image',
+        ]
+        for page_name, page_info in self.page_data['pages'].items():
+            for media_key in media_keys:
+                if page_info.get(media_key):
+                    self.assertIn(
+                        page_info[media_key], media,
+                        "Reference '{}: {}' in page {} does not resolve to a media file".format(
+                            media_key, page_info[media_key], page_name))
+
+    def test_icon_is_emoji(self):
+        for page_name, page_info in self.page_data['pages'].items():
+            self.assertIn(page_info['icon'], emoji.UNICODE_EMOJI,
+                "Page {} has invalid icon: {}".format(page_name, page_info['icon']))
+
+    def test_static_md_has_yml(self):
+        for path, _, files in os.walk('flask_api/static/page_data'):
+            for file in files:
+                filename, ext = os.path.splitext(file)
+                if ext == '.md':
+                    self.assertTrue(os.path.exists(
+                        os.path.join(path, "{}.yml".format(filename))),
+                    "No markdown page data without corresponding yaml page data.")

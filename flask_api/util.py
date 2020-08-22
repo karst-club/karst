@@ -22,7 +22,6 @@ def build_page_tree(all_pages):
         """
         for subpage in subpages:
             node = AnyNode(id=subpage['key'], parent=parent_node)
-            print("creating node {} child of {}".format(subpage['key'], parent_node.id))
             assign_children(node, all_pages[subpage['key']]['subpages'])
 
     root_keys = [k for k, v in all_pages.items() if not v.get('parent_page')]
@@ -30,7 +29,6 @@ def build_page_tree(all_pages):
         len(root_keys))
     root_key = root_keys[0]
     root_node = AnyNode(id=root_key)
-    print("creating node {}".format(root_node))
     assign_children(root_node, all_pages[root_key]['subpages'])
 
     return root_node
