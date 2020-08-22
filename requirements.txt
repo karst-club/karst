@@ -2,3 +2,5 @@ Flask
 markdown
 pandas
 pyyaml
+anytree
+emoji
