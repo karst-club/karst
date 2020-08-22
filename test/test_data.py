@@ -61,4 +61,5 @@ class TestData(unittest.TestCase):
                 if ext == '.md':
                     self.assertTrue(os.path.exists(
                         os.path.join(path, "{}.yml".format(filename))),
-                    "No markdown page data without corresponding yaml page data.")
+                    "Found markdown page {} without corresponding yaml page data.".format(
+                        file))
