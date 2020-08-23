@@ -65,6 +65,15 @@
   list-style: none;
 }
 
+.ParentPageNav {
+  display: flex;
+  margin: 5px;
+}
+
+.ParentPageNavLink {
+  padding: 5px;
+}
+
 .NavLink {
   color: inherit;
   text-decoration: inherit;

@@ -5,6 +5,8 @@ git pull origin master
 git stash pop
 npm install
 npm run build
-pip install -r requirements.txt
+source karst/bin/activate
+pip3 install -r requirements.txt
+deactivate
 sudo systemctl restart karst_api
 exit

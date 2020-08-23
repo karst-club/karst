@@ -36,7 +36,7 @@ function ParentPageNavLink(props) {
   if (props.pageData) {
     const linkUrl = "/" + props.pageData.key
     return (
-      <div>
+      <div className="ParentPageNavLink">
         <Link className="NavLink" to={linkUrl}>
           {props.pageData.icon} {props.pageData.title}
         </Link>
@@ -47,17 +47,28 @@ function ParentPageNavLink(props) {
 }
 
 function ParentPageNav(props) {
+  let pageLineage = [];
+
+  let constructLineage = ((pageId) => {
+    // recursively trace navigation lineage
+    let currentPageData = props.allPageData[pageId];
+    pageLineage.push(currentPageData)
+    if (currentPageData && currentPageData.parent_page) {
+      constructLineage(currentPageData.parent_page)
+    }
+  })
+
+  constructLineage(props.currentPage)
+
+  const parentNavItems = pageLineage.reverse().map((pageData) =>
+    <ParentPageNavLink key={pageData.key}
+      pageData={pageData}
+    />
+  )
+
   return (
     <div className="ParentPageNav">
-      <ParentPageNavLink
-        pageData={props.parentPageData}
-        onPageChange={props.onPageChange}
-      />
-
-      <ParentPageNavLink
-        pageData={props.currentPageData}
-        onPageChange={props.onPageChange}
-      />
+      {parentNavItems}
     </div>
   );
 }
@@ -93,12 +104,10 @@ function Page(props) {
       <div><h1>Page {pageId} Not Found</h1></div>
     )
   }
-
-  const parentPageData = props.allPageData[currentPageData.parent_page];
   let portraitImageContent;
   let headerImageName;
 
-  if (currentPageData.layout == 'portrait') {
+  if (currentPageData.layout === 'portrait') {
     const imgUrl = require("../flask_api/static/media/" + currentPageData.image);
     portraitImageContent = ( <div>
         <img src={imgUrl} className="Page-portrait-image" alt="header" />
@@ -113,8 +122,8 @@ function Page(props) {
       <div className="Page-content">
         <PageIcon emoji={currentPageData.icon} />
         <ParentPageNav
-          currentPageData={currentPageData}
-          parentPageData={parentPageData}
+          currentPage={pageId}
+          allPageData={props.allPageData}
         />
         <div className="Page-portrait-container">
           <div>
@@ -136,7 +145,14 @@ function Page(props) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {pageData: {"karst": {"html": "<h1>Karst</h1>"}}}
+    this.state = {
+      pageData: {
+        "karst": {
+          "html": "<h1>Karst</h1>",
+          "key": "karst"
+        }
+      }
+    }
   }
 
   componentDidMount() {
