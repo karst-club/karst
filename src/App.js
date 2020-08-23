@@ -61,9 +61,8 @@ function ParentPageNav(props) {
   constructLineage(props.currentPage)
 
   const parentNavItems = pageLineage.reverse().map((pageData) =>
-    <ParentPageNavLink
+    <ParentPageNavLink key={pageData.key}
       pageData={pageData}
-      key={pageData.key}
     />
   )
 
@@ -146,7 +145,14 @@ function Page(props) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {pageData: {"karst": {"html": "<h1>Karst</h1>"}}}
+    this.state = {
+      pageData: {
+        "karst": {
+          "html": "<h1>Karst</h1>",
+          "key": "karst"
+        }
+      }
+    }
   }
 
   componentDidMount() {
