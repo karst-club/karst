@@ -4,3 +4,4 @@ pandas
 pyyaml
 anytree
 emoji
+nose
