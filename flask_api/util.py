@@ -1,5 +1,4 @@
 import logging
-import markdown
 import os
 import pandas as pd
 import yaml
@@ -55,8 +54,6 @@ def build_page_data() -> dict:
                     all_pages[page_key]['content'] = ''
 
     for page_key in all_pages.keys():
-        all_pages[page_key]['html'] = process_content(
-            all_pages[page_key]['content'])
         all_pages[page_key]['subpages'] = sorted([
             {
                 'title': v['title'],
@@ -71,35 +68,3 @@ def build_page_data() -> dict:
     page_tree = build_page_tree(all_pages)
 
     return {'pages': all_pages, 'tree': page_tree}
-
-def csv_to_html(table_id):
-    """
-    Looks for tables by name in static/tables, reads CSV and returns HTML
-    """
-    if not table_id:
-        return
-
-    csv_data_dir = os.path.join(APP_DIR, 'static/tables')
-    df = pd.read_csv(os.path.join(csv_data_dir, "{}.csv".format(table_id)))
-    return df.to_html(index=False)
-
-
-def process_content(content):
-    """
-    Given the "content" block of a page YAML, this should
-    return HTML that will be rendered in the application.
-
-    Currently converts to markdown to HTML and also embeds
-    CSV tables referenced by their filenames in jinja syntax
-    (see backgrounds.yml for an example)
-    """
-    template = Template(content)
-    template.globals['embed_table'] = csv_to_html
-    rendered = template.render()
-    html = markdown.markdown(
-        rendered,
-        extensions=['extra', 'smarty'],
-        output_format='html5',
-    )
-    return html
-
