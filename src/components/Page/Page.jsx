@@ -1,10 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import MDX from '@mdx-js/runtime';
 import { useParams } from 'react-router-dom';
 import PageHeader from './PageHeader';
 import PageIcon from './PageIcon';
 import ParentPageNav from './ParentPageNav';
 import SubPageNav from './SubPageNav';
+
+const PageContent = styled.div`
+  padding-left: calc(96px + env(safe-area-inset-left));
+  padding-right: calc(96px + env(safe-area-inset-right));
+  max-width: 100%;
+  margin-bottom: 8px;
+  width: 900px;
+`;
+
+const PagePortraitContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
 
 function Page(props) {
   let { pageId } = useParams();
@@ -36,10 +51,10 @@ function Page(props) {
   return (
     <div className="Page">
       <PageHeader image={headerImageName} />
-      <div className="Page-content">
+      <PageContent>
         <PageIcon emoji={currentPageData.icon} />
         <ParentPageNav currentPage={pageId} allPageData={props.allPageData} />
-        <div className="Page-portrait-container">
+        <PagePortraitContainer>
           <div>
             <h1>{currentPageData.title}</h1>
             <div className="Page-data-html">
@@ -47,9 +62,9 @@ function Page(props) {
             </div>
           </div>
           {portraitImageContent}
-        </div>
+        </PagePortraitContainer>
         <SubPageNav subpages={currentPageData.subpages} />
-      </div>
+      </PageContent>
     </div>
   );
 }
