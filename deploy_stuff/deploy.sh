@@ -1,4 +1,5 @@
-ssh karst@karst.club
+#!/usr/bin/env bash
+
 cd karst
 git stash
 git pull origin master
@@ -9,4 +10,3 @@ source karst/bin/activate
 pip3 install -r requirements.txt
 deactivate
 sudo systemctl restart karst_api
-exit
