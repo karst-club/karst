@@ -34,7 +34,7 @@ def build_page_tree(all_pages):
     return root_node
 
 
-def build_page_data() -> dict:
+def build_page_data():
     page_data_dir = os.path.join(APP_DIR, 'static/page_data')
     all_pages = {}
     for path, _, files in os.walk(page_data_dir):
