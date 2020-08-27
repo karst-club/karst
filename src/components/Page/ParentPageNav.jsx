@@ -1,5 +1,5 @@
-import React from "react";
-import ParentPageNavLink from "./ParentPageNavLink";
+import React from 'react';
+import ParentPageNavLink from './ParentPageNavLink';
 
 function ParentPageNav(props) {
   let pageLineage = [];
