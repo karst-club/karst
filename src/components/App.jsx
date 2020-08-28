@@ -1,24 +1,24 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Page from "./Page";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Page from './Page';
 
-import "./App.css";
+import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       pageData: {
         karst: {
-          html: "<h1>Karst</h1>",
-          key: "karst",
+          html: '<h1>Karst</h1>',
+          key: 'karst',
         },
       },
     };
   }
 
   componentDidMount() {
-    fetch("/api/page_data")
+    fetch('/api/page_data')
       .then((res) => res.json())
       .then((data) => {
         this.setState({ pageData: data.pages });
