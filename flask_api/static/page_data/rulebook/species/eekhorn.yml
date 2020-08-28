@@ -1,0 +1,11 @@
+title: Eekhorn
+icon: 🐿️
+image: eekhorn1.jpg
+parent_page: species
+layout: portrait
+ordinal_position: 6
+blurb: A bushy-tailed, nut-loving folk, the Eekhorn are known for being high energy, high strung, and quick to action.
+abilities:
+  - +1 Initiative
+  - Climb Walls Knack
+  - +1 Listen
