@@ -33,7 +33,8 @@ sudo apt-get install \
     npm \
     python3-pip \
     python3-venv \
-    virtualenv
+    virtualenv \
+    policykit-1
 
 sudo ufw allow 'Nginx Full'
 
