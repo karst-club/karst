@@ -1,14 +1,14 @@
-import React from "react";
-import MDX from "@mdx-js/runtime";
-import { useParams } from "react-router-dom";
-import PageHeader from "./PageHeader";
-import PageIcon from "./PageIcon";
-import ParentPageNav from "./ParentPageNav";
-import SubPageNav from "./SubPageNav";
+import React from 'react';
+import MDX from '@mdx-js/runtime';
+import { useParams } from 'react-router-dom';
+import PageHeader from './PageHeader';
+import PageIcon from './PageIcon';
+import ParentPageNav from './ParentPageNav';
+import SubPageNav from './SubPageNav';
 
 function Page(props) {
   let { pageId } = useParams();
-  pageId = pageId || "karst";
+  pageId = pageId || 'karst';
   const currentPageData = props.allPageData[pageId];
 
   if (!currentPageData) {
@@ -21,15 +21,15 @@ function Page(props) {
   let portraitImageContent;
   let headerImageName;
 
-  if (currentPageData.layout === "portrait") {
-    const imgUrl = require("../../../flask_api/static/media/" +
+  if (currentPageData.layout === 'portrait') {
+    const imgUrl = require('../../../flask_api/static/media/' +
       currentPageData.image);
     portraitImageContent = (
       <div>
         <img src={imgUrl} className="Page-portrait-image" alt="header" />
       </div>
     );
-    headerImageName = "woodcuts_13.jpg";
+    headerImageName = 'woodcuts_13.jpg';
   } else {
     headerImageName = currentPageData.image;
   }
