@@ -1,5 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import ParentPageNavLink from './ParentPageNavLink';
+
+const ParentPageNavWrapper = styled.div`
+  display: flex;
+  margin: 5px;
+`;
 
 function ParentPageNav(props) {
   let pageLineage = [];
@@ -21,7 +27,7 @@ function ParentPageNav(props) {
       <ParentPageNavLink key={pageData.key} pageData={pageData} />
     ));
 
-  return <div className="ParentPageNav">{parentNavItems}</div>;
+  return <ParentPageNavWrapper>{parentNavItems}</ParentPageNavWrapper>;
 }
 
 export default ParentPageNav;
