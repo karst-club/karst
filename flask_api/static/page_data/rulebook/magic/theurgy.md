@@ -9,5 +9,3 @@ The Theurge channels the Intent of the Gods Above, manifesting their Will within
 - Shield (M)
 
 ## Extra
-
-- Chromatic Orb (I)
