@@ -23,7 +23,7 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
         with:
           source: "./deploy_stuff/deploy.sh"
-          target: "/home/karst/deploy.sh"
+          target: "/home/karst"
 
       - name: Deploy
         uses: appleboy/ssh-action@master
@@ -32,4 +32,4 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
-          script: ls -la
+          script: bash .deploy_stuff/deploy.sh
