@@ -1,5 +1,4 @@
 Flask
-markdown
 pandas
 pyyaml
 anytree
