@@ -1,10 +1,6 @@
-The Arts of Illusion and Enchantment/Charm comprise the Form of Deceit and all
-its splendor.
+The Arts of Illusion and Enchantment/Charm comprise the Form of Deceit and all its splendor.
 
-Practitioners of this somewhat sinister Form are capable of twisting others
-perceptions of the world around them and their very thoughts. Though some use
-the power of Deceit for good, it is no small wonder that Practice is frowned
-upon by many.
+Practitioners of this somewhat sinister Form are capable of twisting others perceptions of the world around them and their very thoughts. Though some use the power of Deceit for good, it is no small wonder that Practice is frowned upon by many.
 
 # Level 1
 
