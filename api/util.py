@@ -1,6 +1,5 @@
 import logging
 import os
-import pandas as pd
 import yaml
 
 from anytree import AnyNode
