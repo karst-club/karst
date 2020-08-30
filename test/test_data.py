@@ -5,7 +5,7 @@ import anytree
 import emoji
 import os
 import unittest
-from flask_api.util import build_page_data
+from api.util import build_page_data
 
 class TestData(unittest.TestCase):
     @classmethod
@@ -36,7 +36,7 @@ class TestData(unittest.TestCase):
                     "page {} missing required key {}".format(page_name, k))
 
     def test_media_references_resolve(self):
-        media_folder = 'flask_api/static/media'
+        media_folder = 'static/media'
         media = [f for f in os.listdir(media_folder)]
         media_keys = [
             'image',
@@ -55,7 +55,7 @@ class TestData(unittest.TestCase):
                 "Page {} has invalid icon: {}".format(page_name, page_info['icon']))
 
     def test_static_md_has_yml(self):
-        for path, _, files in os.walk('flask_api/static/page_data'):
+        for path, _, files in os.walk('static/page_data'):
             for file in files:
                 filename, ext = os.path.splitext(file)
                 if ext == '.md':

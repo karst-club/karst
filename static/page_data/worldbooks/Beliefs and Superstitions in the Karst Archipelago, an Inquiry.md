@@ -1,5 +1,3 @@
-# Beliefs and Superstitions in the Karst Archipelago - An Inquiry
-
 By Hammerton & Beaumont - Universtity of Gresterecht
 
 ## Introduction
