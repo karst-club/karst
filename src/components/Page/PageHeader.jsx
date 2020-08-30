@@ -27,7 +27,7 @@ const PageHeaderWrapper = styled.div`
 
 function PageHeader(props) {
   const img = props.image || 'woodcuts_13.jpg';
-  const imgUrl = require('../../../flask_api/static/media/' + img);
+  const imgUrl = require('../../../static/media/' + img);
   return (
     <header>
       <PageHeaderWrapper>

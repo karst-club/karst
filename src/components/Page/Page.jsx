@@ -37,7 +37,7 @@ function Page(props) {
   let headerImageName;
 
   if (currentPageData.layout === 'portrait') {
-    const imgUrl = require('../../../flask_api/static/media/' +
+    const imgUrl = require('../../../static/media/' +
       currentPageData.image);
     portraitImageContent = (
       <div>

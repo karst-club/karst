@@ -1,6 +1,5 @@
 import logging
 import os
-import pandas as pd
 import yaml
 
 from anytree import AnyNode
@@ -8,7 +7,7 @@ from jinja2 import Template
 
 logger = logging.getLogger(__name__)
 
-APP_DIR = os.path.split(__file__)[0]
+PROJECT_DIR = os.path.split(os.path.split(__file__)[0])[0]
 
 
 def build_page_tree(all_pages):
@@ -34,7 +33,7 @@ def build_page_tree(all_pages):
 
 
 def build_page_data():
-    page_data_dir = os.path.join(APP_DIR, 'static/page_data')
+    page_data_dir = os.path.join(PROJECT_DIR, 'static/page_data')
     all_pages = {}
     for path, _, files in os.walk(page_data_dir):
         for page_file in files:
