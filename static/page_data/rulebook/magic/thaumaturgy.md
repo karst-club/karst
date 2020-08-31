@@ -3,15 +3,19 @@ The Form of Thaumaturgy encompasses a singular Art, Alteration.
 Possessing the largest and possibly most diverse group of spells, Practitioners of this powerful art are able to physically change the world around them.
 
 # Level 1
-## Darkness (C)
+## Darkness
+The Thaumaturge creates a 30' sphere of near-perfect darkness, blocking all sight but infravision and cancelling out a Light spell if cast against it. If instead cast on a target's eyes, it causes blindness unless they save. The Darkness may be canceled at will and otherwise lasts for an hour plus 10 minutes for each Spell Slot Knack that the caster has.
 
 ## Hold Portal (M)
 
-## Light (C)
+## Light
+A 30' sphere of light is created by this spell that may be canceled at will but otherwise lasts for an hour plus 10 minutes for every Spell Slot Knack the caster has. The centerpoint may be cast on an object. If cast on a character's eyes, they become blinded unless they save.
 
-## Purify Food and Water (C)
+## Purify Food and Water
+The Thaumaturge is able to unspoil food or make water potable, purifying one ration of food, 6 skins of water or enough unpreserved food to feed a dozen.
 
 ## Resist Cold (C)
+One chracter is made resistant to cold temperatures for an hour. Freezing temperatures have no effect on the target, they gain +2 to saves against cold, and cold damage is reduced by -1 per die.
 
 # Level 2
 ## Continual Darkness (M)

@@ -9,15 +9,20 @@ The Spiritist touches a character and causes 1d6+1 damage. In combat, a successf
 ## Cure Light Wounds
 With a touch, the Spiritist restores up to 1d6+1 HP to a single character or themselves. Alternatively, this spell may be used to cure Paralysis.
 
-## Detect Evil (C)
+## Detect Evil
+For the next hour, the Spiritist can detect ill-will and evil intentions in Characters and magical objects whose surfaces can be clearly discerned (120').
 
-## Detect Magic (C)
+## Detect Magic
+The Spiritist observes a telltale aura around any character or object under the effects of magic for the next 20 minutes.
 
-## Protection from Evil (C)
+## Protection from Evil
+The Spiritist is incircled by a protective aura for the next two hours. Those who oppose the Spiritist in hatred or anger suffer -1 to hit. In addition, the caster gains a +1 modifier when saving against any spell or affect from said opponents. Lastly, the Spiritist gains immunity agaist melee attacks from summoned characters, which can be lost if the caster engages a summoned character in melee.
 
-## Read Languages (M)
+## Read Languages
+For 20 minutes, the Spiritist may read, but not speak, any unknown language, code, or diagram.
 
 ## Read Magic (M)
+Maybe should be a Knack, seems limiting to have it be Spiritism only?
 
 # Level 2
 ## Detect Invisibility (M)
