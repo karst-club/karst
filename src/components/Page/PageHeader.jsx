@@ -26,7 +26,7 @@ const PageHeaderWrapper = styled.div`
 `;
 
 function PageHeader(props) {
-  const img = props.image || 'woodcuts_13.jpg';
+  const img = props.image || 'little_tropical_island.jpg';
   const imgUrl = require('../../../static/media/' + img);
   return (
     <header>

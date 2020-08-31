@@ -44,6 +44,11 @@ Note: CanMay be taken once per level.
 Level: Basic
 Category: Combat Capabilities
 
+### Archery
+Effect: +1 to hit with bows and Strength bonus is added to damage rolls for long and short bows.
+Level: Basic
+Category: Combat Capabilities
+
 ### Deftness
 Effect: Double your Dexterity Bonus (up to +2).
 Level: Basic
@@ -96,6 +101,11 @@ Category: Combat Capabilities
 
 ### Throwing Weapons
 Effect: You may attack twice per turn with thrown weapons or once at a +2 to-hit bonus.
+Level: Basic
+Category: Combat Capabilities
+
+### Unarmed Combat
+Effect: Makes unarmed attacks do more damage. Maybe can take multiple time or has Expert version. Look at monk/mystic rules for inspiration.
 Level: Basic
 Category: Combat Capabilities
 
@@ -173,13 +183,23 @@ Level: Basic
 Category: Hero Stuff
 
 ### Fury
-Effect: In combat, you are prone to entering an uncontrollable rage.
+Effect: In combat, you are prone to entering an uncontrollable rage. Voluntarily or when wounded you enter a rage, gaining +1 to hit and damage with melee weapons and immunity to fear. You may not use non-thrown ranged weapons or voluntarily retreatand are tired after combat.
+Level: Basic
+Category: Hero Stuff
+
+### Heroic Presence
+Effect: +2 to friendly morale checks
 Level: Basic
 Category: Hero Stuff
 
 ### Sharpness
 Effect: Your blows can strike invulnerable monsters.
 Level: Expert
+Category: Hero Stuff
+
+### Sheer Luck
+Effect: Once per session you may reroll a failed save.
+Level: Basic
 Category: Hero Stuff
 
 ### Sworn Enemy
@@ -230,6 +250,16 @@ Category: What Sorcery is This?
 
 ### Healing Hands
 Effect: Heal 2 HP/lvl/day (or 1d4/lvl in increments/day)?
+Level: Basic
+Category: What Sorcery is This?
+
+### Identify Magic Items
+Effect: You gain +2 to any attempts to identify magical items. (Prereq for Master skill Create Magic Item)
+Level: Basic
+Category: What Sorcery is This?
+
+### Meditation
+Effect: Once per day you may meditate for an hour to memorize one spell or heal 1d6 HP.
 Level: Basic
 Category: What Sorcery is This?
 

@@ -37,14 +37,13 @@ function Page(props) {
   let headerImageName;
 
   if (currentPageData.layout === 'portrait') {
-    const imgUrl = require('../../../static/media/' +
-      currentPageData.image);
+    const imgUrl = require('../../../static/media/' + currentPageData.image);
     portraitImageContent = (
       <div>
         <img src={imgUrl} className="Page-portrait-image" alt="header" />
       </div>
     );
-    headerImageName = 'woodcuts_13.jpg';
+    headerImageName = 'little_tropical_island.jpg';
   } else {
     headerImageName = currentPageData.image;
   }
