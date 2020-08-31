@@ -1,0 +1,20 @@
+name: Tem P Late
+player: Human McPerson
+species: Eekhorn
+hook: A brave adventurer
+level: 1
+xp: 0
+attributes:
+  str: 10
+  dex: 10
+  con: 10
+  int: 10
+  wis: 10
+  cha: 10
+hp: 1
+knacks:
+  - focus
+items:
+  - common clothes
+loot:
+  - 90

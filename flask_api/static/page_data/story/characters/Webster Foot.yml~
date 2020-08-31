@@ -1,0 +1,31 @@
+name: Webster Foot
+player: David
+species: Visita
+hook: A holy warrior from Thark, Foot is a paladin of Woggles.
+level: 1
+xp: 0
+attributes:
+  str: 17
+  dex: 11
+  con: 15
+  int: 11
+  wis: 10
+  cha: 15
+max_hp: 5
+hp: 4
+knacks:
+  - Bravery
+  - Heavy Armor
+  - Heavy Weapons
+items:
+  - Two-Handed Sword
+  - Scale Mail
+  - Dagger
+  - Clothes (common)
+  - Backpack
+  - Rope (50')
+  - Torches (6)
+  - Waterskin
+  - Rations (3 days)
+loot: 7
+notes: TODO
