@@ -10,7 +10,10 @@ const AppContent = styled.div`
   h1 {
     color: #9a4456;
   }
-  h2 {
+  h2,
+  h3,
+  h4,
+  h5 {
     color: #429c91;
   }
 `;
