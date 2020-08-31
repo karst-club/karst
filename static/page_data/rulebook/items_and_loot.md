@@ -1,5 +1,7 @@
 There are all sorts of Items that Characters can use in their adventures. Some examples are listed below. When purchasing an item be sure to write down a couple of words about what makes it unique.
 
+Characters use Coins to purchase Items. While there are smaller denominations (quarters or even pieces of eight), Characters only deal in a singular denomination, the Coin. Many pieces of Loot, which are worth Coins, and Magical Items are not listed here.
+
 ## Weapons
 
 Tools for violent disagreements.
