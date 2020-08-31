@@ -35,7 +35,7 @@ The Theurge channels the Intent of the Gods Above, manifesting their Will within
 
 ## Insect Plague (C)
 
-# L6
+# Level 6
 ## Death Spell (M)
 
 ## Invisible Stalker (M)

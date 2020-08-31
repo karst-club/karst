@@ -52,7 +52,7 @@ With this spell, the Practicioner is able to make the sound of their voice come 
 
 ## Remove Quest (C)
 
-# L6
+# Level 6
 ## Geas (M)
 
 ## Project Image (M)
