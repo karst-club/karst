@@ -21,7 +21,7 @@ The Spiritist is incircled by a protective aura for the next two hours. Those wh
 ## Read Languages
 For 20 minutes, the Spiritist may read, but not speak, any unknown language, code, or diagram.
 
-## Read Magic (M)
+## Read Magic
 Maybe should be a Knack, seems limiting to have it be Spiritism only?
 
 # Level 2

@@ -9,7 +9,7 @@ The Theurge summons an invisble plaform that closely follows the caster at waist
 ## Magic Missile
 The Theurge channels the Will of the Gods into a bolt of pure energy, striking a target for 1d6+1 points damage. For every 5 Spell Slot Knacks the caster has, they gain an additional two missiles which may be used to strike the same or different targets.
 
-## Shield (M)
+## Shield
 The Theurge shields themselves with the Will of the Gods. For 20 minutes, the caster's AC becomes 15 against melee attacks and 17 versus missiles.
 
 # Level 2
