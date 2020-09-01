@@ -1,18 +1,18 @@
 Karst is played as a shared dialog between the Players and the Referee. These rules provide a framework for how that dialog is conducted and how situations with multiple outcomes can be resolved using creativity, character statistics, and chance.
 
 # Scenes and Actions
-
 The game is mostly comprised of Scenes. 
 
-The Referee starts a Scene by describing the situation to the Players. The Players then ask the Referee questions and state what Actions their Characters are taking. The Referee answers questions and describes the outcomes of Character Actions.
+The Referee starts a Scene by describing the situation to the Players. Next, the Players ask the Referee questions any questions they might have about the scene before stating any Actions their Characters are taking. The Referee answers questions and describes the outcomes of Character Actions, noting how the Scene has changed.
+
+This dialog continues back and forth until the Scene reaches a conclusion, transitioning to another Scene or ending the current Episode.
 
 ## Actions
+When a Player wants their Character to do something, they say so. This is an Action.
 
-When a Player wants their PC to do something, they say so. This is an Action.
+When a Player declares an Action, it generally happens. The Referee describes the result or invites the Player to do so.
 
-Generally speaking, when a Player declares an Action it happens and the Referee describes the result.
-
-Sometimes, the Referee will determine that the PC has failed at the Action and will describe the result of the failure.
+Sometimes, the Referee will determine that the Character has failed or is unable to perform the Action and will describe the result of the failure.
 
 ### Rolling for Success
 
