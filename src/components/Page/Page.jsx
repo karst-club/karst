@@ -12,7 +12,6 @@ const PageContent = styled.div`
   padding-right: calc(96px + env(safe-area-inset-right));
   max-width: 900px;
   margin-bottom: 8px;
-  width: 100%;
 `;
 
 const PagePortraitContainer = styled.div`
