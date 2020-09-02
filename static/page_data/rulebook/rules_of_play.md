@@ -16,19 +16,19 @@ Sometimes, the Referee will determine that the Character has failed or is unable
 
 ### Rolling for Success
 
-When there is doubt about whether or not a PC would succeed at an Action, or if success and failure are both interesting outcomes, the Referee may set odds and have the Player roll a d6 to determine what happens. 
+When there is doubt about whether or not a Player's Character would succeed at an Action, or in situations where an Action's success or failure would be an interesting outcome, the Referee may have the Player roll to determine how their Character fares. 
 
-Actions based on Attributes are modified by them. Modifiers may never bring the odds below 1 in 6 and if the odds are modified to 6 in 6 or higher, success should be automatic or failure should only occur on a roll of 12 on 2d6 (1 in 36 odds).
+The Player rolls 1d6. If the roll is a 6, the Character succeeds at their Action. If the roll is a 1, the Character fails. For any other result, the Player applies any relevant modifiers, succeeeding if the modified result is 6 or higher.
 
-When the outcome would not be immediately apparent to the Character, the Referee may roll in secret instead.
+Actions are generally based on and modified by an Attribute. Many Knacks, Abilities, and Items can modify Action rolls too, tipping the scale for or against Characters.
 
-The last and most important thing about rolling for success is that it should happen infrequently.
+When the outcome of an Action would not be immediately apparent to the Character, the Referee may roll in secret, revealing the result when appropriate.
+
+The last thing about rolling for success, is that it should happen infrequently. Players are meant to be rewarded for their creativity, Characters are capable of more than just the things on their sheets, and rolls shouldn't be made just for the sake of rolling dice. Limiting Action rolls to the big moments in a game can also make them really memorable. On the other hand, it is your game, and all this is just my opinion. If you like rolling dice for every Action, go for it. Karst is here for your fun, not its fun.
 
 ## Saving Throws
 
 When Actions and other events might cause Bad Things to happen to a Character, they will sometimes have the chance to make a Saving Throw to try and minimize or avoid the effects.
-
-The character rolls a d20 and adds 1 for every even-numbered level they have reached, as well as any other modifiers. If the score is equal to or higher than 15, they have successfully Saved. (15|16 for Poison/Petrify, 18|20 for Elements/Magic?)
 
 There are four types of Saving Throws: 
 
@@ -37,21 +37,21 @@ There are four types of Saving Throws:
 - Elements
 - Magic
 
-Magic Saving Throws are modified by a Character's Wis.
+To make a Saving Throw, the Player rolls a d20 and adds 1 for every even-numbered Level their Character has reached, as well as any other modifiers including Wis for Magic Saving Throws and Con for all others. If the score is equal to or higher than 15, they have successfully Saved, mitigating or minimizing the effects.
 
 # Encounters and Combat
 
-Scenes are generally a free-flowing discussion, but if a confrontation between two parties arises, the Scene becomes an Encounter.
+Scenes are generally a free-flowing discussion, but if a confrontation between two or more groups arises, the Scene becomes an Encounter.
 
-Encounters occur over a number of Rounds. Within each round, Characters are given an opportunity to act.
+Encounters occur over a number of Rounds. During a Round, each Character is given a Turn to act. Rounds usually represent a handful of seconds in the game world, but their length can be varied to better fit the pacing of an Encounter.
 
 ## Surprise
 
-If there is a chance either side could be Surprised about the Encounter, everyone rolls a d6 before the first round to determine if they are. On a roll of a 1 or 2 a character is surprised and cannot act in the first round.
+If there is a chance either side could be Surprised about the Encounter, each Character rolls a d6 before the first round to determine if they are Surprised or not. On a roll of a 1 or 2 a character is surprised and cannot act in the first round.
 
 ## Initiative
 
-Characters who are not surprised roll a d6 modified by Dex to generate their Initiative score. Participants act in order of Initiative from highest score to lowest, with PCs winning ties against NPCs and resolving ties amongst themselves as they see fit.
+Characters who are not surprised roll a d6 modified by Dex to generate their Initiative score. Participants take their Turns in order of Initiative from highest score to lowest, with PCs winning ties against NPCs and resolving ties amongst themselves as they see fit.
 
 ## Character Turns
 
@@ -63,13 +63,13 @@ There are two special types of Actions that Characters often perform during Enco
 
 ## Talking
 
-Characters may spend their Action attempting to talk and perhaps reason, bargain, or parlay with the other side. The first time a Player Character does this during an encounter, they get to make a Reaction roll using 2d6 modified by Cha. The higher the number the less negative the reaction.
+Characters may spend their Action attempting to talk and perhaps reason, bargain, or parlay with the other side. The first time a Player Character does this during an encounter, they get to make a Reaction roll as an Action modified by Cha. The higher the number the less negative the reaction.
 
 ## Attacking and Combat
 
 When talking won’t do, Characters can attack. If a Character makes an Attack during an Encounter it becomes a Combat.
 
-Attacks are made by rolling a d20 modified by Str for melee or Dex for ranged attacks. Other modifiers may apply, such as +2 for sneak attacks made on unsuspecting targets. If the roll is equal to or over the opponent’s AC, the Characters hits and does Damage.
+Attacks are made by rolling a d20 modified by Str for melee or Dex for ranged attacks. Other modifiers may apply, such as +2 for sneak attacks made on unsuspecting targets. If the roll is equal to or over the opponent’s AC, the Character hits and does Damage.
 
 ### Damage
 
