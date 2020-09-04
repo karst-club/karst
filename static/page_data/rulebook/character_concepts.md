@@ -1,14 +1,3 @@
-# Concepts
-In Karst, you will be talking, rolling dice, and writing things down. Advice about the talking part of the game is sprinked throughout these rules, but is mostly left up to you and your group, as is much of the writing things down. These Concepts and the Rules of Play section concern themselves with giving you guidance around rolling dice and writing things down that might affect your dice rolls.
-
-## Dice Rolls & Modifiers
-You will need a standard six-sided dice plus some fancier dice that have four, eight, ten, twelve, and twenty sides. It can be helpful if sure everyone has their own six and twenty sided dice.
-
-No matter what dice you are rolling, a higher number is always better.
-
-When rolling a die there will often be a modifier, positive or negative. After rolling, adjust the result by adding or subtracting the modifier. No matter what, a modifier may not bring the result to below 1.
-
-# Characters
 These rules govern **P**layer **C**haracters foremost, but also cover **N**on-**P**layer **C**haracters and Monsters controlled by the Narrator.
 
 ## Species & Monsters
