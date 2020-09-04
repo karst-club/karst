@@ -1,4 +1,15 @@
-These rules govern **P**layer **C**haracters foremost, but also cover **N**on-**P**layer **C**haracters and Monsters controlled by the Referee.
+# Concepts
+In Karst, you will be talking, rolling dice, and writing things down. Advice about the talking part of the game is sprinked throughout these rules, but is mostly left up to you and your group, as is much of the writing things down. These Concepts and the Rules of Play section concern themselves with giving you guidance around rolling dice and writing things down that might affect your dice rolls.
+
+## Dice Rolls & Modifiers
+You will need a standard six-sided dice plus some fancier dice that have four, eight, ten, twelve, and twenty sides. It can be helpful if sure everyone has their own six and twenty sided dice.
+
+No matter what dice you are rolling, a higher number is always better.
+
+When rolling a die there will often be a modifier, positive or negative. After rolling, adjust the result by adding or subtracting the modifier. No matter what, a modifier may not bring the result to below 1.
+
+# Characters
+These rules govern **P**layer **C**haracters foremost, but also cover **N**on-**P**layer **C**haracters and Monsters controlled by the Narrator.
 
 ## Species & Monsters
 
@@ -33,15 +44,15 @@ Modifiers affect rolls related to the Attribute, reflecting the strengths and we
 
 ## Levels and Experience Points (XP)
 
-All characters have a Level, which denotes how Experienced they are. Most NPCs are Level 0, but PCs start the game at Level 1.
+All characters have a Level, which denotes how Experienced they are. Most common folk are Level 0, but PCs start the game having reached Level 1.
 
 PCs track experience using E**x**perience **P**oints, which are gained from overcoming foes, spending Coin, or recovering Treasure and Loot. When a Character gains enough XP, they reach the next Level and gain all the bonuses associated with doing so.
 
-The higher the level of a character, the more hit points they have, the better their saves are, and the more extraordinary things they are capable of doing. These extraordinary things are called Knacks.
+The higher the level of a character, the more Hit Points they have, the more likely they are to Save against negative effects, and the more extraordinary things they are capable of doing. These extraordinary things are called Knacks.
 
 ## Hit Points (HP)
 
-All Characters have one or more **H**it **P**oints and die if they lose them all.
+All Characters have one or more **H**it **P**oints and will die if they lose all of them.
 
 Food and rest can restore HP back to their original value.
 
