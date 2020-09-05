@@ -16,7 +16,7 @@ A 30' sphere of light is created by this spell that may be canceled at will but 
 The Thaumaturge is able to unspoil food or make water potable, purifying one ration of food, 6 skins of water or enough unpreserved food to feed a dozen.
 
 ## Resist Cold
-One chracter is made resistant to cold temperatures for an hour. Freezing temperatures have no effect on the target, they gain +2 to saves against cold, and cold damage is reduced by -1 per die.
+The Thaumaturge, or one chracter within 60' of the caster is made resistant to cold temperatures for an hour. Freezing temperatures have no effect on the target, they gain +2 to saves against cold, and cold damage is reduced by -1 per die.
 
 # Level 2
 ## Continual Darkness (M)

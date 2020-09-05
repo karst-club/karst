@@ -10,7 +10,7 @@ The Spiritist touches a character and causes 1d6+1 damage. In combat, a successf
 With a touch, the Spiritist restores up to 1d6+1 HP to a single character or themselves. Alternatively, this spell may be used to cure Paralysis.
 
 ## Detect Evil
-For the next hour, the Spiritist can detect ill-will and evil intentions in Characters and magical objects whose surfaces can be clearly discerned (120').
+For the next hour, the Spiritist can detect ill-will and evil intentions in Characters and Magical objects whose surfaces can be clearly discerned (120').
 
 ## Detect Magic
 The Spiritist observes a telltale aura around any character or object under the effects of magic for the next 20 minutes.

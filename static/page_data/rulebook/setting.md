@@ -43,6 +43,9 @@ A large archipelago in the Mirror Sea, Karst lies between the Eastern Woods and 
 ## The Mirror Sea
 An ocean between the Eastern Woods, the Southern Swamps, and the Western Sands. The Mirror Sea is known for beautiful placid waters punctuated by fogbanks and typhoons.
 
+## Porta Cortu
+A rowdy and boisterous freeport located on a small island chain. Popular with merchants and adventurers.
+
 ## The Southern Swamps
 The Lagartos and Visita call these Swamps their homeland. Comprised of a great river that feeds into an equally great delta, this is a humid and prosperous land.
 

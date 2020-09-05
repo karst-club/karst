@@ -10,9 +10,8 @@ import SubPageNav from './SubPageNav';
 const PageContent = styled.div`
   padding-left: calc(96px + env(safe-area-inset-left));
   padding-right: calc(96px + env(safe-area-inset-right));
-  max-width: 100%;
+  max-width: 900px;
   margin-bottom: 8px;
-  width: 900px;
 `;
 
 const PagePortraitContainer = styled.div`
