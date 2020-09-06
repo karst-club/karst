@@ -1,9 +1,9 @@
 title: Webster Foot
 icon: 🐸
-image: little_tropical_island.jpg
+image: webster-foot-theo-martin-final.jpg
 layout: character
 parent_page: characters
-ordinal_position: 2
+ordinal_position: 3
 sheet:
   name: Webster Foot
   player: David
@@ -26,8 +26,8 @@ sheet:
     - Heavy Armor
     - Heavy Weapons
   items:
-    - Two-Handed Sword
-    - Scale Mail
+    - Two-Handed Sword (1d10 damage, Heavy)
+    - Scale Mail (+5 AC, Heavy)
     - Dagger
     - Clothes (common)
     - Backpack

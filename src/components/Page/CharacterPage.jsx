@@ -25,6 +25,23 @@ function CharacterAttribute({ name, value }) {
   );
 }
 
+const speciesAbilities = {
+  Eekhorn: [],
+  Grevling: ['Grevling: +4 to all Saves'],
+  Lagartos: [],
+  Serpos: [
+    'Serpos: Infravision',
+    'Serpos: +4 to Death and Paralysis Saves',
+    'Serpos: +1 Find Hidden Mechanism or Construction',
+  ],
+  Veldling: [],
+  Visita: [
+    'Visita: Reroll HP Dice',
+    'Visita: +1 to morale/loyaly rolls',
+    'Visita: +1 understand language',
+  ],
+};
+
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -36,11 +53,21 @@ const FlexChild = styled.div`
   flex-basis: 50%;
 `;
 
+const PortraitImage = styled.img`
+  width: 50%;
+  display: block;
+  float: right;
+  padding-left: 1em;
+  padding-bottom: 1em;
+`;
+
 function CharacterPage(props) {
-  const { sheet } = props;
+  const { image, sheet } = props;
   const attrs = sheet.attributes;
-  const knacks = sheet.knacks.map((knack) => <li>{knack}</li>);
+  const abilities = sheet.knacks.concat(speciesAbilities[sheet.species]);
+  const knacks = abilities.map((knack) => <li>{knack}</li>);
   const items = sheet.items.map((item) => <li>{item}</li>);
+  const imgUrl = require('../../../static/media/' + image);
 
   return (
     <div>
@@ -49,10 +76,12 @@ function CharacterPage(props) {
         <FlexChild>
           <h2>Vitals</h2>
           <ul>
+            <li>Player: {sheet.player}</li>
             <li>Species: {sheet.species}</li>
             <li>Level: {sheet.level}</li>
             <li>XP: {sheet.xp}</li>
             <li>
+              {' '}
               HP: {sheet.hp} / {sheet.max_hp}
             </li>
             <li>Coins: ¢{sheet.coins}</li>
@@ -79,7 +108,21 @@ function CharacterPage(props) {
         </FlexChild>
       </FlexContainer>
       <h2>About</h2>
+      <PortraitImage
+        src={imgUrl}
+        className="Page-portrait-image"
+        alt="header"
+      />
       <MDX>{props.content}</MDX>
+      <h2>TODO</h2>
+      <ul>
+        <li>Saves</li>
+        <li>Spells</li>
+        <li>AC</li>
+        <li>Attacks</li>
+        <li>Focus</li>
+        <li>Move Rate</li>
+      </ul>
     </div>
   );
 }
