@@ -6,6 +6,8 @@ import PageHeader from './PageHeader';
 import PageIcon from './PageIcon';
 import ParentPageNav from './ParentPageNav';
 import SubPageNav from './SubPageNav';
+import CharacterPage from './CharacterPage';
+import ContentPage from './ContentPage';
 
 const PageContent = styled.div`
   padding-left: calc(96px + env(safe-area-inset-left));
@@ -46,6 +48,17 @@ function Page(props) {
   } else {
     headerImageName = currentPageData.image;
   }
+
+  const content =
+    currentPageData.layout === 'character' ? (
+      <CharacterPage
+        sheet={currentPageData.sheet}
+        content={currentPageData.content}
+      />
+    ) : (
+      <ContentPage content={currentPageData.content} />
+    );
+
   return (
     <div className="Page">
       <PageHeader image={headerImageName} />
@@ -55,9 +68,7 @@ function Page(props) {
         <PagePortraitContainer>
           <div>
             <h1>{currentPageData.title}</h1>
-            <div className="Page-data-html">
-              <MDX>{currentPageData.content}</MDX>
-            </div>
+            <div className="Page-data-html">{content}</div>
           </div>
           {portraitImageContent}
         </PagePortraitContainer>
