@@ -15,8 +15,6 @@ Anyone may develop Basic Knacks but a Character must reach Level 5 to develop Ex
 
 **Level:** Basic
 
-**Category:** The Fundamentals
-
 **Note:** May be taken once per level.
 
 Many Characters have one or more Focus Points, which are typically purchased as a Knack. These points are used to increase one's prowess during Combat. At the start of each round of Combat, Characters may declare how they are allocating their Focus Points. If no declaration is made, it is assumed that their allocation remains the same. In the interest of fast play, Players should create a default allocation.
@@ -28,8 +26,6 @@ By default, characters may allocate their Focus between increasing their To-Hit 
 
 **Level:** Basic
 
-**Category:** The Fundamentals
-
 **Note:** May be taken once per level.
 
 You are made of tougher stuff.
@@ -38,8 +34,6 @@ You are made of tougher stuff.
 **Effect:** The number of spells you can memorize is increased by one. 
 
 **Level:** Basic
-
-**Category:** The Fundamentals
 
 **Note:** May be taken once per level.
 
@@ -52,8 +46,6 @@ Developing this Knack allows you to memorize a single spell per day from any of 
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 **Note:** May be taken once per level.
 
 ### Archery
@@ -61,98 +53,70 @@ Developing this Knack allows you to memorize a single spell per day from any of 
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 ### Deftness
 **Effect:** Double your Dexterity Bonus (up to +2).
 
 **Level:** Basic
-
-**Category:** Combat Capabilities
 
 ### Dodge
 **Effect:** You may allocate Focus to increase your AC on a one to one basis.
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 ### Dual Wielding
 **Effect:** You gain 1 Focus when wielding two one-handed weapons. Flip a coin to determine which weapon is used to do damage after hitting.
 
 **Level:** Basic
-
-**Category:** Combat Capabilities
 
 ### Heavy Armor
 **Effect:** You are able to wear heavy armor.
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 ### Heavy Weapons
 **Effect:** You can wield heavy weapons.
 
 **Level:** Basic
-
-**Category:** Combat Capabilities
 
 ### Readiness
 **Effect:** You may allocate Focus to increase your Initiative on a one for one basis.
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 ### Savage Strike
 **Effect:** You may allocate Focus to increase your Damage on a one for one basis.
 
 **Level:** Basic
-
-**Category:** Combat Capabilities
 
 ### Shield Expert
 **Effect:** Shields give you +2 AC and your shield bash damage increases.
 
 **Level:** Expert
 
-**Category:** Combat Capabilities
-
 ### Shields
 **Effect:** You can use a shield and a weapon at the same time without penalty. You can also perform a shield bash.
 
 **Level:** Basic
-
-**Category:** Combat Capabilities
 
 ### Steady Aim
 **Effect:** If you spend 1 round aiming, you gain +2 To-Hit for your next ranged attack. If you know how to Backstab, you may now do so with ranged weapons.
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 ### Throwing Weapons
 **Effect:** You may attack twice per turn with thrown weapons or once at a +2 to-hit bonus.
 
 **Level:** Basic
-
-**Category:** Combat Capabilities
 
 ### Unarmed Combat
 **Effect:** Makes unarmed attacks do more damage. Maybe can take multiple time or has Expert version. Look at monk/mystic rules for inspiration.
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 ### Weapon Expert
 **Effect:** An additional +1 To-Hit and Damage when using weapons of your chosen type.
 
 **Level:** Expert
-
-**Category:** Combat Capabilities
 
 **Note:** This Knack may be developed multiple times for multiple weapon types.
 
@@ -163,8 +127,6 @@ Developing this Knack allows you to memorize a single spell per day from any of 
 
 **Level:** Basic
 
-**Category:** Combat Capabilities
-
 **Note:** This Knack may be developed multiple times for multiple weapon types.
 
 ## Fighting Dirty
@@ -174,14 +136,10 @@ Developing this Knack allows you to memorize a single spell per day from any of 
 
 **Level:** Expert
 
-**Category:** Fighting Dirty
-
 ### Backstab
 **Effect:** You do 2x damage and get +4 To-Hit when attacking an unsuspecting opponent with a Pointy 1-handed melee weapon.
 
 **Level:** Basic
-
-**Category:** Fighting Dirty
 
 You enjoy sticking it to people when they least expect it.
 
@@ -190,21 +148,15 @@ You enjoy sticking it to people when they least expect it.
 
 **Level:** Basic
 
-**Category:** Fighting Dirty
-
 ### I could do this Blindfolded
 **Effect:** You only have a -2 penalty when you are incapable of seeing your target (maybe no penalty at all?).
 
 **Level:** Basic
 
-**Category:** Fighting Dirty
-
 ### Lights Out
 **Effect:** Can perform knockout attacks.
 
 **Level:** Basic
-
-**Category:** Fighting Dirty
 
 An unconscious enemy is a silent enemy.
 
@@ -215,16 +167,12 @@ An unconscious enemy is a silent enemy.
 
 **Level:** Basic
 
-**Category:** Hero Stuff
-
 You hate magic so much that it has a hard time affecting you.
 
 ### Animosity
 **Effect:** +1 To-Hit a and Damage a specific type of enemy.
 
 **Level:** Basic
-
-**Category:** Hero Stuff
 
 **Note:** May be taken multiple times for different types of enemies.
 
@@ -233,56 +181,40 @@ You hate magic so much that it has a hard time affecting you.
 
 **Level:** Basic
 
-**Category:** Hero Stuff
-
 ### Clear-Eyed
 **Effect:** ?Anti-charm / charm immunity (prerequisite Adversorcery or Vigilance)
 
 **Level:** Expert
-
-**Category:** Hero Stuff
 
 ### Fitness
 **Effect:** +4 to Death/Poison & Petrify saves.
 
 **Level:** Basic
 
-**Category:** Hero Stuff
-
 ### Fury
 **Effect:** In combat, you are prone to entering an uncontrollable rage. Voluntarily or when wounded you enter a rage, gaining +1 to hit and damage with melee weapons and immunity to fear. You may not use non-thrown ranged weapons or voluntarily retreatand are tired after combat.
 
 **Level:** Basic
-
-**Category:** Hero Stuff
 
 ### Heroic Presence
 **Effect:** +2 to friendly morale checks and hireling reaction rolls.
 
 **Level:** Basic
 
-**Category:** Hero Stuff
-
 ### Sharpness
 **Effect:** Your blows can strike invulnerable monsters.
 
 **Level:** Expert
-
-**Category:** Hero Stuff
 
 ### Sheer Luck
 **Effect:** Once per session you may reroll a failed save.
 
 **Level:** Basic
 
-**Category:** Hero Stuff
-
 ### Sworn Enemy
 **Effect:** +1 To-Hit a and Damage a specific type of enemy.
 
 **Level:** Expert
-
-**Category:** Hero Stuff
 
 **Requirements:** Animosity
 
@@ -293,14 +225,10 @@ You hate magic so much that it has a hard time affecting you.
 
 **Level:** Basic
 
-**Category:** Hero Stuff
-
 ### Vigilance
 **Effect:** +2 to magic and elemental saves.
 
 **Level:** Basic
-
-**Category:** Hero Stuff
 
 ## What Sorcery is This?
 
@@ -309,21 +237,15 @@ You hate magic so much that it has a hard time affecting you.
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Bard Song
 **Effect:** TODO but basically you get a deceit spell. Can be taken a few times.
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Call Blade (maybe)
 **Effect:** Summon your Spirit Blade to you.
 
 **Level:** Basic
-
-**Category:** What Sorcery is This?
 
 Carley Rae eat your heart out.
 
@@ -332,49 +254,35 @@ Carley Rae eat your heart out.
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Combat Casting
 **Effect:** Can cast spells in normal armor. Maybe expert/master level knacks to cast in heavy armor or on the move or maybe that’s a separate skill?
 
 **Level:** Basic
-
-**Category:** What Sorcery is This?
 
 ### Healing Hands
 **Effect:** Heal 2 HP/lvl/day (or 1d4/lvl in increments/day)?
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Identify Magic Items
 **Effect:** You gain +2 to any attempts to identify magical items. (Prereq for Master skill Create Magic Item)
 
 **Level:** Basic
-
-**Category:** What Sorcery is This?
 
 ### Meditation
 **Effect:** Once per day you may meditate for an hour to memorize one spell or heal 1d6 HP.
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Sense Magic
 **Effect:** +2 to detect magic rolls.
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Spellcasting
 **Effect:** You can create, learn, memorize, and cast spells of the School of your choice.
 
 **Level:** Basic
-
-**Category:** What Sorcery is This?
 
 **Note:** This Knack may be developed multiple times, once per Form. However, becoming versed in a magical Form is a major undertaking and must involve some amount of work if developed during the course of play.
 
@@ -385,21 +293,15 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Spirit Blade
 **Effect:** You can imbue your weapon with part of your spiritual essence doing... TODO
 
 **Level:** Basic
 
-**Category:** What Sorcery is This?
-
 ### Use Any Scroll
 **Effect:** You can cast any scroll you can somewhat read. Only a 1 in 6 chance of something happening instead.
 
 **Level:** Expert
-
-**Category:** What Sorcery is This?
 
 **Requirements:** Read Any Script
 
@@ -410,8 +312,6 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Expert
 
-**Category:** The Learned Arts
-
 **Requirements:** Identify Poisons and Potions
 
 ### Identify Poisons and Potions
@@ -419,14 +319,10 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** The Learned Arts
-
 ### Poisonry
 **Effect:** You can create Poisons.
 
 **Level:** Expert
-
-**Category:** The Learned Arts
 
 **Requirements:** Identify Poisons and Potions
 
@@ -435,8 +331,6 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** The Learned Arts
-
 ## A Rogues' Gallery
 
 ### Alertness
@@ -444,14 +338,10 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Climb Sheer Surfaces
 **Effect:** 6 in 6 chance to climb sheer surfaces.
 
 **Level:** Expert
-
-**Category:** A Rogues' Gallery
 
 **Requirements:** Climbing
 
@@ -460,35 +350,25 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Disguise
 **Effect:** 6 in 6 chance of disguising as a member of the same species and gender. -1 in 6 for every deviation further or if target is close with the individual being impersonated.
 
 **Level:** Basic
-
-**Category:** A Rogues' Gallery
 
 ### Escape Bonds
 **Effect:** Break free of constraints using a Dex check. Might also need a Str check and/or lock picking depending on the circumstances.
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Find Doors and Mechanisms
 **Effect:** +2 in 6 chance of finding hidden doors and secret mechanisms.
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Hide in Shadows
 **Effect:** 6 in 6 chance to hide, even in shadows.
 
 **Level:** Expert
-
-**Category:** A Rogues' Gallery
 
 **Requirements:** Stealth
 
@@ -497,28 +377,20 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Nimble Fingers
 **Effect:** Pick Pockets and Sleight of Hand Tricks.
 
 **Level:** Basic
-
-**Category:** A Rogues' Gallery
 
 ### Sharp Ears
 **Effect:** Your chance of hearing through doors, etc is increased by 1 in 6.
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Silent Footsteps
 **Effect:** 6 in 6 chance of silent movement.
 
 **Level:** Expert
-
-**Category:** A Rogues' Gallery
 
 **Requirements:** Stealth
 
@@ -527,21 +399,15 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Technically Minded (Mechanical Inclination?)
 **Effect:** Pick Locks and Disable Small Mechanisms automatically with time and 3 in 6 (+2) chance to do so under duress.
 
 **Level:** Basic
 
-**Category:** A Rogues' Gallery
-
 ### Tightrope Walking
 **Effect:** Part of climbing or tumbling?
 
 **Level:** Basic
-
-**Category:** A Rogues' Gallery
 
 ## Outdoorsy Activities
 
@@ -550,35 +416,25 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-**Category:** Outdoorsy Activities
-
 ### Hunting & Gathering
 **Effect:** Improve group hunting chance by 2 in 6 (stacking -1).
 
 **Level:** Basic
-
-**Category:** Outdoorsy Activities
 
 ### Leave No Trace
 **Effect:** You are virtually impossible to track alone. With a group, you increase the difficulty of being tracked.
 
 **Level:** Basic
 
-**Category:** Outdoorsy Activities
-
 ### Natural Knowledge
 **Effect:** Identify Plants & Animals, fresh water, etc.
 
 **Level:** Basic
 
-**Category:** Outdoorsy Activities
-
 ### Navigation
 **Effect:** Less chance of getting lost in a chosen terrain type.
 
 **Level:** Basic
-
-**Category:** Outdoorsy Activities
 
 **Note:** May be developed multiple times for multiple types of terrain.
 
@@ -586,5 +442,3 @@ Those who have developed this Knack are versed in one or more of the four magica
 **Effect:** You have a 5 in 6 base chance of tracking, adjusted as appropriate.
 
 **Level:** Basic
-
-**Category:** Outdoorsy Activities

@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import MDX from '@mdx-js/runtime';
 import { useParams } from 'react-router-dom';
 import PageHeader from './PageHeader';
 import PageIcon from './PageIcon';
 import ParentPageNav from './ParentPageNav';
 import SubPageNav from './SubPageNav';
+import CharacterPage from './CharacterPage';
+import ContentPage from './ContentPage';
 
 const PageContent = styled.div`
   padding-left: calc(96px + env(safe-area-inset-left));
@@ -32,20 +33,25 @@ function Page(props) {
       </div>
     );
   }
-  let portraitImageContent;
   let headerImageName;
 
-  if (currentPageData.layout === 'portrait') {
-    const imgUrl = require('../../../static/media/' + currentPageData.image);
-    portraitImageContent = (
-      <div>
-        <img src={imgUrl} className="Page-portrait-image" alt="header" />
-      </div>
-    );
+  if (currentPageData.layout === 'character') {
     headerImageName = 'little_tropical_island.jpg';
   } else {
     headerImageName = currentPageData.image;
   }
+
+  const content =
+    currentPageData.layout === 'character' ? (
+      <CharacterPage
+        sheet={currentPageData.sheet}
+        content={currentPageData.content}
+        image={currentPageData.image}
+      />
+    ) : (
+      <ContentPage content={currentPageData.content} />
+    );
+
   return (
     <div className="Page">
       <PageHeader image={headerImageName} />
@@ -53,13 +59,8 @@ function Page(props) {
         <PageIcon emoji={currentPageData.icon} />
         <ParentPageNav currentPage={pageId} allPageData={props.allPageData} />
         <PagePortraitContainer>
-          <div>
-            <h1>{currentPageData.title}</h1>
-            <div className="Page-data-html">
-              <MDX>{currentPageData.content}</MDX>
-            </div>
-          </div>
-          {portraitImageContent}
+          <h1>{currentPageData.title}</h1>
+          <div className="Page-data-html">{content}</div>
         </PagePortraitContainer>
         <SubPageNav subpages={currentPageData.subpages} />
       </PageContent>
