@@ -11,7 +11,9 @@ In Karst, you will be talking, rolling dice, and writing things down. Advice abo
 This Rulebooks concerns itself mostly with giving you guidance around rolling dice and writing things down that might affect the dice you roll. It also contains all sorts of information to help you create characters and learn a little about the game world.
 
 ## Rolling the Dice
-You will need a few six-sided dice plus some fancier dice that have four, eight, ten, twelve, and twenty sides. It can be helpful if everyone has their own six and twenty sided dice. No matter what dice you are rolling, a higher number is always better.
+You will need a few six-sided dice plus some fancier, polyhedral, dice that have four, eight, ten, twelve, and twenty sides. It can be helpful if everyone has their own six and twenty sided dice. 
+
+No matter what dice you are rolling, a higher number is always better.
 
 When rolling a die there will often be a modifier, positive or negative. After rolling, adjust the result by adding or subtracting the modifier. No matter what, a modifier may not bring the result to below 1.
 
