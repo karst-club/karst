@@ -20,7 +20,7 @@ sheet:
     cha: 14
   max_hp: 10
   hp: 10
-  coins: 21
+  coins: 28
   knacks:
     - Fitness
     - Focus
