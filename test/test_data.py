@@ -27,7 +27,6 @@ class TestData(unittest.TestCase):
         required_keys = [
             'title',
             'icon',
-            'image',
             'content',
         ]
         for page_name, page_info in self.page_data['pages'].items():
