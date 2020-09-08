@@ -1,5 +1,4 @@
 import logging
-import markdown
 import os
 import yaml
 
