@@ -24,8 +24,7 @@ const PagePortraitContainer = styled.div`
 function Page(props) {
   let { pageId } = useParams();
   pageId = pageId || 'karst';
-  const currentPageData = props.allPageData[pageId];
-
+  const currentPageData = props.data.pages[pageId];
   if (!currentPageData) {
     return (
       <div>
@@ -43,10 +42,12 @@ function Page(props) {
 
   const content =
     currentPageData.layout === 'character' ? (
+
       <CharacterPage
         sheet={currentPageData.sheet}
         content={currentPageData.content}
         image={currentPageData.image}
+        allKnacks={props.data.knacks}
       />
     ) : (
       <ContentPage content={currentPageData.content} />
@@ -57,7 +58,7 @@ function Page(props) {
       <PageHeader image={headerImageName} />
       <PageContent>
         <PageIcon emoji={currentPageData.icon} />
-        <ParentPageNav currentPage={pageId} allPageData={props.allPageData} />
+        <ParentPageNav currentPage={pageId} allPageData={props.data.pages} />
         <PagePortraitContainer>
           <h1>{currentPageData.title}</h1>
           <div className="Page-data-html">{content}</div>
