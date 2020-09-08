@@ -51,6 +51,9 @@ def get_knacks():
             if line.startswith(pattern):
                 current_knack_content[key] = line.replace(pattern, "")
 
+    # Write out the last knack
+    knacks[current_knack] = current_knack_content
+
     return knacks
 
 

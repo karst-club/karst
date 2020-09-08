@@ -51,7 +51,7 @@ class TestCharacterSheets(unittest.TestCase):
             for knack in sheet["sheet"]["knacks"]:
                 self.assertIn(
                     knack,
-                    self.valid_knacks,
+                    self.valid_knacks.keys(),
                     "{} has an invalid knack.".format(sheet["sheet"]["name"]),
                 )
 
