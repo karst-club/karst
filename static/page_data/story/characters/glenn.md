@@ -1,5 +1,6 @@
 ## Hook
-Glenn is a noble son of a well-established roughskin family of furriers, out to be muscle for protecting their latest outpost in the archipelago.
+Glenn is a noble son of a well-established roughskin family of furriers, out to be muscle
+for protecting their latest outpost in the archipelago.
 
 ## Hometown
 Belagoria
