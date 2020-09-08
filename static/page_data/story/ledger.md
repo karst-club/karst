@@ -1,5 +1,7 @@
 ## Group Loot
  - **Coins:** 3
+ - Ruby Hearts: 2
+   - These hearts dropped from defeated Crystal Crabs
 
 ## Key Items
  - [Pirate's Journal](pirates_journal)
