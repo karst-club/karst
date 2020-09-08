@@ -4,4 +4,4 @@ pyyaml
 anytree
 emoji
 nose
-black
+black >= 20.0
