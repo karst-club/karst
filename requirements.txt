@@ -3,3 +3,4 @@ pyyaml
 anytree
 emoji
 nose
+black

@@ -399,10 +399,12 @@ Those who have developed this Knack are versed in one or more of the four magica
 
 **Level:** Basic
 
-### Technically Minded (Mechanical Inclination?)
+### Technically Minded
 **Effect:** Pick Locks and Disable Small Mechanisms automatically with time and 3 in 6 (+2) chance to do so under duress.
 
 **Level:** Basic
+
+**Note:** This knack is AKA Mechanical Inclination?
 
 ### Tightrope Walking
 **Effect:** Part of climbing or tumbling?
