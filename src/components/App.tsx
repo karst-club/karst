@@ -3,6 +3,19 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Page from './Page';
 
+export type State = {
+  data: {
+    pages: {
+      pageData: {
+        karst: {
+          html: string;
+          key: string;
+        };
+      };
+    };
+  };
+};
+
 const AppContent = styled.div`
   font-family: 'Vollkorn', serif;
   background: #fefef5;
@@ -18,7 +31,7 @@ const AppContent = styled.div`
   }
 `;
 
-class App extends Component {
+class App extends Component<{}, State> {
   constructor(props) {
     super(props);
     this.state = {

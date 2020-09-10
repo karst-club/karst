@@ -56,7 +56,7 @@ function Page(props) {
         <h1>{currentPageData.title}</h1>
         <div className="Page-data-html">{content}</div>
         <SubPageNav subpages={currentPageData.subpages} />
-        <ReactTooltip delayShow="500" />
+        <ReactTooltip delayShow={500} />
       </PageContent>
     </div>
   );
