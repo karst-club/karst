@@ -54,6 +54,10 @@ def get_knacks():
     # Write out the last knack
     knacks[current_knack] = current_knack_content
 
+    magic_schools = ["Spiritism", "Theurgy", "Theumaturgy", "Deceit"]
+    for school in magic_schools:
+        knacks["Spellcasting ({})".format(school)] = knacks["Spellcasting"]
+
     return knacks
 
 

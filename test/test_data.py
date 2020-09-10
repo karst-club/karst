@@ -23,12 +23,6 @@ class TestCharacterSheets(unittest.TestCase):
         ]
         cls.valid_knacks = page_data["knacks"]
 
-        magic_schools = ["Spiritism", "Theurgy", "Theumaturgy", "Deceit"]
-        for school in magic_schools:
-            cls.valid_knacks["Spellcasting ({})".format(school)] = cls.valid_knacks[
-                "Spellcasting"
-            ]
-
     def test_all_chars_defined(self):
         self.assertEqual(
             len(self.sheets), 4, "There should be 4 characters in the campaign"

@@ -27,14 +27,12 @@ function CharacterAttribute({ name, value }) {
 
 function KnackDisplay({knack, allKnacks}) {
   const knackInfo = allKnacks[knack]
+  let toolTip = ""
   if (knackInfo) {
-    console.log(knackInfo.content)
-  }
-  else {
-    console.log("no knackInfo available for knack " + knack)
+    toolTip = knackInfo.effect || ""
   }
   return (
-    <li key={knack}>{knack}</li>
+    <li key={knack} title={toolTip}>{knack}</li>
   )
 }
 
