@@ -37,6 +37,19 @@ All characters have a Level, which denotes how Experienced they are. Most common
 
 PCs track experience using E**x**perience **P**oints, which are gained from overcoming foes, spending Coin, or recovering Treasure and Loot. When a Character gains enough XP, they reach the next Level and gain all the bonuses associated with doing so.
 
+| Level | XP     |
+| ----- | ------ |
+| 1     | 0      |
+| 2     | 2000   |
+| 3     | 4000   |
+| 4     | 8000   |
+| 5     | 16000  |
+| 6     | 32000  |
+| 7     | 64000  |
+| 8     | 120000 |
+| 9     | 240000 |
+| 10    | 360000 |
+
 The higher the level of a character, the more Hit Points they have, the more likely they are to Save against negative effects, and the more extraordinary things they are capable of doing. These extraordinary things are called Knacks.
 
 ## Hit Points (HP)
