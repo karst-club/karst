@@ -34,8 +34,6 @@ A nation that is not friends with Belagoria.
 ## Gygalos Island
 A small island with a town and some things to explore. Default location for players to start.
 
-[🦀 Beasts of Gygalos Island](mnstrs_of_gygalos)
-
 ### Poe Village
 A small fishing community on Gygalos Island.
 
