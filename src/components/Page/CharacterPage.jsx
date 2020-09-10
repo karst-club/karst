@@ -25,6 +25,17 @@ function CharacterAttribute({ name, value }) {
   );
 }
 
+function KnackDisplay({knack, allKnacks}) {
+  const knackInfo = allKnacks[knack]
+  let toolTip = ""
+  if (knackInfo) {
+    toolTip = knackInfo.effect || ""
+  }
+  return (
+    <li key={knack} title={toolTip}>{knack}</li>
+  )
+}
+
 const speciesAbilities = {
   Eekhorn: [],
   Grevling: ['Grevling: +4 to all Saves'],
@@ -65,8 +76,11 @@ function CharacterPage(props) {
   const { image, sheet } = props;
   const attrs = sheet.attributes;
   const abilities = sheet.knacks.concat(speciesAbilities[sheet.species]);
-  const knacks = abilities.map((knack) => <li>{knack}</li>);
-  const items = sheet.items.map((item) => <li>{item}</li>);
+
+  const knacks = abilities.map((knack) =>
+    <KnackDisplay knack={knack} allKnacks={props.allKnacks}/>
+  );
+  const items = sheet.items.map((item) => <li key={item}>{item}</li>);
   const imgUrl = require('../../../static/media/' + image);
 
   return (

@@ -23,5 +23,8 @@ jobs:
           sudo apt-get install -y python3-setuptools
           sudo pip3 install -r requirements.txt
 
+      - name: Black
+        run: black --check .
+
       - name: Test
         run: nosetests test
