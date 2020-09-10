@@ -25,15 +25,17 @@ function CharacterAttribute({ name, value }) {
   );
 }
 
-function KnackDisplay({knack, allKnacks}) {
-  const knackInfo = allKnacks[knack]
-  let toolTip = ""
+function KnackDisplay({ knack, allKnacks }) {
+  const knackInfo = allKnacks[knack];
+  let toolTip = '';
   if (knackInfo) {
-    toolTip = knackInfo.effect || ""
+    toolTip = knackInfo.effect || '';
   }
   return (
-    <li key={knack} title={toolTip}>{knack}</li>
-  )
+    <li key={knack} data-tip={toolTip}>
+      {knack}
+    </li>
+  );
 }
 
 const speciesAbilities = {
@@ -77,9 +79,9 @@ function CharacterPage(props) {
   const attrs = sheet.attributes;
   const abilities = sheet.knacks.concat(speciesAbilities[sheet.species]);
 
-  const knacks = abilities.map((knack) =>
-    <KnackDisplay knack={knack} allKnacks={props.allKnacks}/>
-  );
+  const knacks = abilities.map((knack) => (
+    <KnackDisplay knack={knack} allKnacks={props.allKnacks} />
+  ));
   const items = sheet.items.map((item) => <li key={item}>{item}</li>);
   const imgUrl = require('../../../static/media/' + image);
 
