@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 cd karst
-git stash
 git pull origin master
-git stash pop
 npm install
 npm run build
 source karst/bin/activate
