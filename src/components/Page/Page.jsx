@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 import PageHeader from './PageHeader';
 import PageIcon from './PageIcon';
 import ParentPageNav from './ParentPageNav';
@@ -42,7 +43,6 @@ function Page(props) {
 
   const content =
     currentPageData.layout === 'character' ? (
-
       <CharacterPage
         sheet={currentPageData.sheet}
         content={currentPageData.content}
@@ -64,6 +64,7 @@ function Page(props) {
           <div className="Page-data-html">{content}</div>
         </PagePortraitContainer>
         <SubPageNav subpages={currentPageData.subpages} />
+        <ReactTooltip delayShow="500" />
       </PageContent>
     </div>
   );

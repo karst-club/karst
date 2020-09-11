@@ -12,6 +12,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
 
     from .api import api
+
     app.register_blueprint(api)
 
     return app
