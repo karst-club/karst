@@ -16,12 +16,6 @@ const PageContent = styled.div`
   margin-bottom: 8px;
 `;
 
-const PagePortraitContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
 function Page(props) {
   let { pageId } = useParams();
   pageId = pageId || 'karst';
@@ -59,10 +53,8 @@ function Page(props) {
       <PageContent>
         <PageIcon emoji={currentPageData.icon} />
         <ParentPageNav currentPage={pageId} allPageData={props.data.pages} />
-        <PagePortraitContainer>
-          <h1>{currentPageData.title}</h1>
-          <div className="Page-data-html">{content}</div>
-        </PagePortraitContainer>
+        <h1>{currentPageData.title}</h1>
+        <div className="Page-data-html">{content}</div>
         <SubPageNav subpages={currentPageData.subpages} />
         <ReactTooltip delayShow="500" />
       </PageContent>
