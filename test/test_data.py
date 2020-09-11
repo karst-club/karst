@@ -25,11 +25,6 @@ class TestCharacterSheets(unittest.TestCase):
         ]
         cls.valid_knacks = page_data["knacks"]
 
-    def test_all_chars_defined(self):
-        self.assertEqual(
-            len(self.sheets), 4, "There should be 4 characters in the campaign"
-        )
-
     def test_right_levels_for_knacks(self):
         for sheet in self.sheets:
             level = sheet["sheet"]["level"]
@@ -72,9 +67,8 @@ class TestData(unittest.TestCase):
         self.assertEqual(2 + 2, 4)
 
     def test_json_schema(self):
-        schema = json.load(open('test/schema.json'))
+        schema = json.load(open("test/schema.json"))
         jsonschema.validate(self.page_data, schema)
-
 
     def test_required_page_metadata(self):
         required_keys = [
