@@ -73,7 +73,17 @@
           },
           "subpages": {
             "description": "Derived from parent_pages by the API and placed into order based on ordinal_position, this is then used on the frontend to create the subpage navigation element.",
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "icon": {"type": "string"},
+                "key": {"type": "string"},
+                "ordinal_position": {"type": "number"},
+                "title": {"type": "string"}
+              },
+              "additionalProperties": false
+            }
           },
           "layout": {
             "description": "The intent of this field is to enable to selection of differentiated page layouts on the frontend. Currently there is only one layout other than the default, and that is for the character sheet.",
@@ -81,10 +91,89 @@
             "enum": ["character"]
           },
           "sheet": {
-            "description": "When the character layout is present, then the sheet will also be required",
+            "description": "When the character layout is present, then the sheet will also be required.",
             "type": "object",
             "properties": {
-            }
+              "name": {
+                "description": "Character's name",
+                "type": "string"
+              },
+              "player": {
+                "description": "Player's name",
+                "type": "string"
+              },
+              "species": {
+                "type": "string",
+                "enum": ["Serpos", "Visita", "Grevling", "Veldling", "Eekhorn", "Lagartos"]
+              },
+              "hook": {
+                "type": "string"
+              },
+              "level": {
+                "type": "number"
+              },
+              "xp": {
+                "type": "number"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "str": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "dex": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "con": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "int": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "wis": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "cha": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  }
+                },
+                "additionalProperties": false
+              },
+              "max_hp": {
+                "type": "number"
+              },
+              "hp": {
+                "type": "number"
+              },
+              "coins": {
+                "type": "number"
+              },
+              "knacks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
           },
           "image": {
             "description": "Should reference to a file in static/media (this is enforced by unit test). The default layout will use this image to replace the default header image. The character sheet layout will instead embed this image onto the page as a separate element.",
