@@ -5,6 +5,8 @@ import anytree
 import emoji
 import os
 import unittest
+import json
+import jsonschema
 from api.util import build_page_data
 
 
@@ -68,6 +70,11 @@ class TestData(unittest.TestCase):
     def test_sanity(self):
         # print(anytree.RenderTree(self.page_data['tree']))
         self.assertEqual(2 + 2, 4)
+
+    def test_json_schema(self):
+        schema = json.load(open('test/schema.json'))
+        jsonschema.validate(self.page_data, schema)
+
 
     def test_required_page_metadata(self):
         required_keys = [

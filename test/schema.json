@@ -1,0 +1,45 @@
+{
+  "title": "Karst API Response",
+  "description": "Data payload for rendering the Karst App",
+  "type": "object",
+  "properties": {
+    "knacks": {
+      "description": "All of the game's available knacks",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "description": "Each knack belongs to a category i.e. The Fundamentals, Hero Stuff",
+            "type": "string"
+          },
+          "content": {
+            "description": "Full description of the knack in markdown with all details",
+            "type": "string"
+          },
+          "effect": {
+            "description": "A sub-portion of the content which describes the knack's effect",
+            "type": "string"
+          },
+          "level": {
+            "description": "A sub-portion of the content which describes the knack's level",
+            "type": "string"
+          },
+          "notes": {
+            "description": "A sub-portion of the content containing special notes about this knack",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "content",
+          "effect",
+          "level"
+        ]
+      }
+    },
+    "pages": {},
+    "tree": {}
+  },
+  "additionalProperties": false
+}
