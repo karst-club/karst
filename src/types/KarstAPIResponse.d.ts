@@ -4,7 +4,7 @@ import Pages from './Pages';
 /**
  * Data payload for rendering the Karst App
  */
-export interface KarstAPIResponse {
+export default interface KarstAPIResponse {
   /**
    * All of the game's available knacks
    */

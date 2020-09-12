@@ -1,23 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import Page from '../../types/Page';
 import NavLink from './NavLink';
+
+export interface Props {
+  page: Page;
+}
 
 const ParentPageNavLinkWrapper = styled.div`
   padding: 5px;
 `;
 
-function ParentPageNavLink(props) {
-  if (props.pageData) {
-    const linkUrl = '/' + props.pageData.key;
-    return (
-      <ParentPageNavLinkWrapper>
-        <NavLink to={linkUrl}>
-          {props.pageData.icon} {props.pageData.title}
-        </NavLink>
-      </ParentPageNavLinkWrapper>
-    );
-  }
-  return <div />;
+function ParentPageNavLink({ page }: Props) {
+  if (!page) return null;
+  const { icon, key, title } = page;
+  const linkUrl = `/${key}`;
+
+  return (
+    <ParentPageNavLinkWrapper>
+      <NavLink to={linkUrl}>
+        {icon} {title}
+      </NavLink>
+    </ParentPageNavLinkWrapper>
+  );
 }
 
 export default ParentPageNavLink;

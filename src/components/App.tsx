@@ -2,19 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Page from './Page';
+import KarstAPIResponse from '../types/KarstAPIResponse';
 
-export type State = {
-  data: {
-    pages: {
-      pageData: {
-        karst: {
-          html: string;
-          key: string;
-        };
-      };
-    };
-  };
-};
+export interface Props {}
+
+export interface State {
+  data: KarstAPIResponse;
+}
 
 const AppContent = styled.div`
   font-family: 'Vollkorn', serif;
@@ -31,13 +25,14 @@ const AppContent = styled.div`
   }
 `;
 
-class App extends Component<{}, State> {
-  constructor(props) {
+class App extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       data: {
         pages: {
           pageData: {
+            // @ts-ignore: This doesn't match the JSONSchema!!!
             karst: {
               html: '<h1>Karst</h1>',
               key: 'karst',
@@ -57,18 +52,17 @@ class App extends Component<{}, State> {
   }
 
   render() {
+    const { data } = this.state;
+
     return (
       <Router>
         <div className="App">
           <AppContent>
             <Switch>
               <Route exact path="/">
-                <Page data={this.state.data} />
+                <Page data={data} />
               </Route>
-              <Route
-                path="/:pageId"
-                children={<Page data={this.state.data} />}
-              />
+              <Route path="/:pageId" children={<Page data={data} />} />
             </Switch>
           </AppContent>
         </div>

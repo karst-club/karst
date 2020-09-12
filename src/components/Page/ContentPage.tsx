@@ -1,7 +1,11 @@
 import React from 'react';
 import MDX from '@mdx-js/runtime';
 
-function ContentPage(props) {
+export interface Props {
+  content: string;
+}
+
+function ContentPage(props: Props) {
   return <MDX>{props.content}</MDX>;
 }
 

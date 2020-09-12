@@ -1,3 +1,4 @@
+import KarstAPIResponse from '../../types/KarstAPIResponse';
 import React from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
@@ -9,6 +10,10 @@ import SubPageNav from './SubPageNav';
 import CharacterPage from './CharacterPage';
 import ContentPage from './ContentPage';
 
+export interface Props {
+  data: KarstAPIResponse;
+}
+
 const PageContent = styled.div`
   padding-left: calc(96px + env(safe-area-inset-left));
   padding-right: calc(96px + env(safe-area-inset-right));
@@ -16,46 +21,44 @@ const PageContent = styled.div`
   margin-bottom: 8px;
 `;
 
-function Page(props) {
-  let { pageId } = useParams();
-  pageId = pageId || 'karst';
-  const currentPageData = props.data.pages[pageId];
-  if (!currentPageData) {
+function Page({ data: { knacks, pages } }: Props) {
+  const { pageId = 'karst' } = useParams<{ pageId: string }>();
+  const currentPage = pages && pages[pageId];
+
+  if (!currentPage) {
     return (
       <div>
         <h1>Page {pageId} Not Found</h1>
       </div>
     );
   }
-  let headerImageName;
 
-  if (currentPageData.layout === 'character') {
-    headerImageName = 'little_tropical_island.jpg';
-  } else {
-    headerImageName = currentPageData.image;
-  }
+  const headerImageName =
+    currentPage.layout === 'character'
+      ? 'little_tropical_island.jpg'
+      : currentPage.image;
 
   const content =
-    currentPageData.layout === 'character' ? (
+    currentPage.layout === 'character' ? (
       <CharacterPage
-        sheet={currentPageData.sheet}
-        content={currentPageData.content}
-        image={currentPageData.image}
-        allKnacks={props.data.knacks}
+        sheet={currentPage.sheet}
+        content={currentPage.content}
+        image={currentPage.image}
+        knacks={knacks}
       />
     ) : (
-      <ContentPage content={currentPageData.content} />
+      <ContentPage content={currentPage.content} />
     );
 
   return (
     <div className="Page">
       <PageHeader image={headerImageName} />
       <PageContent>
-        <PageIcon emoji={currentPageData.icon} />
-        <ParentPageNav currentPage={pageId} allPageData={props.data.pages} />
-        <h1>{currentPageData.title}</h1>
+        <PageIcon emoji={currentPage.icon} />
+        <ParentPageNav currentPage={pageId} pages={pages} />
+        <h1>{currentPage.title}</h1>
         <div className="Page-data-html">{content}</div>
-        <SubPageNav subpages={currentPageData.subpages} />
+        <SubPageNav subpages={currentPage.subpages} />
         <ReactTooltip delayShow={500} />
       </PageContent>
     </div>
