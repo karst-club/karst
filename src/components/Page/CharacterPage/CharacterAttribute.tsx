@@ -24,7 +24,7 @@ const CharacterAttribute = ({ name, value: attributeValue }: Props) => {
   if (!attributeValue) return <li />;
   const displayName = name[0].toUpperCase() + name.slice(1);
   const tier = tiers.find(t => attributeValue <= t.ceiling);
-  const modifier = tier && tier.modifier;
+  const modifier = tier?.modifier;
 
   return (
     <li>
