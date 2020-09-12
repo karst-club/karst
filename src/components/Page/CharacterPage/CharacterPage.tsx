@@ -33,7 +33,7 @@ const PortraitImage = styled.img`
   padding-bottom: 1em;
 `;
 
-function CharacterPage(props: Props) {
+const CharacterPage = (props: Props) => {
   const { content, image, knacks, sheet } = props;
   if (!sheet) return null;
 
@@ -121,6 +121,6 @@ function CharacterPage(props: Props) {
       </ul>
     </div>
   );
-}
+};
 
 export default CharacterPage;

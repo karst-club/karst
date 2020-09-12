@@ -11,7 +11,7 @@ const SubPageList = styled.ul`
   list-style: none;
 `;
 
-function SubPageNav({ subpages = [] }: Props) {
+const SubPageNav = ({ subpages = [] }: Props) => {
   if (!subpages.length) return null;
 
   return (
@@ -33,6 +33,6 @@ function SubPageNav({ subpages = [] }: Props) {
       </SubPageList>
     </>
   );
-}
+};
 
 export default SubPageNav;

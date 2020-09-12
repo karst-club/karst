@@ -21,7 +21,7 @@ const PageContent = styled.div`
   margin-bottom: 8px;
 `;
 
-function Page({ data: { knacks, pages } }: Props) {
+const Page = ({ data: { knacks, pages } }: Props) => {
   const { pageId = 'karst' } = useParams<{ pageId: string }>();
   const currentPage = pages && pages[pageId];
 
@@ -63,6 +63,6 @@ function Page({ data: { knacks, pages } }: Props) {
       </PageContent>
     </div>
   );
-}
+};
 
 export default Page;

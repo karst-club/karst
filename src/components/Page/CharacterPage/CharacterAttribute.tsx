@@ -5,9 +5,10 @@ export interface Props {
   value?: number;
 }
 
-function CharacterAttribute({ name, value }: Props) {
+const CharacterAttribute = ({ name, value }: Props) => {
   if (!value) return <li />;
   const displayName = name[0].toUpperCase() + name.slice(1);
+
   const modifier =
     value < 4
       ? -3
@@ -22,11 +23,12 @@ function CharacterAttribute({ name, value }: Props) {
       : value < 18
       ? 2
       : 3;
+
   return (
     <li>
       {displayName}: {value} <strong>({modifier})</strong>
     </li>
   );
-}
+};
 
 export default CharacterAttribute;

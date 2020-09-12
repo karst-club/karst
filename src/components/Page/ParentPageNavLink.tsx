@@ -4,25 +4,24 @@ import Page from '../../types/Page';
 import NavLink from './NavLink';
 
 export interface Props {
-  page: Page;
+  page?: Page;
 }
 
 const ParentPageNavLinkWrapper = styled.div`
   padding: 5px;
 `;
 
-function ParentPageNavLink({ page }: Props) {
+const ParentPageNavLink = ({ page }: Props) => {
   if (!page) return null;
   const { icon, key, title } = page;
-  const linkUrl = `/${key}`;
 
   return (
     <ParentPageNavLinkWrapper>
-      <NavLink to={linkUrl}>
+      <NavLink to={`/${key}`}>
         {icon} {title}
       </NavLink>
     </ParentPageNavLinkWrapper>
   );
-}
+};
 
 export default ParentPageNavLink;

@@ -14,25 +14,28 @@ const ParentPageNavWrapper = styled.div`
   margin: 5px;
 `;
 
-function ParentPageNav({ pages, currentPage }: Props) {
+const constructLineage = (
+  pages: Pages,
+  pageId: string,
+  pageLineage: Page[]
+) => {
+  const page = pages && pages[pageId];
+  page && pageLineage.push(page);
+  page?.parent_page && constructLineage(pages, page.parent_page, pageLineage);
+};
+
+const ParentPageNav = ({ pages, currentPage }: Props) => {
   const pageLineage: Page[] = [];
+  if (!pages || !currentPage) return null;
+  constructLineage(pages, currentPage, pageLineage);
 
-  // recursively trace navigation lineage
-  const constructLineage = (pageId: string) => {
-    const page = pages && pages[pageId];
-    page && pageLineage.push(page);
-    page?.parent_page && constructLineage(page.parent_page);
-  };
-
-  constructLineage(currentPage);
-
-  const parentNavItems = pageLineage
-    .reverse()
-    .map((pageData) => (
-      <ParentPageNavLink key={pageData.key} page={pageData} />
-    ));
-
-  return <ParentPageNavWrapper>{parentNavItems}</ParentPageNavWrapper>;
-}
+  return (
+    <ParentPageNavWrapper>
+      {pageLineage.reverse().map((page) => (
+        <ParentPageNavLink key={page.key} page={page} />
+      ))}
+    </ParentPageNavWrapper>
+  );
+};
 
 export default ParentPageNav;
