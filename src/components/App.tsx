@@ -45,8 +45,8 @@ class App extends Component<Props, State> {
 
   componentDidMount() {
     fetch('/api/page_data')
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         this.setState({ data: data });
       });
   }

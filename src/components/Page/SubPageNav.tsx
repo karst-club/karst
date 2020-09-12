@@ -19,7 +19,7 @@ const SubPageNav = ({ subpages = [] }: Props) => {
       <hr />
       <h1>Subpages</h1>
       <SubPageList>
-        {subpages.map((subpage) => (
+        {subpages.map(subpage => (
           <>
             {subpage.key && subpage.title && (
               <li key={subpage.title}>

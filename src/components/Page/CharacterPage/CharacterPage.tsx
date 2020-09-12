@@ -89,7 +89,7 @@ const CharacterPage = (props: Props) => {
         <FlexChild>
           <h2>Knacks</h2>
           <ul>
-            {abilities?.map((knackName) => (
+            {abilities?.map(knackName => (
               <KnackDisplay knackName={knackName} knacks={knacks} />
             ))}
           </ul>
@@ -97,7 +97,7 @@ const CharacterPage = (props: Props) => {
         <FlexChild>
           <h2>Items</h2>
           <ul>
-            {items?.map((item) => (
+            {items?.map(item => (
               <li key={item}>{item}</li>
             ))}
           </ul>

@@ -31,7 +31,7 @@ const ParentPageNav = ({ pages, currentPage }: Props) => {
 
   return (
     <ParentPageNavWrapper>
-      {pageLineage.reverse().map((page) => (
+      {pageLineage.reverse().map(page => (
         <ParentPageNavLink key={page.key} page={page} />
       ))}
     </ParentPageNavWrapper>
