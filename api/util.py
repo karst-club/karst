@@ -102,7 +102,7 @@ def build_page_data(secret_access=False):
                 )
                 page_data["key"] = page_key
 
-                secret_page = page_data.get('secret')
+                secret_page = page_data.get("secret")
 
                 if not secret_page or secret_access:
 

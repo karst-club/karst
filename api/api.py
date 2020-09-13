@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from hashlib import sha1
 from anytree.exporter import DictExporter
 
-SECRET_SHA = b'}\\*-a6\xfb\xf1f!\x1dQ\x83\xbff!J$\x7f1'
+SECRET_SHA = b"}\\*-a6\xfb\xf1f!\x1dQ\x83\xbff!J$\x7f1"
 
 api = Blueprint("api", __name__)
 
@@ -11,7 +11,7 @@ api = Blueprint("api", __name__)
 def fetch_page_data():
     from .util import build_page_data
 
-    secret = request.cookies.get('secret')
+    secret = request.cookies.get("secret")
     secret_access = False
     if secret:
         secret_access = sha1(secret.encode()).digest() == SECRET_SHA
