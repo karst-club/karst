@@ -12,10 +12,11 @@ def fetch_page_data():
     from .util import build_page_data
 
     secret = request.cookies.get('secret')
+    secret_access = False
     if secret:
-        secret = sha1(secret.encode()).digest() == SECRET_SHA
+        secret_access = sha1(secret.encode()).digest() == SECRET_SHA
 
-    all_page_data = build_page_data(secret=secret)
+    all_page_data = build_page_data(secret_access=secret_access)
     exporter = DictExporter()
     return {
         "pages": all_page_data["pages"],
