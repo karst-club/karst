@@ -63,11 +63,11 @@ There are two special types of Actions that Characters often perform during Enco
 
 Distance is broken up into five conceptual ranges:
 
-* Close - Can reach out and touch them. Melee weapons work at this range.
+* Close - Can touch them. Melee weapons work at this range.
 * Nearby - Can see the whites of their eyes. A knife can be thrown at nearby targets.
 * Distant - Can see thier faces. Short bows can hit distant targets.
 * Far Away: Can see their form. A long bow can strike targets that are far away.
-* Very Far Away - Can be seen at all. Very far away is too far for almost every weapon.
+* Very Far Away - Can see them at all. Very far away is too far for almost every weapon.
 
 There are also five general speeds of movement:
 
@@ -108,5 +108,5 @@ If one side has been defeated or tensions have been de-escalated, the Encounter 
 # Learning Lessons
 - Healing
 - Loot
-- XP and Leveling
-- Journals and Notes
+- XP and Leveling (covered in character concepts?)
+- Journals and Notes (covered in party?)
