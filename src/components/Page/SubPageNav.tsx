@@ -9,14 +9,15 @@ export interface Props {
 
 const SubPageList = styled.ul`
   list-style: none;
+  padding-left: 0;
 `;
 
-const SubPageNav = ({ subpages = [] }: Props) => {
+const SubPageNav = (props: Props) => {
+  const { subpages = [] } = props;
   if (!subpages.length) return null;
 
   return (
-    <>
-      <hr />
+    <div {...props}>
       <h1>Subpages</h1>
       <SubPageList>
         {subpages.map(subpage => (
@@ -31,7 +32,7 @@ const SubPageNav = ({ subpages = [] }: Props) => {
           </>
         ))}
       </SubPageList>
-    </>
+    </div>
   );
 };
 
