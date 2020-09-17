@@ -14,11 +14,34 @@ export interface Props {
   data: KarstAPIResponse;
 }
 
-const PageContent = styled.div`
-  padding-left: calc(96px + env(safe-area-inset-left));
-  padding-right: calc(96px + env(safe-area-inset-right));
-  max-width: 900px;
+const PageBody = styled.div`
+  padding-left: calc(16px + env(safe-area-inset-left));
+  padding-right: calc(16px + env(safe-area-inset-right));
+  @media (min-width: 768px) {
+    padding-left: calc(48px + env(safe-area-inset-left));
+    padding-right: calc(48px + env(safe-area-inset-right));
+  }
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const PageTorso = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
+
+const PageContent = styled.div`
+  padding: 1em;
+  flex-basis: 66%;
+`;
+
+const StyledNav = styled(SubPageNav)`
+  padding: 1em;
+  flex-basis: 34%;
 `;
 
 const Page = ({ data: { knacks, pages } }: Props) => {
@@ -53,14 +76,20 @@ const Page = ({ data: { knacks, pages } }: Props) => {
   return (
     <div className="Page">
       <PageHeader image={headerImageName} />
-      <PageContent>
-        <PageIcon emoji={currentPage.icon} />
-        <ParentPageNav currentPage={pageId} pages={pages} />
-        <h1>{currentPage.title}</h1>
-        <div className="Page-data-html">{content}</div>
-        <SubPageNav subpages={currentPage.subpages} />
-        <ReactTooltip delayShow={500} />
-      </PageContent>
+      <PageBody>
+        <div>
+          <PageIcon emoji={currentPage.icon} />
+          <ParentPageNav currentPage={pageId} pages={pages} />
+        </div>
+        <PageTorso>
+          <PageContent>
+            <h1>{currentPage.title}</h1>
+            <div className="Page-data-html">{content}</div>
+            <ReactTooltip delayShow={500} />
+          </PageContent>
+          <StyledNav subpages={currentPage.subpages} />
+        </PageTorso>
+      </PageBody>
     </div>
   );
 };
