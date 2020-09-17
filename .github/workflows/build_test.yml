@@ -26,9 +26,6 @@ jobs:
       - name: Prettier
         run: npx prettier --check src/
 
-
-        run: black --check .
-
       - name: Black
         run: black --check .
 
