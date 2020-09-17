@@ -57,21 +57,39 @@ Characters who are not surprised roll a d6 modified by Dex to generate their Ini
 
 On their Turn a Character may Move and take an Action. Certain Actions may require the Character to remain stationary or may be Sustained across multiple Turns.
 
-If a Character is Encumbered during an Encounter, their movement is halved, their AC is reduced by 2, and they lose any positive Dex modifiers.
+There are two special types of Actions that Characters often perform during Encounters, Talking with the other side and Attacking them. These are covered in more detail below.
 
-There are two special types of Actions that Characters often perform during Encounters, Talking with the other side and Attacking them.
+### Movement and Distance
 
-## Talking
+Distance is broken up into five conceptual ranges:
+
+* Close - Can touch them. Melee weapons work at this range.
+* Nearby - Can see the whites of their eyes. A knife can be thrown at nearby targets.
+* Distant - Can see thier faces. Short bows can hit distant targets.
+* Far Away: Can see their form. A long bow can strike targets that are far away.
+* Very Far Away - Can see them at all. Very far away is too far for almost every weapon.
+
+There are also five general speeds of movement:
+
+* Quick Movement - Can change one distance a turn. Unarmored and lightly armored characters can move quickly.
+* Moderate Movement - Can move one distance every two turns. Characters in medium armor move at a moderate rate.
+* Slow Movement - Can move one distance every three turns. Heavy armor reduces a character to slow movement.
+* Very Slow Movement - Can move one distance every four turns. Very slow movement is for the extremely encumbered.
+* Immobile - Can not move at all. Paralysis and other forms of restraint are the primary causes of this movement rate.
+
+If a Character is Encumbered, their movement is decreased by as many as two levels (stopping at Very Slow), their AC is reduced by 2, and they lose any positive Dex modifiers.
+
+### Talking
 
 Characters may spend their Action attempting to talk and perhaps reason, bargain, or parlay with the other side. The first time a Player Character does this during an encounter, they get to make a Reaction roll as an Action modified by Cha. The higher the number the less negative the reaction.
 
-## Attacking and Combat
+### Attacking and Combat
 
 When talking won’t do, Characters can attack. If a Character makes an Attack during an Encounter it becomes a Combat.
 
 Attacks are made by rolling a d20 modified by Str for melee or Dex for ranged attacks. Other modifiers may apply, such as +2 for sneak attacks made on unsuspecting targets. If the roll is equal to or over the opponent’s AC, the Character hits and does Damage.
 
-### Damage
+#### Damage
 
 A successful Attack does at least 1 Damage to an opponent's HP. The Attacker rolls their weapon's Damage. Melee Attack Damage is modified by Str.
 
@@ -90,5 +108,5 @@ If one side has been defeated or tensions have been de-escalated, the Encounter 
 # Learning Lessons
 - Healing
 - Loot
-- XP and Leveling
-- Journals and Notes
+- XP and Leveling (covered in character concepts?)
+- Journals and Notes (covered in party?)
