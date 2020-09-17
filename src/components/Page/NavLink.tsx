@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const NavLink = styled(Link)`
+export interface Props {
+  to: string;
+}
+
+const NavLink = styled(Link)<Props>`
   color: inherit;
   text-decoration: inherit;
 `;

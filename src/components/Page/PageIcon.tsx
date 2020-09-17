@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export interface Props {
+  emoji: string;
+}
+
 const PageHeaderIcon = styled.div`
   display: flex;
   height: 78px;
@@ -24,12 +28,10 @@ const PageHeaderIcon = styled.div`
   line-height: 1em;
 `;
 
-function PageIcon(props) {
-  return (
-    <PageHeaderIcon>
-      <span>{props.emoji}</span>
-    </PageHeaderIcon>
-  );
-}
+const PageIcon = ({ emoji }: Props) => (
+  <PageHeaderIcon>
+    <span>{emoji}</span>
+  </PageHeaderIcon>
+);
 
 export default PageIcon;

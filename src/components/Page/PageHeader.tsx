@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export interface Props {
+  image?: string;
+}
+
 const PageHeaderImage = styled.img`
   display: block;
   object-fit: cover;
@@ -25,9 +29,10 @@ const PageHeaderWrapper = styled.div`
   color: white;
 `;
 
-function PageHeader(props) {
-  const img = props.image || 'little_tropical_island.jpg';
-  const imgUrl = require('../../../static/media/' + img);
+const PageHeader = ({ image = 'little_tropical_island.jpg' }: Props) => {
+  if (!image) return null;
+  const imgUrl = require(`../../../static/media/${image}`);
+
   return (
     <header>
       <PageHeaderWrapper>
@@ -35,6 +40,6 @@ function PageHeader(props) {
       </PageHeaderWrapper>
     </header>
   );
-}
+};
 
 export default PageHeader;
