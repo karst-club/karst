@@ -1,0 +1,204 @@
+{
+  "title": "Karst API Response",
+  "description": "Data payload for rendering the Karst App",
+  "type": "object",
+  "properties": {
+    "knacks": {
+      "description": "All of the game's available knacks",
+      "type": "object",
+      "additionalProperties": {
+        "description": "The keys of the knacks dict are the Knack Names",
+        "type": "object",
+        "properties": {
+          "category": {
+            "description": "Each knack belongs to a category i.e. The Fundamentals, Hero Stuff",
+            "type": "string"
+          },
+          "content": {
+            "description": "Full description of the knack in markdown with all details",
+            "type": "string"
+          },
+          "effect": {
+            "description": "A sub-portion of the content which describes the knack's effect",
+            "type": "string"
+          },
+          "level": {
+            "description": "A sub-portion of the content which describes the knack's level",
+            "type": "string"
+          },
+          "note": {
+            "description": "A sub-portion of the content containing special notes about this knack",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "content",
+          "effect",
+          "level"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pages": {
+      "description": "All of the Page Data for the application content",
+      "type": "object",
+      "additionalProperties": {
+        "description": "Each key in the pageData represents a page's unique ID and corresponds to the yaml/markdown filenames in static/page_data",
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "The page's id a.k.a. the name of the corresponding yaml/markdown files.",
+            "type": "string"
+          },
+          "title": {
+            "description": "This is the page's Display Name",
+            "type": "string"
+          },
+          "content": {
+            "description": "Markdown content which will rendered in a page with MDX",
+            "type": "string"
+          },
+          "icon": {
+            "description": "The page's icon which must be an emoji. 😈",
+            "type": "string"
+          },
+          "ordinal_position": {
+            "description": "Used on the backend to sort subpages that would appear on the same level into a preferred order. Not currently referenced anywhere in the frontend",
+            "type": "number"
+          },
+          "parent_page": {
+            "description": "All pages except the root page should have this defined. It's used on the backend to construct the subpages list, and it's used in the frontend to construct navigation trees",
+            "type": "string"
+          },
+          "subpages": {
+            "description": "Derived from parent_pages by the API and placed into order based on ordinal_position, this is then used on the frontend to create the subpage navigation element.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "icon": {"type": "string"},
+                "key": {"type": "string"},
+                "ordinal_position": {"type": "number"},
+                "title": {"type": "string"}
+              },
+              "additionalProperties": false
+            }
+          },
+          "layout": {
+            "description": "The intent of this field is to enable to selection of differentiated page layouts on the frontend. Currently there is only one layout other than the default, and that is for the character sheet.",
+            "type": "string",
+            "enum": ["character"]
+          },
+          "sheet": {
+            "description": "When the character layout is present, then the sheet will also be required.",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Character's name",
+                "type": "string"
+              },
+              "player": {
+                "description": "Player's name",
+                "type": "string"
+              },
+              "species": {
+                "type": "string",
+                "enum": ["Serpos", "Visita", "Grevling", "Veldling", "Eekhorn", "Lagartos"]
+              },
+              "hook": {
+                "type": "string"
+              },
+              "level": {
+                "type": "number"
+              },
+              "xp": {
+                "type": "number"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "str": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "dex": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "con": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "int": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "wis": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  },
+                  "cha": {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 18
+                  }
+                },
+                "additionalProperties": false
+              },
+              "max_hp": {
+                "type": "number"
+              },
+              "hp": {
+                "type": "number"
+              },
+              "coins": {
+                "type": "number"
+              },
+              "knacks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "image": {
+            "description": "Should reference to a file in static/media (this is enforced by unit test). The default layout will use this image to replace the default header image. The character sheet layout will instead embed this image onto the page as a separate element.",
+            "type": "string"
+          },
+          "session_date": {
+            "description": "Recorded on episodes for posterity, not exposed or used anywhere at the moment. Also currently inconsistent between the yaml, python, and API response values - yaml has YYYY-MM-DD, python has it as a datetime.date, and API response has it as a pretty verbose date string (Mon, 24 Aug 2020 00:00:00 GMT)"
+          }
+        },
+        "dependencies": {
+          "sheet": ["layout"]
+        },
+        "required": [
+          "key",
+          "title",
+          "content",
+          "icon",
+          "subpages"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "tree": {
+      "description": "This is the jsonified representation of a tree structure of page IDs, each node is an AnyNode{id: str, children: List(AnyNode)}. It is currently not used anywhere on the frontend and is only included in the API response for posteritiy. On the backend it's kept as an anytree.AnyNode which is validated in unit tests."
+    }
+  },
+  "additionalProperties": false
+}

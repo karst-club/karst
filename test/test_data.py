@@ -5,6 +5,8 @@ import anytree
 import emoji
 import os
 import unittest
+import json
+import jsonschema
 from api.util import build_page_data
 
 
@@ -22,11 +24,6 @@ class TestCharacterSheets(unittest.TestCase):
             if sheet.get("layout") == "character"
         ]
         cls.valid_knacks = page_data["knacks"]
-
-    def test_all_chars_defined(self):
-        self.assertEqual(
-            len(self.sheets), 4, "There should be 4 characters in the campaign"
-        )
 
     def test_right_levels_for_knacks(self):
         for sheet in self.sheets:
@@ -68,6 +65,10 @@ class TestData(unittest.TestCase):
     def test_sanity(self):
         # print(anytree.RenderTree(self.page_data['tree']))
         self.assertEqual(2 + 2, 4)
+
+    def test_json_schema(self):
+        schema = json.load(open("test/schema.json"))
+        jsonschema.validate(self.page_data, schema)
 
     def test_required_page_metadata(self):
         required_keys = [
