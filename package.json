@@ -41,7 +41,8 @@
     "dev": "run-p start-api start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "npx prettier -w src/"
   },
   "eslintConfig": {
     "extends": "react-app"
