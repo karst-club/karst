@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Page from './Page';
 import KarstAPIResponse from '../types/KarstAPIResponse';
+import ScrollToTop from './ScrollToTop';
 
 export interface Props {}
 
@@ -49,6 +50,7 @@ class App extends Component<Props, State> {
 
     return (
       <Router>
+        <ScrollToTop />
         <div className="App">
           <AppContent>
             <Switch>
