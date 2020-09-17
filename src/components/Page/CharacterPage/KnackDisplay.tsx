@@ -7,15 +7,16 @@ export interface Props {
   knacks?: Knacks;
 }
 
-function KnackDisplay({ knackName, knacks }: Props) {
+const KnackDisplay = ({ knackName, knacks }: Props) => {
   if (!knacks) return null;
   const knack: Knack | undefined = knacks[knackName];
   const toolTip = knack?.effect || '';
+
   return (
     <li key={knackName} data-tip={toolTip}>
       {knackName}
     </li>
   );
-}
+};
 
 export default KnackDisplay;

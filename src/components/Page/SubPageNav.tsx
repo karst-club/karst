@@ -11,7 +11,7 @@ const SubPageList = styled.ul`
   list-style: none;
 `;
 
-function SubPageNav({ subpages = [] }: Props) {
+const SubPageNav = ({ subpages = [] }: Props) => {
   if (!subpages.length) return null;
 
   return (
@@ -19,7 +19,7 @@ function SubPageNav({ subpages = [] }: Props) {
       <hr />
       <h1>Subpages</h1>
       <SubPageList>
-        {subpages.map((subpage) => (
+        {subpages.map(subpage => (
           <>
             {subpage.key && subpage.title && (
               <li key={subpage.title}>
@@ -33,6 +33,6 @@ function SubPageNav({ subpages = [] }: Props) {
       </SubPageList>
     </>
   );
-}
+};
 
 export default SubPageNav;

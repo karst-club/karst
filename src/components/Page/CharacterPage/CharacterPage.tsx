@@ -33,7 +33,7 @@ const PortraitImage = styled.img`
   padding-bottom: 1em;
 `;
 
-function CharacterPage(props: Props) {
+const CharacterPage = (props: Props) => {
   const { content, image, knacks, sheet } = props;
   if (!sheet) return null;
 
@@ -89,7 +89,7 @@ function CharacterPage(props: Props) {
         <FlexChild>
           <h2>Knacks</h2>
           <ul>
-            {abilities?.map((knackName) => (
+            {abilities?.map(knackName => (
               <KnackDisplay knackName={knackName} knacks={knacks} />
             ))}
           </ul>
@@ -97,7 +97,7 @@ function CharacterPage(props: Props) {
         <FlexChild>
           <h2>Items</h2>
           <ul>
-            {items?.map((item) => (
+            {items?.map(item => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -121,6 +121,6 @@ function CharacterPage(props: Props) {
       </ul>
     </div>
   );
-}
+};
 
 export default CharacterPage;

@@ -28,12 +28,10 @@ const PageHeaderIcon = styled.div`
   line-height: 1em;
 `;
 
-function PageIcon({ emoji }: Props) {
-  return (
-    <PageHeaderIcon>
-      <span>{emoji}</span>
-    </PageHeaderIcon>
-  );
-}
+const PageIcon = ({ emoji }: Props) => (
+  <PageHeaderIcon>
+    <span>{emoji}</span>
+  </PageHeaderIcon>
+);
 
 export default PageIcon;

@@ -5,8 +5,6 @@ export interface Props {
   content: string;
 }
 
-function ContentPage(props: Props) {
-  return <MDX>{props.content}</MDX>;
-}
+const ContentPage = (props: Props) => <MDX>{props.content}</MDX>;
 
 export default ContentPage;

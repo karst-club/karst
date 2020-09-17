@@ -29,9 +29,10 @@ const PageHeaderWrapper = styled.div`
   color: white;
 `;
 
-function PageHeader({ image = 'little_tropical_island.jpg' }: Props) {
+const PageHeader = ({ image = 'little_tropical_island.jpg' }: Props) => {
   if (!image) return null;
   const imgUrl = require(`../../../static/media/${image}`);
+
   return (
     <header>
       <PageHeaderWrapper>
@@ -39,6 +40,6 @@ function PageHeader({ image = 'little_tropical_island.jpg' }: Props) {
       </PageHeaderWrapper>
     </header>
   );
-}
+};
 
 export default PageHeader;
