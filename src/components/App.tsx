@@ -29,24 +29,22 @@ const AppContent = styled.div`
 class App extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {data: undefined};
+    this.state = { data: undefined };
   }
 
   componentDidMount() {
     fetch('/api/page_data')
       .then(res => res.json())
       .then(data => {
-        this.setState({ data: data});
+        this.setState({ data: data });
       });
   }
 
   render() {
     const { data } = this.state;
     if (!data) {
-      return (
-        <h1>Loading Karst</h1>
-      )
-    };
+      return <h1>Loading Karst</h1>;
+    }
 
     return (
       <Router>
