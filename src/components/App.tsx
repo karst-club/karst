@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Page from './Page';
+import KarstAPIResponse from '../types/KarstAPIResponse';
+import ScrollToTop from './ScrollToTop';
+
+export interface Props {}
+
+export interface State {
+  data?: KarstAPIResponse;
+}
 
 const AppContent = styled.div`
   font-family: 'Vollkorn', serif;
@@ -18,44 +26,38 @@ const AppContent = styled.div`
   }
 `;
 
-class App extends Component {
-  constructor(props) {
+class App extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-    this.state = {
-      data: {
-        pages: {
-          pageData: {
-            karst: {
-              html: '<h1>Karst</h1>',
-              key: 'karst',
-            },
-          },
-        },
-      },
-    };
+    this.state = {data: undefined};
   }
 
   componentDidMount() {
     fetch('/api/page_data')
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ data: data });
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ data: data});
       });
   }
 
   render() {
+    const { data } = this.state;
+    if (!data) {
+      return (
+        <h1>Loading Karst</h1>
+      )
+    };
+
     return (
       <Router>
+        <ScrollToTop />
         <div className="App">
           <AppContent>
             <Switch>
               <Route exact path="/">
-                <Page data={this.state.data} />
+                <Page data={data} />
               </Route>
-              <Route
-                path="/:pageId"
-                children={<Page data={this.state.data} />}
-              />
+              <Route path="/:pageId" children={<Page data={data} />} />
             </Switch>
           </AppContent>
         </div>

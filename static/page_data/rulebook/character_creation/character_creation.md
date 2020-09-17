@@ -22,7 +22,7 @@ Starting characters get two hit dice worth of HP. Roll 2d6 each modified by Con 
 
 Roll 3d6 and multiply the result by 10 for your starting Loot. The values of these 3 dice may also me used to randomly generate a background using the link below if you would like inspiration.
 
-[Backgrounds](backgrounds)
+<Link to="backgrounds">Backgrounds</Link>
 
 ## Interlude
 
