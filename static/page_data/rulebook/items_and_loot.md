@@ -98,147 +98,98 @@ Harm reduction.
 | Plate Mail        | 100  | 6    | Heavy     |
 
 
-## Equipment & Gear
+## Equipment, Tools, Kits & Gear
 
 You probably don't *need* most of the items listed below, but all of them could come in handy.
 
-### Adventuring Gear
+#### Simple Tools and Equipment
 
-| Name                        | Cost | Notes |
-| --------------------------- | ---- | ----- |
-| Air Bladder                 | 15   |       |
-| Bandages (10)               | 1    |       |
-| Block and tackle            | 5    |       |
-| Caltrops                    | 1    |       |
-| Canvas (2.5 sq yards)       | 1    |       |
-| Chain (heavy, 1')           | 4    |       |
-| Chain (light, 1')           | 3    |       |
-| Climbing Harness            | 15   |       |
-| Climbing Tools              | 20   |       |
-| Cord/Strap (30')            | 1    |       |
-| Crampons                    | 4    |       |
-| Crowbar                     | 10   |       |
-| Crutches                    | 1    |       |
-| Fishing Net (10' sq)        | 4    |       |
-| Fishing Pole and Hooks (3)  | 2    |       |
-| Grappling Hook              | 25   |       |
-| Hammer (small)              | 2    |       |
-| Iron Spikes (12)            | 1    |       |
-| Ladder (rope, 25')          | 3    |       |
-| Lantern (bullseye)          | 15   |       |
-| Lantern (hooded)            | 10   |       |
-| Lens (small)                | 10   |       |
-| Magnet (small)              | 1    |       |
-| Magnifying Glass            | 100  |       |
-| Mirror (hand-sized)         | 5    |       |
-| Mirror (silver, hand-sized) | 25   |       |
-| Needle (magnetized)         | 1    |       |
-| Oil (flask)                 | 2    |       |
-| Piton (climbing, 5)         | 1    |       |
-| Pole (wooden, 10')          | 1    |       |
-| Razor                       | 1    |       |
-| Rope (50')                  | 1    |       |
-| Rope (silk, 50')            | 10   |       |
-| Stakes (3) and mallet       | 3    |       |
-| String (twine, 500')        | 1    |       |
-| String (silk, 100')         | 1    |       |
-| Torches (6)                 | 1    |       |
-| Trap (small)                | 5    |       |
-| Trap (medium)               | 10   |       |
-| Trap (large)                | 15   |       |
+¢**1** each
 
-### Clothes & Storage
+* Blanket
+* Bottle
+* Chalk
+* Dice (set)
+* Hammock
+* Large Sack
+* Oil (flask)
+* Parchment
+* Poor Clothes
+* Pot or Pan
+* Pouch
+* Quiver
+* Rope (50')
+* Scabbard
+* Small Magnet (lodestone)
+* Soap
+* Torches (6)
+* Twine (500')
+* Waterskin
+* Weapon Belt
+* Wooden Pole (10')
 
-| Name                  | Cost | Notes                                   |
-| --------------------- | ---- | --------------------------------------- |
-| Adventurers Outfit    | 10   | Or Travel Outfit                        |
-| Artisan Clothes       | 10   | Or Cold Weather Clothes, Vestments, etc |
-| Backpack              | 5    |                                         |
-| Bag (Cloth)           | 1    |                                         |
-| Belt Sash             | 1    | Or Weapon Belt                          |
-| Common Clothes        | 5    |                                         |
-| Flask (Steel)         | 2    |                                         |
-| Jar or Bottle         | 1    | Glass or Ceramic                        |
-| Map or Scroll Case    | 5    |                                         |
-| Money Belt            | 4    |                                         |
-| Noble Clothes         | 100  |                                         |
-| Pack Vest             | 10   |                                         |
-| Poor Clothes          | 1    |                                         |
-| Pouch                 | 1    |                                         |
-| Pouch (Large)         | 2    |                                         |
-| Quiver or Bolt Case   | 1    |                                         |
-| Rich Clothes          | 50   |                                         |
-| Sack (Large)          | 1    |                                         |
-| Scabbard              | 1    |                                         |
-| Travois               | 5    | Maybe in Transport instead?             |
-| Vial (Glass)          | 1    |                                         |
-| Waterskin             | 1    |                                         |
-| Waterskin (Gallon)    | 2    |                                         |
+#### Small Tools and Kits
 
-### Camping & Cooking Gear
+¢**5** each
 
-| Name                         | Cost | Notes                       |
-| ---------------------------- | ---- | --------------------------- |
-| Bed Roll                     | 15   |                             |
-| Bellows                      | 10   |                             |
-| Coal Keeper                  | 2    |                             |
-| Cooking Supplies (7 days)    | 3    |                             |
-| Fire Grate                   | 3    |                             |
-| Hammock                      | 5    |                             |
-| Iron Pan                     | 1    |                             |
-| Iron Pot                     | 2    |                             |
-| Mess Kit                     | 8    |                             |
-| Soap (2 lbs)                 | 1    |                             |
-| Soap (perfumed, 1 lb)        | 5    |                             |
-| Teapot                       | 1    |                             |
-| Tent (Large)                 | 25   | Sleeps 10, 6 comfortably    |
-| Tent (Pavillion)             | 100  |                             |
-| Tent (Small)                 | 5    | Sleeps 1, 2 uncomfortably   |
-| Tinder Box (flint and steel) | 3    |                             |
-| Tripod, Cooking              | 3    |                             |
-| Winter Blanket               | 1    |                             |
-| Rations (iron, 7 days)       | 15   |                             |
-| Rations (standard, 7 days)   | 5    |                             |
-| Wine (2 pints)               | 1    |                             |
+* Armor Patch Kit
+* Backpack
+* Bedroll
+* Block & Tackle
+* Chain
+* Common Clothes
+* Cooking Supplies (1 week)
+* Deck of Cards
+* Firestarting Kit (Firestarter, Coal Keeper, and Grate) 
+* First Aid Kit
+* Fishing Rod or Net Kit
+* Hand Mirror
+* Hunter's Kit
+* Money Belt
+* Rope Ladder (25')
+* Scroll Case
+* Small Musical Instrument
+* Small Tent (Sleeps 1, 2 uncomfortably)
+* Small Tool
+* Small Trap
+* Tripod (Cooking)
 
-### Kits & Crafts
+#### Basic Tools and Kits
 
-| Name                         | Cost | Notes                                       |
-| ---------------------------- | ---- | ------------------------------------------- |
-| Alchemist Lab                | 500  |                                             |
-| Armor Patch Kit              | 5    |                                             |
-| Basic Tool Kit               | 10   | Artisan, Craftsperson, Herbalist, etc       |
-| Book (Empty)                 | 25   |                                             |
-| Bowstrings (10)              | 1    |                                             |
-| Candles (12)                 | 1    |                                             |
-| Censer (gold)                | 5    |                                             |
-| Chalk                        | 2    | Small Bag                                   |
-| Charcoal Sticks              | 1    | A Handful                                   |
-| Deck of Cards                | 5    |                                             |
-| Dice (set)                   | 1    |                                             |
-| Disguise Kit                 | 20   |                                             |
-| Full Tool Set                | 50   |                                             |
-| Holy Symbol                  | 25   |                                             |
-| Holy Symbol (fancy)          | 50   |                                             |
-| Holy Water (vial)            | 25   |                                             |
-| Incense (stick)              | 1    |                                             |
-| Ink Pot (Ceramic)            | 2    |                                             |
-| Instrument (Small)           | 5    | Small Drum, Small Flute, Hunter's Horn, etc |
-| Instrument (Medium)          | 20   | Large Drum, Lute, etc                       |
-| Instrument (Large)           | 75   | Harp, etc                                   |
-| Journal (Empty)              | 20   |                                             |
-| Oil (scented/rubbing, flask) | 5    |                                             |
-| Paper (Fine Vellum)          | 4    |                                             |
-| Paper (Parchment)            | 1    |                                             |
-| Perfume (vial)               | 5    |                                             |
-| Prayer Book                  | 25   |                                             |
-| Quill                        | 1    | 10 Count                                    |
-| Quill Knife                  | 1    |                                             |
-| Smoking Pipe & Pouch         | 2    |                                             |
-| Spellbook (traveling)        | 50   |                                             |
-| Sword Oil                    | 1    |                                             |
-| Thieves' Picks and Tools     | 25   |                                             |
-| Travel Alter                 | 40   |                                             |
-| Wax (beeswax, 1 lb)          | 1    |                                             |
-| Whetstone                    | 1    |                                             |
-| Writing Ink                  | 8    | Vial                                        |
+¢**10** each
+
+* Adventurers Outfit
+* Artisan's Tools
+* Cooking Kit
+* Crowbar
+* Journal (Empty)
+* Herbalist's Kit
+* Lantern
+* Medium Trap
+* Pack Vest
+* Rations (1 week)
+* Trapper's Gear
+* Weapon Repair Kit
+
+#### Specialist Tools and Kits
+
+¢**25** each
+
+* Book (Empty)
+* Climbing Tools
+* Disguise Kit
+* Grappling Hook
+* Holy Symbol
+* Large Tent (Sleeps 10, 6 comfortably)
+* Large Trap
+* Musical Instrument
+* Scribes' Tools
+* Thieves' Picks and Tools
+
+#### Full Tool Sets and Expensive Gear
+
+¢**50** each
+
+* Large Instrument
+* Rich Clothes
+* Travel Alter
