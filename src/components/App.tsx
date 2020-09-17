@@ -7,7 +7,7 @@ import KarstAPIResponse from '../types/KarstAPIResponse';
 export interface Props {}
 
 export interface State {
-  data: KarstAPIResponse;
+  data?: KarstAPIResponse;
 }
 
 const AppContent = styled.div`
@@ -28,31 +28,24 @@ const AppContent = styled.div`
 class App extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      data: {
-        pages: {
-          pageData: {
-            // @ts-ignore: This doesn't match the JSONSchema!!!
-            karst: {
-              html: '<h1>Karst</h1>',
-              key: 'karst',
-            },
-          },
-        },
-      },
-    };
+    this.state = {data: undefined};
   }
 
   componentDidMount() {
     fetch('/api/page_data')
       .then(res => res.json())
       .then(data => {
-        this.setState({ data: data });
+        this.setState({ data: data});
       });
   }
 
   render() {
     const { data } = this.state;
+    if (!data) {
+      return (
+        <h1>Loading Karst</h1>
+      )
+    };
 
     return (
       <Router>
