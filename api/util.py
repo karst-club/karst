@@ -85,7 +85,7 @@ def build_page_tree(all_pages):
     return root_node
 
 
-def build_page_data():
+def build_page_data(secret_access=False):
     page_data_dir = os.path.join(PROJECT_DIR, "static", "page_data")
     all_pages = {}
     for path, _, files in os.walk(page_data_dir):
@@ -102,14 +102,18 @@ def build_page_data():
                 )
                 page_data["key"] = page_key
 
-                all_pages[page_key] = page_data
-                markdown_path = os.path.join(
-                    page_data_dir, path, "{}.md".format(page_key)
-                )
-                if os.path.exists(markdown_path):
-                    all_pages[page_key]["content"] = open(markdown_path, "r").read()
-                else:
-                    all_pages[page_key]["content"] = ""
+                secret_page = page_data.get("secret")
+
+                if not secret_page or secret_access:
+
+                    all_pages[page_key] = page_data
+                    markdown_path = os.path.join(
+                        page_data_dir, path, "{}.md".format(page_key)
+                    )
+                    if os.path.exists(markdown_path):
+                        all_pages[page_key]["content"] = open(markdown_path, "r").read()
+                    else:
+                        all_pages[page_key]["content"] = ""
 
     for page_key in all_pages.keys():
         all_pages[page_key]["subpages"] = sorted(
