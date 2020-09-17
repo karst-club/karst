@@ -4,19 +4,19 @@ The world of Karst is a magical one. Characters can learn to draw power from or 
 
 The cosmology of Karst has spawned four distinct types, or Forms, of magic, Thaumaturgy, Theurgy, Spiritualism, and Deceit. A Practitioner of Magic is the term for anyone who has the Knack for one or more of these Forms. Becoming versed in any of these mysteries is possible for any character, but may prove incredibly difficult or involve sacrifice and/or devotion. 
 
-### [Deceit](deceit)
+### <Link to="deceit">Deceit</Link>
 
 The most sinister Form of magic, Deceit encompasses the Arts of Illusion and Charm. While not every Practitioner of the Form is evil, the ability to deceive and magically influence the behavior others is a frequent draw for those with ill-intent.
 
-### [Spiritism](spiritism)
+### <Link to="spiritism">Spiritism</Link>
 
 Abjuration, Divination, and the Necromantic Arts are granted by the Spirits Below to Practitioners of this Form. Spiritism is a defensive, restorative, supportive, and divinatory Form, powerful, if indirect.
 
-### [Thaumaturgy](thaumaturgy)
+### <Link to="thaumaturgy">Thaumaturgy</Link>
 
 Thaumaturgy is the fine art of bending the Essence of Existence to one's own Will. Practitioners of this Form wield the fearsome Art of Alteration, capable of making changes to themselves and the world around them.
 
-### [Theurgy](theurgy)
+### <Link to="theurgy">Theurgy</Link>
 
 Channeling and Manifesting the Intent of the Gods Above, the Theurge wields the Arts of Evocation and Conjuration. Powerful (if a bit direct) combat magic, summoned aid, and the Blessings of the Gods are the tools of this magical trade.
 
