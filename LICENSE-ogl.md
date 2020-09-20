@@ -6,7 +6,7 @@ The following items are designated as Product Identity in accordance with releva
 * All fictional elements, including proper nouns, names, locations, and geography, except such elemets that are derived from other Open Game Content.
 
 DESIGNATION OF OPEN GAME CONTENT
-All game rules and mechanics are Open Game Content. Some portions of this game are delinated from existing Open Game Content, whose copyrights may be found in the COPYRIGHT NOTICE of the license below. The remainder of the Open Game Content portions of this game are hereby added to the Open Content and if used, may optionally bear the COPYRIGTH NOTICE "Karst, Copyright 2020, (TBD)"
+All game rules and mechanics are Open Game Content. Some portions of this game are delinated from existing Open Game Content, whose copyrights may be found in the COPYRIGHT NOTICE of the license below. The remainder of the Open Game Content portions of this game are hereby added to the Open Content and if used, may optionally bear the COPYRIGTH NOTICE "Karst, Copyright 2020, The Karst Archipelago Historical Society
 
 OPEN GAME LICENSE Version 1.0a
 
@@ -47,4 +47,4 @@ System Reference Document Copyright 2000-2003, Wizards of the Coast, Inc.; Autho
 
 Equipment Emporium: A Basic Fantasy Supplement Copyright © 2010-2019 Joe Ludlum, R. Kevin Smoot, and Alan Vetter
 
-Karst Copyright 2020 (TBD)
+Karst Copyright © 2020 The Karst Archipelago Historical Society

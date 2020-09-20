@@ -40,3 +40,5 @@ As mentioned at the top of this section, we want you to take Karst and make it y
 If you ever want to publish a story or suppliment for Karst, you totally can, but we just ask that you follow our 3rd-party license found in the [LICENSE-3rd-party.md](LICENSE-3rd-party.md) file.
 
 Also, if you every want any story or thing you create to be an official part of Karst or even just linked to, let us know!
+
+- The Karst Archipelago Historical Society
