@@ -1,3 +1,4 @@
 Karst is a collection of stories and tools for creating stories in the form of a roleplaying game. This webapp contains both the rules and setting of Karst as well as tools for running your own game of Karst and creating your own stories.
 
-If you'd like to see the source code and raw content for all of this or would like to learn more, you can do so [here](https://github.com/karst-club/karst).
+If you'd like to see the source code and raw content for all of this, you can do so [here](https://github.com/karst-club/karst).
+

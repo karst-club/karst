@@ -9,6 +9,8 @@ The design was somewhat inspired by [Notion](notion.so), which is where the cont
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Karst is yours to create your own stories with.
+
 # Boring License Stuff
 
 The guiding principal and spirit of this project is to be as "make it yours" as possible. After all, the game is about creating your own stories.
@@ -37,7 +39,7 @@ Some images in this project are licensed, others are in the Public Domain. See [
 
 As mentioned at the top of this section, we want you to take Karst and make it yours and do what your want with it. The above licenses are really just to prevent someone from taking it away from everyone else or being a jerk.
 
-If you ever want to publish a story or suppliment for Karst, you totally can, but we just ask that you follow our 3rd-party license found in the [LICENSE-3rd-party.md](LICENSE-3rd-party.md) file.
+If you ever want to publish a story or suppliment for Karst, we'd be honored. In turn, all we ask is that you follow our 3rd-party license found in the [LICENSE-3rd-party.md](LICENSE-3rd-party.md) file.
 
 Also, if you every want any story or thing you create to be an official part of Karst or even just linked to, let us know!
 
