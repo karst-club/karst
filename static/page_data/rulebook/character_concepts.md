@@ -19,15 +19,17 @@ Characters have six Attributes:
 
 Their values range from 3 to 18.
 
-An Attribute’s value corresponds to a modifier which ranges from -3 to +3:
+An Attribute’s value corresponds to a modifier which ranges from -3 to +3.
 
-- **3:** -3
-- **4, 5:** -2
-- **6, 7, 8:** -1
-- **9, 10, 11, 12:** 0
-- **13, 14, 15:** +1
-- **16, 17:** +2
-- **18:** +3
+| Score     | Modifier |
+| ----:     | -------: |
+| **3**     | -3       |
+| **4-5**   | -2       |
+| **6-8**   | -1       |
+| **9-12**  | 0        |
+| **13-15** | 1        |
+| **16-17** | 2        |
+| **18**    | 3        |
 
 Modifiers affect rolls related to the Attribute, reflecting the strengths and weaknesses of Characters.
 
@@ -38,7 +40,7 @@ All characters have a Level, which denotes how Experienced they are. Most common
 PCs track experience using E**x**perience **P**oints, which are gained from overcoming foes, spending Coin, or recovering Treasure and Loot. When a Character gains enough XP, they reach the next Level and gain all the bonuses associated with doing so.
 
 | Level | XP     |
-| ----- | ------ |
+| ----: | -----: |
 | 1     | 0      |
 | 2     | 2000   |
 | 3     | 4000   |

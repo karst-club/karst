@@ -15,7 +15,7 @@ Tools for violent disagreements.
 These weapons don't draw blood, directly. Some Folk think it's more wholesome that way.
 
 | Name                               | Cost | Damage | Notes             |
-| ---------------------------------- | ---- | ------ | ----------------- |
+| :--------------------------------- | ---: | -----: | :---------------- |
 | Staff                              | 2    | 1d4    | Two-Handed        |
 | Club                               | 3    | 1d4    |                   |
 | Mace or Warhammer                  | 5    | 1d6    |                   |
@@ -27,7 +27,7 @@ These weapons don't draw blood, directly. Some Folk think it's more wholesome th
 Blades are a popular type of weapon, good for both slashing and stabbing.
 
 | Name                           | Cost | Damage | Notes                                  |
-| ------------------------------ | ---- | ------ | -------------------------------------- |
+| :----------------------------- | ---: | -----: | :------------------------------------- |
 | Dagger                         | 3    | 1d4    | Thrown 5'-10', 11'-20', 21'-30'        |
 | Hand Axe                       | 4    | 1d6    | Thrown 5'-10', 11'-20', 20'-30'        |
 | Short Sword                    | 7    | 1d6    |                                        |
@@ -40,7 +40,7 @@ Blades are a popular type of weapon, good for both slashing and stabbing.
 Plenty of other weapons can be thrown in a pinch, but these ones were designed for it.
 
 | Name      | Cost | Damage | Notes                                     |
-| --------- | ---- | ------ | ----------------------------------------- |
+| :-------- | ---: | -----: | :---------------------------------------- |
 | Dart      | 1    | 1d2    | 5'-10', 11'-20', 21'-30', 5 count         |
 | Javelin   | 1    | 1d4    | 5'-30', 31'-60', 61'-90'                  |
 | Oil Flask | -    | 1d8    | 5'-10', 11'-20', 21'-30', Burning, Splash |
@@ -51,7 +51,7 @@ Plenty of other weapons can be thrown in a pinch, but these ones were designed f
 These weapons are great for keeping your distance.
 
 | Name      | Cost | Damage | Notes                                          |
-| --------- | ---- | ------ | ---------------------------------------------- |
+| :-------- | ---: | -----: | :--------------------------------------------- |
 | Crossbow  | 30   | 1d6    | 5'-80', 81'-160', 161'-240', Heavy, Two-Handed |
 | Long Bow  | 40   | 1d6    | 5-70', 71'-140', 141'-210', Heavy, Two-Handed  |
 | Short Bow | 25   | 1d6    | 5'-50', 51'-100', 101'-150', Two-Handed        |
@@ -62,7 +62,7 @@ These weapons are great for keeping your distance.
 Long pokey things and improvisational tools.
 
 | Name    | Cost | Damage | Notes                    |
-| ------- | ---- | ------ | ------------------------ |
+| :------ | ---: | -----: | :----------------------- |
 | Lance   | 5    | 1d6    | Charge                   |
 | Polearm | 7    | 1d10   | Brace, Heavy, Two-Handed |
 | Torch   | -    | 1d4    | Burning                  |
@@ -72,12 +72,12 @@ Long pokey things and improvisational tools.
 
 Arrows aren't free (but rocks are).
 
-| Name                | Cost | Notes    |
-| ------------------- | ---- | -------- |
-| Arrows              | 5    | 20 count |
-| Crossbow Bolts      | 10   | 30 count |
-| Sliver-Tipped Arrow | 5    | 1 count  |
-| Stone               | -    | 1 count  |
+| Name                | Cost | Quantity | Notes |
+| :------------------ | ---: | -------: | :---- |
+| Arrows              | 5    | 20       |       |
+| Crossbow Bolts      | 10   | 30       |       |
+| Sliver-Tipped Arrow | 5    | 1        |       |
+| Stone               | -    | 1        |       |
 
 
 ## Armor
@@ -85,7 +85,7 @@ Arrows aren't free (but rocks are).
 Harm reduction.
 
 | Name              | Cost | AC   | Notes     |
-| ---------------   | ---- | ---- | ------    |
+| :--------------   | ---: | ---: | :-----    |
 | Shield            | 10   | 1    | -2 To-Hit |
 | Quilted or Padded | 10   | 1    | Light     |
 | Hide              | 10   | 2    | Medium    |

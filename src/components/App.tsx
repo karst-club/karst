@@ -24,6 +24,10 @@ const AppContent = styled.div`
   h5 {
     color: #429c91;
   }
+  th,
+  td {
+    padding: 0em 1em;
+  }
 `;
 
 class App extends Component<Props, State> {
