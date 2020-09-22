@@ -4,6 +4,8 @@ This background can be used to inform a Character's Hook and Knacks or can be ig
 
 ## Socioeconomic Class
 
+The first of the three dice rolled for starting coins.
+
 1. Low
 2. Low
 3. Med
@@ -13,11 +15,13 @@ This background can be used to inform a Character's Hook and Knacks or can be ig
 
 ## Background
 
+Second and third dice rolled. First of the two represents the Sphere of backgrounds and the second represents the specific one.
+
 | Sphere                   | 1                 | 2                     | 3                  | 4                    | 5                 | 6                   |
-| ------------------------ | ----------------- | --------------------- | ------------------ | -------------------- | ----------------- | ------------------- |
-| 1. Agrarian & Rural      | Gatherer          | Farmer                | Fisher             | Rancher              | Trapper           | Hunter              |
-| 2. Culinary Careers      | Miller            | Baker                 | Brewer/Winemaker   | Butcher              | Cook              | Barkeep             |
-| 3. Humble Trades         | Furrier           | Cobbler/Leatherworker | Fletcher/Ropemaker | Carpenter/Woodcarver | Mason/Stoneworker | Smith/Foundryworker |
-| 4. The Working Class     | Servant           | Laborer/Teamster      | Peddler/Vendor     | Guard                | Shipmate/Sailor   | Barber/Healer       |
-| 5. Respected Professions | Tailor            | Apothecary            | Armorer            | Jeweler/Gemcutter    | Shipbuilder       | Architect           |
-| 6. The Educated Class    | Steward/Navigator | Scribe                | Priest             | Doctor               | Merchant/Captain  | Magistrate/Judge    |
+| :----------------------- | :---------------- | :-------------------- | :----------------- | :------------------- | :---------------- | :------------------ |
+| **1.** Agrarian & Rural      | Gatherer          | Farmer                | Fisher             | Rancher              | Trapper           | Hunter              |
+| **2.** Culinary Careers      | Miller            | Baker                 | Brewer/Winemaker   | Butcher              | Cook              | Barkeep             |
+| **3.** Humble Trades         | Furrier           | Cobbler/Leatherworker | Fletcher/Ropemaker | Carpenter/Woodcarver | Mason/Stoneworker | Smith/Foundryworker |
+| **4.** The Working Class     | Servant           | Laborer/Teamster      | Peddler/Vendor     | Guard                | Shipmate/Sailor   | Barber/Healer       |
+| **5.** Respected Professions | Tailor            | Apothecary            | Armorer            | Jeweler/Gemcutter    | Shipbuilder       | Architect           |
+| **6.** The Educated Class    | Steward/Navigator | Scribe                | Priest             | Doctor               | Merchant/Captain  | Magistrate/Judge    |
