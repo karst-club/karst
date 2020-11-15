@@ -5,6 +5,7 @@ server {
     server_name karst.club www.karst.club;
     location / {
         root /var/www/html/public/;
+        error_page 404 /404.html;
     }
 
     listen 443 ssl; # managed by Certbot
