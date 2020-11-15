@@ -5,12 +5,17 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn gatsby build
 
       - name: Deploy
         uses: appleboy/scp-action@master
@@ -21,4 +26,4 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
         with:
           source: './public'
-          target: '/var/www/karst/public'
+          target: '/var/www/html'
