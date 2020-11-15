@@ -37,17 +37,3 @@ sudo apt-get install \
     policykit-1
 
 sudo ufw allow 'Nginx Full'
-
-git clone git@github.com:sarah-johnson/karst.git
-
-cd karst
-
-python3 -m venv karst
-source karst/bin/activate
-pip install -r requirements.txt
-pip install gunicorn
-
-npm install
-npm run build
-
-ln -s . /var/www/karst
