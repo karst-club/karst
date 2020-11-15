@@ -5,7 +5,7 @@
 Public domain images courtesy of the British Library (https://www.bl.uk):
 
 - owlswoop.jpg
-- lagartos.png
+- lizard.png
 
 Images licensed by the Karst Archipelago Historical Society:
 
