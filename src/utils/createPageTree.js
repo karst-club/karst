@@ -3,6 +3,7 @@ import PageTreeMdxNode from '../../../types/PageTreeMdxNode';
 let recursiveTreeBuilder = (mdxNodes, tree, depth, maxDepth) => {
   mdxNodes
     .filter((s: PageTreeMdxNode) => s.paths.length === depth)
+    .filter((s: PageTreeMdxNode) => !s.linkPath.includes('404'))
     .map(node => {
       tree.push(node);
       let childNodes = mdxNodes.filter((s: PageTreeMdxNode) =>
