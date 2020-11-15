@@ -3,7 +3,7 @@
   "private": true,
   "description": "A downtempo post-apocalyptic RPG with themes of adventure, exploration, and soft terror.",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -53,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/karst-club/karst-gatsby"
+    "url": "https://github.com/karst-club/karst"
   },
   "bugs": {
-    "url": "https://github.com/karst-club/karst-gatsby/issues"
+    "url": "https://github.com/karst-club/karst/issues"
   }
 }
