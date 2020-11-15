@@ -4,7 +4,7 @@ server {
 
     server_name karst.club www.karst.club;
     location / {
-        root /var/www/karst/public/;
+        root /var/www/html/public/;
         try_files $uri /index.html;
     }
 
