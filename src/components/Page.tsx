@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { PageProps } from 'gatsby';
 
 import PageBanner from './PageBanner';
-import PageIcon from './PageIcon';
 import PageNav from './PageNav';
 import CharacterPage from './CharacterPage';
 
@@ -50,7 +49,6 @@ const Page: React.FC<props> = (props: PageProps) => (
     <ReactTooltip delayShow={500} />
     <PageBanner />
     <PageBody>
-      <PageIcon emoji={props.pageContext.frontmatter.icon} />
       <PageContentContainer>
         <PageContent>
           <h1>{props.pageContext.frontmatter.title}</h1>

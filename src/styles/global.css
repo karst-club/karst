@@ -1,35 +1,49 @@
 @font-face {
   font-family: 'Dearest Dorothy';
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
   src: url('DearestDorothy.woff2') format('woff2'),
     url('DearestDorothy.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Hiawatha';
+  font-style: normal;
+  font-weight: normal;
+  src: url('WFHiawatha.woff2') format('woff2'),
+    url('WFHiawatha.otf') format('otf'),
+    url('WFHiawatha.woff') format('woff');
+  text-rendering: optimizeLegibility;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Vollkorn', serif;
-  background: #fefef5;
-  color: #503e3a;
+  font-family: 'Ibarra Real Nova', serif;
+  background: #fefefd;
+  color: #301e1a;
+  font-size: 18px;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Hiawatha';
+  font-weight: 600;
+  margin-bottom: 0.5em;
 }
 h1 {
-  color: #9a4456;
-  font-family: 'Dearest Dorothy';
-  font-weight: 400;
-  font-size: 72px;
+  color: #65000b;
+  font-size: 4em;
 }
-h2,
-h3,
-h4,
-h5 {
-  color: #429c91;
+h2, h3, h4, h5 {
+  color: #2a2c24;
 }
+h2 {font-size: 3em;}
+h3 {font-size: 2em;}
+h4 {font-size: 1.5em;}
+h5 {font-size: 18px;}
 th,
 td {
   padding: 0em 1em;

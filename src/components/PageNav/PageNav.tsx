@@ -31,10 +31,10 @@ const PageNav: React.FC<props> = ({ props }: PageProps) => {
       }
     }
   `);
+  // at top of PageNavWrapper <PageNavHeader>Explore Karst</PageNavHeader>
   const pageTree = createPageTree(data.allMdx.nodes);
   return (
     <PageNavWrapper>
-      <PageNavHeader>Explore Karst</PageNavHeader>
       <NavTree pageTree={pageTree} currentPagePath={props.location.pathname} />
     </PageNavWrapper>
   );

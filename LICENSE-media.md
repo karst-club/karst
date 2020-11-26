@@ -18,3 +18,5 @@ Illustrations by Anastasia (@cute_miuu). She's the best.
 ## Fonts
 
 Dearest Dorothy font courtesy of Chris Hansen, who ask that you please donante to the Koala Hospital if you can https://www.koalahospital.org.au. If you are like us and can't decide which Koala to adopt, we recommed buying them a tree or two that they can all eat.
+
+Hiawatha font licensed from the Walden Font Co.
