@@ -22,6 +22,7 @@ const PageBody = styled.div`
 const PageContentContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   @media (min-width: 768px) {
     flex-direction: row;
   }

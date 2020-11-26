@@ -9,11 +9,13 @@ Public domain images courtesy of the British Library (https://www.bl.uk):
 
 Images licensed by the Karst Archipelago Historical Society:
 
-- little_tropical_island.jpg
+- none right now
 
 All images not listed above are copyright of the Karst Archipelago Historical Society.
 
 Illustrations by Anastasia (@cute_miuu). She's the best.
+
+Temporary(?) banner by Ryan.
 
 ## Fonts
 

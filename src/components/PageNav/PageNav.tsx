@@ -7,6 +7,8 @@ import { createPageTree } from '../../utils/createPageTree';
 
 const PageNavWrapper = styled.div`
   padding: 1em;
+  position: sticky;
+  top: 1rem;
 `;
 
 const PageNavHeader = styled.h2`
