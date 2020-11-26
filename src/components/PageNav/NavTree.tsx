@@ -11,7 +11,7 @@ const NavList = styled.ul`
   margin-left: 10%;
 `;
 
-const NavLink = styled(Link) <Props>`
+const NavLink = styled(Link)<Props>`
   color: inherit;
   text-decoration: inherit;
 `;
@@ -43,9 +43,7 @@ const NavTree: React.FunctionComponent<Species> = ({
       <NavList>
         {tree.map(mdxNode => (
           <li key={mdxNode.linkPath}>
-            <NavLink to={mdxNode.linkPath}>
-              {mdxNode.frontmatter.title}
-            </NavLink>
+            <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
             {childrenTree(mdxNode)}
           </li>
         ))}
