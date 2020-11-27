@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Collapsible from 'react-collapsible';
 import styled from 'styled-components';
-import NavTriggerIcon from './NavTriggerIcon';
 
 const NavList = styled.ul`
+  font-family: 'Hiawatha';
+  font-size: 1.5rem;
   list-style: none;
   padding-left: 0;
   margin-left: 10%;
@@ -28,8 +29,8 @@ const NavTree: React.FunctionComponent<Species> = ({
         }
         return (
           <Collapsible
-            trigger={NavTriggerIcon(false)}
-            triggerWhenOpen={NavTriggerIcon(true)}
+            trigger={'•'}
+            triggerWhenOpen={'☼'}
             open={inCurrentPagePath}
           >
             {createTree(mdxNode.children)}
@@ -37,13 +38,12 @@ const NavTree: React.FunctionComponent<Species> = ({
         );
       }
     };
+    // old NavLink content {mdxNode.frontmatter.icon} {mdxNode.frontmatter.title}
     return (
       <NavList>
         {tree.map(mdxNode => (
           <li key={mdxNode.linkPath}>
-            <NavLink to={mdxNode.linkPath}>
-              {mdxNode.frontmatter.icon} {mdxNode.frontmatter.title}
-            </NavLink>
+            <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
             {childrenTree(mdxNode)}
           </li>
         ))}

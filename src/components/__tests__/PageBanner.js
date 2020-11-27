@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PageIcon from '../PageIcon';
+import PageBanner from '../PageBanner';
 
-describe('PageIcon', () => {
+describe('PageBanner', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<PageIcon emoji="❤️" />).toJSON();
+    const tree = renderer.create(<PageBanner />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
