@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import bannerImage from '../images/little_tropical_island.jpg';
+import bannerImage from '../images/ship_scene.png';
 
 const PageHeaderImage = styled.img`
   display: block;
