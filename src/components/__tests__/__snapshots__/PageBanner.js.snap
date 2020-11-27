@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageBanner renders correctly 1`] = `
+<header>
+  <div
+    className="sc-gsTCUz inYfpR"
+  >
+    <img
+      alt="header"
+      className="sc-bdfBwQ jXVdju"
+      src="test-file-stub"
+    />
+  </div>
+</header>
+`;
