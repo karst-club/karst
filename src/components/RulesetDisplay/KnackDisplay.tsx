@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Knack from '../../types/Knack';
-import Knacks from '../../types/Knacks';
 
 export interface Props {
   knackName: string;
