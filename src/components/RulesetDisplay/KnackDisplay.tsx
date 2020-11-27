@@ -25,14 +25,10 @@ const KnackDisplay: React.FC<props> = ({ characterKnack }: Props) => {
     .filter((knackInfo: Knack) => characterKnack.knack.startsWith(knackInfo.id))
     .pop();
   const toolTip = knackInfo?.effect || '';
-  let knackLevels = '';
-  if (characterKnack.levels) {
-    knackLevels = '(' + characterKnack.levels + ')';
-  }
-  let knackSpecialty = '';
-  if (characterKnack.specialty) {
-    knackSpecialty = '(' + characterKnack.specialty + ')';
-  }
+  const knackLevels = characterKnack.levels ? `(${characterKnack.levels})` : '';
+  const knackSpecialty = characterKnack.specialty
+    ? `(${characterKnack.specialty})`
+    : '';
   return (
     <li
       key={characterKnack.knack
