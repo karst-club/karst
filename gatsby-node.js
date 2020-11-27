@@ -11,16 +11,11 @@ exports.onCreateNode = ({ node }) => {
 };
 
 // https://spectrum.chat/gatsby-js/general/why-is-sourcenodes-hook-called-before-all-oncreatenode-callbacks-are-finished~cf2ba3a2-c463-4df0-b691-99c266cf0a43?m=MTU4Mjc0MzYyMDI5Mw==
-exports.sourceNodes = ({
-  actions,
-  createNodeId,
-  createContentDigest,
-  getNodesByType,
-}) => {
+exports.sourceNodes = ({ actions, createContentDigest, getNodesByType }) => {
   const { createNode } = actions;
   const createKnackNode = knackContent => {
     const knackMeta = {
-      id: createNodeId(`knack-${knackContent.name}`),
+      id: knackContent.name,
       parent: null,
       children: [],
       internal: {
@@ -39,7 +34,7 @@ exports.sourceNodes = ({
     const pageNodes = getNodesByType('File');
     const knackPageContent = pageNodes
       .filter(node => node.relativePath === 'rulebook/knacks.mdx')
-      .pop().internal.content; //.content
+      .pop().internal.content;
 
     const knackAttributes = [
       ['**Effect:** ', 'effect'],
@@ -97,8 +92,29 @@ exports.createSchemaCustomization = ({ actions }) => {
       };
     },
   });
+  createFieldExtension({
+    name: `defaultOne`,
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          if (source[info.fieldName] == null) {
+            return 1;
+          }
+          return source[info.fieldName];
+        },
+      };
+    },
+  });
 
   const typeDefs = `
+    type Knack implements Node @dontInfer {
+      id: String!
+      category: String!
+      content: String!
+      effect: String!
+      level: String!
+      note: String
+    }
     type Mdx implements Node @dontInfer {
       frontmatter: Frontmatter
     }
@@ -119,8 +135,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       max_hp: Int!
       hp: Int!
       coins: Int!
-      knacks: [String]!
+      knacks: [CharacterKnack]!
       items: [String]
+    }
+    type CharacterKnack {
+      knack: Knack! @link
+      levels: Int @defaultOne
+      specialty: String
     }
     enum Species {
       Eekhorn

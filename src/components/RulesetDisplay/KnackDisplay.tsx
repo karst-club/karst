@@ -7,7 +7,7 @@ export interface Props {
   knackName: string;
 }
 
-const KnackDisplay: React.FC<props> = ({ knackName }: Props) => {
+const KnackDisplay: React.FC<props> = ({ characterKnack }: Props) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -16,25 +16,33 @@ const KnackDisplay: React.FC<props> = ({ knackName }: Props) => {
             level
             effect
             category
-            name
+            id
           }
         }
       }
     `
   );
-  const knack: Knack = data.allKnack.nodes
-    .filter((knack: Knack) => knackName.startsWith(knack.name))
+  const knackInfo: Knack = data.allKnack.nodes
+    .filter((knackInfo: Knack) => characterKnack.knack.startsWith(knackInfo.id))
     .pop();
-  const toolTip = knack?.effect || '';
+  const toolTip = knackInfo?.effect || '';
+  let knackLevels = '';
+  if (characterKnack.levels) {
+    knackLevels = '(' + characterKnack.levels + ')';
+  }
+  let knackSpecialty = '';
+  if (characterKnack.specialty) {
+    knackSpecialty = '(' + characterKnack.specialty + ')';
+  }
   return (
     <li
-      key={knackName
+      key={characterKnack.knack
         .toLowerCase()
         .replace(/\s/g, '-')
         .replace(/[^\w-]/g, '')}
       data-tip={toolTip}
     >
-      {knackName}
+      {characterKnack.knack} {knackSpecialty} {knackLevels}
     </li>
   );
 };

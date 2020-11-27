@@ -68,8 +68,8 @@ const CharacterPage: React.FC<props> = ({ props }: PageProps) => {
         <FlexChild>
           <h2>Knacks</h2>
           <ul>
-            {knacks?.map(knackName => (
-              <KnackDisplay key={knackName} knackName={knackName} />
+            {knacks?.map(knack => (
+              <KnackDisplay key={knack.knack} characterKnack={knack} />
             ))}
           </ul>
           <h3>Species Abilities</h3>
