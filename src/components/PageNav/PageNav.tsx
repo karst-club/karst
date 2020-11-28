@@ -11,11 +11,11 @@ const PageNavWrapper = styled.div`
   top: 1rem;
 `;
 
-const PageNavHeader = styled.h2`
-  font-family: 'Dearest Dorothy';
-  font-weight: 200;
-  font-size: 48px;
-`;
+// const PageNavHeader = styled.h2`
+//   font-family: 'Dearest Dorothy';
+//   font-weight: 200;
+//   font-size: 48px;
+// `;
 
 const PageNav: React.FC<props> = ({ props }: PageProps) => {
   const data = useStaticQuery(graphql`
