@@ -49,7 +49,7 @@ const Timestamp: React.FC<props> = ({ props }: PageProps) => {
   const timestamp = props.pageContext.frontmatter.pub_date;
   if (timestamp) {
     const time = new Date(0);
-    time.setUTCSeconds(timestamp / 1000);
+    time.setUTCSeconds(timestamp);
     return <p>{time.toDateString()}</p>;
   }
   return <></>;
