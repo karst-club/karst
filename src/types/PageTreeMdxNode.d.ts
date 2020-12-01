@@ -2,6 +2,7 @@ interface MdxNodeFrontmatter {
   title: string;
   menu_order: number;
   pub_date?: number;
+  sheet?: Object;
 }
 
 export default interface PageTreeMdxNode {
