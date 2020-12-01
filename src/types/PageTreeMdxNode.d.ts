@@ -1,7 +1,8 @@
 interface MdxNodeFrontmatter {
-  icon: string;
   title: string;
   menu_order: number;
+  pub_date?: number;
+  sheet?: Record<string, unknown>;
 }
 
 export default interface PageTreeMdxNode {

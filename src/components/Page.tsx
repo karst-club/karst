@@ -45,6 +45,16 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
   return <>{props.children}</>;
 };
 
+const Timestamp: React.FC<props> = ({ props }: PageProps) => {
+  const timestamp = props.pageContext.frontmatter.pub_date;
+  if (timestamp) {
+    const time = new Date(0);
+    time.setUTCSeconds(timestamp);
+    return <p>{time.toDateString()}</p>;
+  }
+  return <></>;
+};
+
 const Page: React.FC<props> = (props: PageProps) => (
   <>
     <ReactTooltip delayShow={500} />
@@ -53,6 +63,7 @@ const Page: React.FC<props> = (props: PageProps) => (
       <PageContentContainer>
         <PageContent>
           <h1>{props.pageContext.frontmatter.title}</h1>
+          <Timestamp props={props} />
           <PageLayout props={props} />
         </PageContent>
         <StyledNav props={props} />
