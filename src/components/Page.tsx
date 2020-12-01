@@ -48,8 +48,8 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
 const Timestamp: React.FC<props> = ({ props }: PageProps) => {
   const timestamp = props.pageContext.frontmatter.pub_date;
   if (timestamp) {
-    const time = new Date(0)
-    time.setUTCSeconds(timestamp / 1000)
+    const time = new Date(0);
+    time.setUTCSeconds(timestamp / 1000);
     return <p>{time.toDateString()}</p>;
   }
   return <></>;
