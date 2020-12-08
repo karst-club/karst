@@ -24,5 +24,8 @@ jobs:
       - name: Unit Tests
         run: yarn test
 
+      - name: Start Server
+        run: yarn gatsby serve -p 8000
+
       - name: E2E Tests
         run: yarn cypress run --headless
