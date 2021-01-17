@@ -1,37 +1,43 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { parseKnackRawMD } from '../../utils/rulesEngine';
 import Knack from '../../types/Knack';
-import Knacks from '../../types/Knacks';
 
 export interface Props {
   knackName: string;
 }
 
-const KnackDisplay: React.FC<props> = ({ knackName }: Props) => {
+const KnackDisplay: React.FC<props> = ({ characterKnack }: Props) => {
   const data = useStaticQuery(
     graphql`
       query {
-        file(base: { eq: "knacks.mdx" }) {
-          internal {
-            content
+        allKnack {
+          nodes {
+            level
+            effect
+            category
+            id
           }
         }
       }
     `
   );
-  const allKnacks: Knacks = parseKnackRawMD(data.file.internal.content);
-  const knack: Knack | undefined = allKnacks[knackName];
-  const toolTip = knack?.effect || '';
+  const knackInfo: Knack = data.allKnack.nodes
+    .filter((knackInfo: Knack) => characterKnack.knack.startsWith(knackInfo.id))
+    .pop();
+  const toolTip = knackInfo?.effect || '';
+  const knackLevels = characterKnack.levels ? `(${characterKnack.levels})` : '';
+  const knackSpecialty = characterKnack.specialty
+    ? `(${characterKnack.specialty})`
+    : '';
   return (
     <li
-      key={knackName
+      key={characterKnack.knack
         .toLowerCase()
         .replace(/\s/g, '-')
         .replace(/[^\w-]/g, '')}
       data-tip={toolTip}
     >
-      {knackName}
+      {characterKnack.knack} {knackSpecialty} {knackLevels}
     </li>
   );
 };
