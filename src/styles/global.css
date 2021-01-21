@@ -23,8 +23,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Ibarra Real Nova', serif;
-  background: #fefefd;
-  color: #301e1a;
+  background: #fefdf8;
+  color: #150802;
   font-size: 18px;
 }
 h1,
@@ -37,14 +37,14 @@ h5 {
   margin-bottom: 0.5em;
 }
 h1 {
-  color: #65000b;
+  color: #851a12;
   font-size: 4em;
 }
 h2,
 h3,
 h4,
 h5 {
-  color: #2a2c24;
+  /*color: #2a2c24;*/
 }
 h2 {
   font-size: 3em;
@@ -74,7 +74,7 @@ code {
 
 .Collapsible__trigger {
   padding: 4px;
-  color: #9a4456;
+  color: #851a12;
 }
 .react-icons {
   vertical-align: middle;

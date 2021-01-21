@@ -7,8 +7,8 @@ const NavList = styled.ul`
   font-family: 'Hiawatha';
   font-size: 1.5rem;
   list-style: none;
-  padding-left: 0;
-  margin-left: 10%;
+  padding: 0 1em;
+  flex-basis: 20%;
 `;
 
 const NavLink = styled(Link)<Props>`
@@ -40,14 +40,14 @@ const NavTree: React.FunctionComponent<Species> = ({
     };
     // old NavLink content {mdxNode.frontmatter.icon} {mdxNode.frontmatter.title}
     return (
-      <NavList>
-        {tree.map(mdxNode => (
-          <li key={mdxNode.linkPath}>
-            <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
-            {childrenTree(mdxNode)}
-          </li>
-        ))}
-      </NavList>
+        <NavList>
+          {tree.map(mdxNode => (
+            <li key={mdxNode.linkPath}>
+              <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
+              {childrenTree(mdxNode)}
+            </li>
+          ))}
+        </NavList>
     );
   };
 

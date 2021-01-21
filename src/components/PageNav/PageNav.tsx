@@ -9,6 +9,9 @@ const PageNavWrapper = styled.div`
   padding: 1em;
   position: sticky;
   top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const PageNavHeader = styled.h2`
@@ -34,10 +37,12 @@ const PageNav: React.FC<props> = ({ props }: PageProps) => {
   `);
   // at top of PageNavWrapper <PageNavHeader>Explore Karst</PageNavHeader>
   const pageTree = createPageTree(data.allMdx.nodes);
+  const root = pageTree[0] || {children:[]};
+  const childNavs = root.children.map(
+    c => <NavTree pageTree={[c]} currentPagePath={props.location.pathname} />
+  )
   return (
-    <PageNavWrapper>
-      <NavTree pageTree={pageTree} currentPagePath={props.location.pathname} />
-    </PageNavWrapper>
+    <PageNavWrapper>{childNavs}</PageNavWrapper>
   );
 };
 

@@ -21,7 +21,7 @@ const PageBody = styled.div`
 
 const PageContentContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   @media (min-width: 768px) {
     flex-direction: row;
@@ -30,12 +30,12 @@ const PageContentContainer = styled.div`
 
 const PageContent = styled.div`
   padding: 1em;
-  flex-basis: 66%;
+  width: 100%;
 `;
 
 const StyledNav = styled(PageNav)`
   padding: 1em;
-  flex-basis: 34%;
+  width: 100%;
 `;
 
 const PageLayout: React.FC<props> = ({ props }: PageProps) => {
@@ -60,13 +60,13 @@ const Page: React.FC<props> = (props: PageProps) => (
     <ReactTooltip delayShow={500} />
     <PageBanner />
     <PageBody>
+    <StyledNav props={props} />
       <PageContentContainer>
         <PageContent>
           <h1>{props.pageContext.frontmatter.title}</h1>
           <Timestamp props={props} />
           <PageLayout props={props} />
         </PageContent>
-        <StyledNav props={props} />
       </PageContentContainer>
     </PageBody>
   </>
