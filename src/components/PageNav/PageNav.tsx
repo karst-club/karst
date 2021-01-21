@@ -25,7 +25,6 @@ const PageNav: React.FC<props> = ({ props }: PageProps) => {
           id
           slug
           frontmatter {
-            icon
             title
             menu_order
           }
