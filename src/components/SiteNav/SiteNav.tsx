@@ -37,11 +37,21 @@ const SiteNav: React.FC<props> = ({ props }: PageProps) => {
       }
     }
   `);
-
+  console.log(props.location.pathname);
+  console.log(props.pageContext);
   const pageTree = createPageTree(data.allMdx.nodes);
   const root = pageTree[0] || { children: [] };
   const childNavs = root.children.map(n => (
-    <NavLink to={n.linkPath}>{n.frontmatter.title}</NavLink>
+    <NavLink
+      to={n.linkPath}
+      style={{
+        color: props.location.pathname.startsWith(n.linkPath)
+          ? '#851a12'
+          : null,
+      }}
+    >
+      {n.frontmatter.title}
+    </NavLink>
   ));
   return <SiteNavWrapper>{childNavs}</SiteNavWrapper>;
 };

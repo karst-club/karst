@@ -1,6 +1,5 @@
 import React, { Props } from 'react';
 import { Link } from 'gatsby';
-import Collapsible from 'react-collapsible';
 import styled from 'styled-components';
 import { Species } from '../../types/Species';
 
@@ -8,8 +7,7 @@ const NavList = styled.ul`
   font-family: 'Hiawatha';
   font-size: 1.5rem;
   list-style: none;
-  padding: 0 1em;
-  flex-basis: 20%;
+  padding: 0 1em 0 1em;
 `;
 
 const NavLink = styled(Link)<Props>`
@@ -22,32 +20,24 @@ const NavTree: React.FunctionComponent<Species> = ({
   currentPagePath,
 }) => {
   const createTree = tree => {
-    const childrenTree = mdxNode => {
-      if (mdxNode.children.length > 0) {
-        let inCurrentPagePath = false;
-        if (currentPagePath.startsWith(mdxNode.linkPath)) {
-          inCurrentPagePath = true;
-        }
-        return (
-          <Collapsible
-            trigger={'•'}
-            triggerWhenOpen={'☼'}
-            open={inCurrentPagePath}
-          >
-            {createTree(mdxNode.children)}
-          </Collapsible>
-        );
-      }
-    };
-    // old NavLink content {mdxNode.frontmatter.icon} {mdxNode.frontmatter.title}
     return (
       <NavList>
-        {tree.map(mdxNode => (
-          <li key={mdxNode.linkPath}>
-            <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
-            {childrenTree(mdxNode)}
-          </li>
-        ))}
+        {tree.map(mdxNode => {
+          const isCurrentPage = currentPagePath === mdxNode.linkPath;
+          return (
+            <li key={mdxNode.linkPath}>
+              <NavLink
+                to={mdxNode.linkPath}
+                style={{ color: isCurrentPage ? '#851a12' : '' }}
+              >
+                {mdxNode.frontmatter.title}
+              </NavLink>
+              {mdxNode.children.length > 0
+                ? createTree(mdxNode.children)
+                : null}
+            </li>
+          );
+        })}
       </NavList>
     );
   };

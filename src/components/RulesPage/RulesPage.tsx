@@ -13,7 +13,7 @@ const RulesLayout = styled.div`
 `;
 
 const StyledNav = styled(SidebarNav)`
-  padding: 1em;
+  padding-right: 1em;
   flex-basis: 34%;
 `;
 
