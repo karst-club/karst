@@ -19,16 +19,10 @@ const SidebarNav: React.FC<props> = ({ props }: PageProps) => {
       }
     }
   `);
-
-  // at top of PageNavWrapper <PageNavHeader>Explore Karst</PageNavHeader>
-  console.log(props);
   const pageTree = createPageTree(data.allMdx.nodes);
   const root = pageTree[0] || { children: [{}] };
-  console.log(root.children);
-
   const subRoot = root.children.find(c => c.slug === props.slug);
   return subRoot ? (
-    // TODO Add
     <NavTree pageTree={[subRoot]} currentPagePath={props.location.pathname} />
   ) : (
     <></>

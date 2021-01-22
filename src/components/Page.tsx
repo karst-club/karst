@@ -6,7 +6,7 @@ import { PageProps } from 'gatsby';
 import PageBanner from './PageBanner';
 import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
-import RulesPage from './RulesPage';
+import SidebarPage from './SidebarPage';
 
 const PageBody = styled.div`
   padding-left: calc(16px + env(safe-area-inset-left));
@@ -44,7 +44,11 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
     case 'character':
       return <CharacterPage props={props} />;
     case 'rules':
-      return <RulesPage props={props} />;
+      return <SidebarPage props={{ slug: 'rulebook/', ...props }} />;
+    case 'story':
+      return <SidebarPage props={{ slug: 'story/', ...props }} />;
+    case 'worldbook':
+      return <SidebarPage props={{ slug: 'worldbooks/', ...props }} />;
     default:
       return <>{props.children}</>;
   }

@@ -37,11 +37,12 @@ const SiteNav: React.FC<props> = ({ props }: PageProps) => {
       }
     }
   `);
-  console.log(props.location.pathname);
-  console.log(props.pageContext);
   const pageTree = createPageTree(data.allMdx.nodes);
   const root = pageTree[0] || { children: [] };
-  const childNavs = root.children.map(n => (
+  const sorted = root.children.sort((c1, c2) => {
+    return c1.frontmatter.menu_order > c2.frontmatter.menu_order ? 1 : -1;
+  });
+  const childNavs = [root, ...sorted].map(n => (
     <NavLink
       to={n.linkPath}
       style={{

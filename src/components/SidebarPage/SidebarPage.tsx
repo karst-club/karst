@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { PageProps } from 'gatsby';
 import SidebarNav from '../SidebarNav';
 
-const RulesLayout = styled.div`
+const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -14,16 +14,16 @@ const RulesLayout = styled.div`
 
 const StyledNav = styled(SidebarNav)`
   padding-right: 1em;
-  flex-basis: 34%;
+  flex-basis: 33.3%;
 `;
 
-const RulesPage: React.FC<props> = ({ props }: PageProps) => {
+const SidebarPage: React.FC<props> = ({ props }: PageProps) => {
   return (
-    <RulesLayout>
-      <StyledNav props={{ slug: 'rulebook/', ...props }} />
+    <PageLayout>
+      <SidebarNav props={props} />
       <div>{props.children}</div>
-    </RulesLayout>
+    </PageLayout>
   );
 };
 
-export default RulesPage;
+export default SidebarPage;
