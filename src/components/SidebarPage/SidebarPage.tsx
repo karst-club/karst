@@ -4,24 +4,35 @@ import { PageProps } from 'gatsby';
 import SidebarNav from '../SidebarNav';
 
 const PageLayout = styled.div`
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: flex-start;
   @media (min-width: 768px) {
     flex-direction: row;
   }
 `;
 
-const StyledNav = styled(SidebarNav)`
+const NavWrap = styled.div`
   padding-right: 1em;
-  flex-basis: 33.3%;
+  @media (min-width: 768px) {
+    width: 33%;
+  }
+`;
+
+const ContentWrap = styled.div`
+  flex-grow: 2;
+  @media (min-width: 768px) {
+    width: 66%;
+  }
 `;
 
 const SidebarPage: React.FC<props> = ({ props }: PageProps) => {
   return (
     <PageLayout>
-      <SidebarNav props={props} />
-      <div>{props.children}</div>
+      <NavWrap>
+        <SidebarNav props={props} />
+      </NavWrap>
+      <ContentWrap>{props.children}</ContentWrap>
     </PageLayout>
   );
 };

@@ -15,9 +15,7 @@ const NavLink = styled(Link)<Props>`
   text-decoration: inherit;
 `;
 
-const NavWrapper = styled.div`
-  flex-basis: 50%;
-`;
+const NavWrapper = styled.div``;
 
 const NavTree: React.FunctionComponent<Species> = ({
   pageTree,
