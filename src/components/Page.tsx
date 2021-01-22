@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { PageProps } from 'gatsby';
 
 import PageBanner from './PageBanner';
-import PageNav from './PageNav';
+import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
+import RulesPage from './RulesPage';
 
 const PageBody = styled.div`
   padding-left: calc(16px + env(safe-area-inset-left));
@@ -33,16 +34,20 @@ const PageContent = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled(PageNav)`
+const StyledNav = styled(SiteNav)`
   padding: 1em;
   width: 100%;
 `;
 
 const PageLayout: React.FC<props> = ({ props }: PageProps) => {
-  if (props.pageContext.frontmatter.sheet) {
-    return <CharacterPage props={props} />;
+  switch (props.pageContext.frontmatter.page_type) {
+    case 'character':
+      return <CharacterPage props={props} />;
+    case 'rules':
+      return <RulesPage props={props} />;
+    default:
+      return <>{props.children}</>;
   }
-  return <>{props.children}</>;
 };
 
 const Timestamp: React.FC<props> = ({ props }: PageProps) => {
@@ -60,7 +65,7 @@ const Page: React.FC<props> = (props: PageProps) => (
     <ReactTooltip delayShow={500} />
     <PageBanner />
     <PageBody>
-    <StyledNav props={props} />
+      <StyledNav props={props} />
       <PageContentContainer>
         <PageContent>
           <h1>{props.pageContext.frontmatter.title}</h1>

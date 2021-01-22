@@ -1,26 +1,28 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { PageProps } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
-import NavTree from './NavTree';
 import { createPageTree } from '../../utils/createPageTree';
 
-const PageNavWrapper = styled.div`
+const SiteNavWrapper = styled.div`
   padding: 1em;
   position: sticky;
-  top: 1rem;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: #fefdf8;
 `;
 
-const PageNavHeader = styled.h2`
-  font-family: 'Dearest Dorothy';
-  font-weight: 200;
-  font-size: 48px;
+const NavLink = styled(Link)<Props>`
+  color: inherit;
+  text-decoration: inherit;
+  font-family: 'Hiawatha';
+  font-size: 1.5rem;
 `;
 
-const PageNav: React.FC<props> = ({ props }: PageProps) => {
+const SiteNav: React.FC<props> = ({ props }: PageProps) => {
   const data = useStaticQuery(graphql`
     query {
       allMdx {
@@ -35,15 +37,13 @@ const PageNav: React.FC<props> = ({ props }: PageProps) => {
       }
     }
   `);
-  // at top of PageNavWrapper <PageNavHeader>Explore Karst</PageNavHeader>
+
   const pageTree = createPageTree(data.allMdx.nodes);
-  const root = pageTree[0] || {children:[]};
-  const childNavs = root.children.map(
-    c => <NavTree pageTree={[c]} currentPagePath={props.location.pathname} />
-  )
-  return (
-    <PageNavWrapper>{childNavs}</PageNavWrapper>
-  );
+  const root = pageTree[0] || { children: [] };
+  const childNavs = root.children.map(n => (
+    <NavLink to={n.linkPath}>{n.frontmatter.title}</NavLink>
+  ));
+  return <SiteNavWrapper>{childNavs}</SiteNavWrapper>;
 };
 
-export default PageNav;
+export default SiteNav;

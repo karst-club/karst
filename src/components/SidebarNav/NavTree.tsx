@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Props } from 'react';
 import { Link } from 'gatsby';
 import Collapsible from 'react-collapsible';
 import styled from 'styled-components';
+import { Species } from '../../types/Species';
 
 const NavList = styled.ul`
   font-family: 'Hiawatha';
@@ -40,14 +41,14 @@ const NavTree: React.FunctionComponent<Species> = ({
     };
     // old NavLink content {mdxNode.frontmatter.icon} {mdxNode.frontmatter.title}
     return (
-        <NavList>
-          {tree.map(mdxNode => (
-            <li key={mdxNode.linkPath}>
-              <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
-              {childrenTree(mdxNode)}
-            </li>
-          ))}
-        </NavList>
+      <NavList>
+        {tree.map(mdxNode => (
+          <li key={mdxNode.linkPath}>
+            <NavLink to={mdxNode.linkPath}>{mdxNode.frontmatter.title}</NavLink>
+            {childrenTree(mdxNode)}
+          </li>
+        ))}
+      </NavList>
     );
   };
 
