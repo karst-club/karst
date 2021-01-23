@@ -36,6 +36,7 @@ const CharacterPage: React.FC<props> = ({ props }: PageProps) => {
 
   return (
     <div>
+      <h1>{props.pageContext.frontmatter.title}</h1>
       <em>{hook}</em>
       <FlexContainer>
         <FlexChild>

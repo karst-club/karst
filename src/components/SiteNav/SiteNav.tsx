@@ -42,18 +42,17 @@ const SiteNav: React.FC<props> = ({ props }: PageProps) => {
   const sorted = root.children.sort((c1, c2) => {
     return c1.frontmatter.menu_order > c2.frontmatter.menu_order ? 1 : -1;
   });
-  const childNavs = [root, ...sorted].map(n => (
-    <NavLink
-      to={n.linkPath}
-      style={{
-        color: props.location.pathname.startsWith(n.linkPath)
-          ? '#851a12'
-          : null,
-      }}
-    >
-      {n.frontmatter.title}
-    </NavLink>
-  ));
+  const childNavs = [root, ...sorted].map(n => {
+    const { pathname } = props.location;
+    const isInPath =
+      (n.linkPath.length > 1 && pathname.startsWith(n.linkPath)) ||
+      pathname === n.linkPath;
+    return (
+      <NavLink to={n.linkPath} style={{ color: isInPath ? '#851a12' : null }}>
+        {n.frontmatter.title}
+      </NavLink>
+    );
+  });
   return <SiteNavWrapper>{childNavs}</SiteNavWrapper>;
 };
 

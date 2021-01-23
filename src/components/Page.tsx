@@ -50,7 +50,12 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
     case 'worldbook':
       return <SidebarPage props={{ slug: 'worldbooks/', ...props }} />;
     default:
-      return <>{props.children}</>;
+      return (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
   }
 };
 
@@ -64,6 +69,8 @@ const Timestamp: React.FC<props> = ({ props }: PageProps) => {
   return <></>;
 };
 
+//<Timestamp props={props} />
+
 const Page: React.FC<props> = (props: PageProps) => (
   <>
     <ReactTooltip delayShow={500} />
@@ -72,8 +79,6 @@ const Page: React.FC<props> = (props: PageProps) => (
       <StyledNav props={props} />
       <PageContentContainer>
         <PageContent>
-          <h1>{props.pageContext.frontmatter.title}</h1>
-          <Timestamp props={props} />
           <PageLayout props={props} />
         </PageContent>
       </PageContentContainer>
