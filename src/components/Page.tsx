@@ -74,7 +74,6 @@ const Timestamp: React.FC<props> = ({ props }: PageProps) => {
 const Page: React.FC<props> = (props: PageProps) => (
   <>
     <ReactTooltip delayShow={500} />
-    <PageBanner />
     <PageBody>
       <StyledNav props={props} />
       <PageContentContainer>
