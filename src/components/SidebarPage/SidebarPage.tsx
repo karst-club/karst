@@ -34,9 +34,7 @@ const SidebarPage: React.FC<props> = ({ props }: PageProps) => {
       <NavWrap>
         <SidebarNav props={props} />
       </NavWrap>
-      <ContentWrap>
-        {props.children}
-      </ContentWrap>
+      <ContentWrap>{props.children}</ContentWrap>
     </PageLayout>
   );
 };

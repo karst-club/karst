@@ -48,43 +48,53 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
           <h1>{props.pageContext.frontmatter.title}</h1>
           {props.children}
         </>
-      )
+      );
     case 'character':
       slug = 'story/';
-      children = <>
-        <CharacterPage props={props}/>
-      </>;
+      children = (
+        <>
+          <CharacterPage props={props} />
+        </>
+      );
       break;
     case 'rules':
       slug = 'rulebook/';
-      children = <>
-        <h1>{props.pageContext.frontmatter.title}</h1>
-        {props.children}
-      </>;
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
       break;
     case 'story':
       slug = 'story/';
-      children = <>
-        <h1>{props.pageContext.frontmatter.title}</h1>
-        {props.children}
-      </>;
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
       break;
     case 'blog':
       slug = 'blog/';
-      children = <>
-        <h1>{props.pageContext.frontmatter.title}</h1>
-        {props.children}
-      </>;
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
       break;
     case 'worldbook':
-      slug = 'worldbooks/'
+      slug = 'worldbooks/';
     default:
-      children = <>
-        <h1>{props.pageContext.frontmatter.title}</h1>
-        {props.children}
-      </>;
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
   }
-  return <SidebarPage props={{ ...props, slug, children}} />;
+  return <SidebarPage props={{ ...props, slug, children }} />;
 };
 
 const Timestamp: React.FC<props> = ({ props }: PageProps) => {

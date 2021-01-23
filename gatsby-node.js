@@ -37,9 +37,9 @@ exports.sourceNodes = ({ actions, createContentDigest, getNodesByType }) => {
       .pop().internal.content;
 
     //const knackAttributes = [
-      //['**Effect:** ', 'effect'],
-      //['**Level:** ', 'level'],
-      //['**Note:** ', 'note'],
+    //['**Effect:** ', 'effect'],
+    //['**Level:** ', 'level'],
+    //['**Note:** ', 'note'],
     //];
     let currentCategory = null;
     let currentKnack = null;
@@ -70,9 +70,9 @@ exports.sourceNodes = ({ actions, createContentDigest, getNodesByType }) => {
       }
 
       //knackAttributes.map(([pattern, key]) => {
-        //if (line.startsWith(pattern)) {
-          //currentKnackContent[key] = line.replace(pattern, '');
-        //}
+      //if (line.startsWith(pattern)) {
+      //currentKnackContent[key] = line.replace(pattern, '');
+      //}
       //});
     });
 
