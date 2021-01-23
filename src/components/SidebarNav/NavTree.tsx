@@ -1,7 +1,7 @@
 import React, { Props } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { Species } from '../../types/Species';
+import { PageProps } from 'gatsby';
 
 const NavList = styled.ul`
   font-family: 'Hiawatha';
@@ -17,7 +17,7 @@ const NavLink = styled(Link)<Props>`
 
 const NavWrapper = styled.div``;
 
-const NavTree = ({ pageTree, currentPagePath }) => {
+const NavTree: React.FC<Props> = ({ pageTree, currentPagePath }: PageProps) => {
   const createTree = tree => {
     return (
       <NavList>
