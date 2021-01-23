@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { PageProps } from 'gatsby';
 import Sheet from '../../../types/Sheet';
-import CharacterAttribute from './CharacterAttribute';
 import KnackDisplay from '../../components/RulesetDisplay/KnackDisplay';
 import SpeciesAbilityDisplay from '../RulesetDisplay/SpeciesAbilityDisplay';
 
@@ -21,21 +20,21 @@ const CharacterPage: React.FC<props> = ({ props }: PageProps) => {
   const sheet: Sheet = props.pageContext.frontmatter.sheet;
 
   const {
-    attributes,
+    abilities,
     coins,
     hook,
-    hp,
+    health,
     items,
     knacks,
     level,
-    max_hp,
+    max_health,
     player,
     species,
     xp,
   } = sheet;
 
   return (
-    <div>
+    <>
       <h1>{props.pageContext.frontmatter.title}</h1>
       <em>{hook}</em>
       <FlexContainer>
@@ -45,24 +44,20 @@ const CharacterPage: React.FC<props> = ({ props }: PageProps) => {
             <li>Player: {player}</li>
             <li>Species: {species}</li>
             <li>Level: {level}</li>
-            <li>XP: {xp}</li>
             <li>
               {' '}
-              HP: {hp} / {max_hp}
+              Health: {health} / {max_health}
             </li>
             <li>Coins: ¢{coins}</li>
           </ul>
         </FlexChild>
         <FlexChild>
-          <h2>Attributes</h2>
-          {attributes && (
+          <h2>Abilities</h2>
+          {abilities && (
             <ul>
-              <CharacterAttribute name="Str" value={attributes.str} />
-              <CharacterAttribute name="Dex" value={attributes.dex} />
-              <CharacterAttribute name="Con" value={attributes.con} />
-              <CharacterAttribute name="Int" value={attributes.int} />
-              <CharacterAttribute name="Wis" value={attributes.wis} />
-              <CharacterAttribute name="Cha" value={attributes.cha} />
+              {abilities?.map(ability => (
+                <li key={ability}>{ability}</li>
+              ))}
             </ul>
           )}
         </FlexChild>
@@ -96,7 +91,7 @@ const CharacterPage: React.FC<props> = ({ props }: PageProps) => {
       </ul>
       <h2>About</h2>
       {props.children}
-    </div>
+    </>
   );
 };
 

@@ -36,11 +36,11 @@ exports.sourceNodes = ({ actions, createContentDigest, getNodesByType }) => {
       .filter(node => node.relativePath === 'rulebook/knacks.mdx')
       .pop().internal.content;
 
-    const knackAttributes = [
-      ['**Effect:** ', 'effect'],
-      ['**Level:** ', 'level'],
-      ['**Note:** ', 'note'],
-    ];
+    //const knackAttributes = [
+      //['**Effect:** ', 'effect'],
+      //['**Level:** ', 'level'],
+      //['**Note:** ', 'note'],
+    //];
     let currentCategory = null;
     let currentKnack = null;
     let currentKnackContent = {};
@@ -56,19 +56,24 @@ exports.sourceNodes = ({ actions, createContentDigest, getNodesByType }) => {
         }
 
         currentKnack = line.replace(/^[\s#]+/g, '');
-        currentKnackContent['name'] = currentKnack;
-        currentKnackContent['category'] = currentCategory;
-        currentKnackContent['content'] = '';
-      } else if (currentKnack) {
-        currentKnackContent['content'] += line;
-        currentKnackContent['content'] += '\n';
+        currentKnackContent.name = currentKnack;
+        currentKnackContent.category = currentCategory;
+        currentKnackContent.content = '';
+        currentKnackContent.effect = '';
+        currentKnackContent.prerequisite = '';
+      } else if (currentKnack && currentKnackContent.content !== '') {
+        currentKnackContent.content = line;
+      } else if (currentKnack && currentKnackContent.effect !== '') {
+        currentKnackContent.effect = line;
+      } else if (currentKnack && currentKnackContent.prerequisite !== '') {
+        currentKnackContent.prerequisite = line;
       }
 
-      knackAttributes.map(([pattern, key]) => {
-        if (line.startsWith(pattern)) {
-          currentKnackContent[key] = line.replace(pattern, '');
-        }
-      });
+      //knackAttributes.map(([pattern, key]) => {
+        //if (line.startsWith(pattern)) {
+          //currentKnackContent[key] = line.replace(pattern, '');
+        //}
+      //});
     });
 
     // Write out the last knack
@@ -112,8 +117,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       category: String!
       content: String!
       effect: String!
-      level: String!
+      level: String
       note: String
+      prerequisite: String
     }
     type Mdx implements Node @dontInfer {
       frontmatter: Frontmatter

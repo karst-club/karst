@@ -35,7 +35,6 @@ const SidebarPage: React.FC<props> = ({ props }: PageProps) => {
         <SidebarNav props={props} />
       </NavWrap>
       <ContentWrap>
-        <h1>{props.pageContext.frontmatter.title}</h1>
         {props.children}
       </ContentWrap>
     </PageLayout>

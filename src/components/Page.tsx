@@ -3,7 +3,6 @@ import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
 import { PageProps } from 'gatsby';
 
-import PageBanner from './PageBanner';
 import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
 import SidebarPage from './SidebarPage';
@@ -40,23 +39,52 @@ const StyledNav = styled(SiteNav)`
 `;
 
 const PageLayout: React.FC<props> = ({ props }: PageProps) => {
+  let slug = '';
+  let children;
   switch (props.pageContext.frontmatter.page_type) {
-    case 'character':
-      return <CharacterPage props={props} />;
-    case 'rules':
-      return <SidebarPage props={{ slug: 'rulebook/', ...props }} />;
-    case 'story':
-      return <SidebarPage props={{ slug: 'story/', ...props }} />;
-    case 'worldbook':
-      return <SidebarPage props={{ slug: 'worldbooks/', ...props }} />;
-    default:
+    case 'full':
       return (
         <>
           <h1>{props.pageContext.frontmatter.title}</h1>
           {props.children}
         </>
-      );
+      )
+    case 'character':
+      slug = 'story/';
+      children = <>
+        <CharacterPage props={props}/>
+      </>;
+      break;
+    case 'rules':
+      slug = 'rulebook/';
+      children = <>
+        <h1>{props.pageContext.frontmatter.title}</h1>
+        {props.children}
+      </>;
+      break;
+    case 'story':
+      slug = 'story/';
+      children = <>
+        <h1>{props.pageContext.frontmatter.title}</h1>
+        {props.children}
+      </>;
+      break;
+    case 'blog':
+      slug = 'blog/';
+      children = <>
+        <h1>{props.pageContext.frontmatter.title}</h1>
+        {props.children}
+      </>;
+      break;
+    case 'worldbook':
+      slug = 'worldbooks/'
+    default:
+      children = <>
+        <h1>{props.pageContext.frontmatter.title}</h1>
+        {props.children}
+      </>;
   }
+  return <SidebarPage props={{ ...props, slug, children}} />;
 };
 
 const Timestamp: React.FC<props> = ({ props }: PageProps) => {
