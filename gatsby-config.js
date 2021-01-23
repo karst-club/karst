@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 module.exports = {
@@ -48,10 +49,10 @@ module.exports = {
         name: 'Karst',
         short_name: 'karst',
         start_url: '/',
-        background_color: '#9a4456',
+        background_color: '#fefdf8',
         theme_color: '#9a4456',
         display: 'minimal-ui',
-        icon: 'src/images/national-park.png',
+        icon: 'src/images/icon.png',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
