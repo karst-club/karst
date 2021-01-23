@@ -17,10 +17,7 @@ const NavLink = styled(Link)<Props>`
 
 const NavWrapper = styled.div``;
 
-const NavTree: React.FunctionComponent<Species> = ({
-  pageTree,
-  currentPagePath,
-}) => {
+const NavTree = ({ pageTree, currentPagePath }) => {
   const createTree = tree => {
     return (
       <NavList>

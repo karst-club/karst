@@ -48,7 +48,11 @@ const SiteNav: React.FC<props> = ({ props }: PageProps) => {
       (n.linkPath.length > 1 && pathname.startsWith(n.linkPath)) ||
       pathname === n.linkPath;
     return (
-      <NavLink to={n.linkPath} style={{ color: isInPath ? '#851a12' : null }}>
+      <NavLink
+        to={n.linkPath}
+        key={n.linkPath}
+        style={{ color: isInPath ? '#851a12' : null }}
+      >
         {n.frontmatter.title}
       </NavLink>
     );
