@@ -7,12 +7,19 @@ import { createPageTree } from '../../utils/createPageTree';
 
 const SiteNavWrapper = styled.div`
   padding: 1em;
-  position: sticky;
   top: 0;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   background: #fefdf8;
+  @media (min-width: 768px) {
+    position: sticky;
+    flex-direction: row;
+  }
+  @media (max-width: 767px) {
+    margin-left: -1rem;
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const NavLink = styled(Link)<Props>`
@@ -20,6 +27,7 @@ const NavLink = styled(Link)<Props>`
   text-decoration: inherit;
   font-family: 'Hiawatha';
   font-size: 1.5rem;
+\
 `;
 
 const SiteNav: React.FC<props> = ({ props }: PageProps) => {

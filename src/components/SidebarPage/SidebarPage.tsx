@@ -23,6 +23,9 @@ const NavWrap = styled.div`
 `;
 
 const ContentWrap = styled.div`
+  @media (max-width: 767px) {
+    order: -1;
+  }
   @media (min-width: 768px) {
     width: 66%;
   }
