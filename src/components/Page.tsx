@@ -8,8 +8,8 @@ import CharacterPage from './CharacterPage';
 import SidebarPage from './SidebarPage';
 
 const PageBody = styled.div`
-  padding-left: calc(16px + env(safe-area-inset-left));
-  padding-right: calc(16px + env(safe-area-inset-right));
+  padding-left: calc(24px + env(safe-area-inset-left));
+  padding-right: calc(24px + env(safe-area-inset-right));
   @media (min-width: 768px) {
     padding-left: calc(48px + env(safe-area-inset-left));
     padding-right: calc(48px + env(safe-area-inset-right));
@@ -29,7 +29,6 @@ const PageContentContainer = styled.div`
 `;
 
 const PageContent = styled.div`
-  padding: 1em;
   width: 100%;
 `;
 

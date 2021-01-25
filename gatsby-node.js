@@ -61,11 +61,11 @@ exports.sourceNodes = ({ actions, createContentDigest, getNodesByType }) => {
         currentKnackContent.content = '';
         currentKnackContent.effect = '';
         currentKnackContent.prerequisite = '';
-      } else if (currentKnack && currentKnackContent.content !== '') {
+      } else if (currentKnack && currentKnackContent.content === '') {
         currentKnackContent.content = line;
-      } else if (currentKnack && currentKnackContent.effect !== '') {
+      } else if (currentKnack && currentKnackContent.effect === '') {
         currentKnackContent.effect = line;
-      } else if (currentKnack && currentKnackContent.prerequisite !== '') {
+      } else if (currentKnack && currentKnackContent.prerequisite === '') {
         currentKnackContent.prerequisite = line;
       }
 
