@@ -31,29 +31,112 @@ const getAbilites = species => {
 };
 
 const getKnacks = abilities => {
-  if (abilities[0] === 'Very Clever') {
+  let charKnacks = [];
+  let remainingKnacks = [...knacks];
+  if (abilities === 'Very Clever') {
     // if very clever
     //  choose one core knack 3x
     //  return
     let coreKnacks = knacks.filter(k => k.kind === 'core');
     let core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
-    return [core, core, core];
-  } else if (
-    (abilities.length === 2 && abilities[0] === 'Clever') ||
-    abilities[1] === 'Clever'
-  ) {
+    charKnacks = [core, core, core];
+  } else if (abilities.indexOf('Clever') > -1) {
     // else if clever
     //  choose one core knack 2x
+    let coreKnacks = knacks.filter(k => k.kind === 'core');
+    let core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
+    charKnacks = [core, core];
+    if (core.name !== 'Memorization') {
+      remainingKnacks = remainingKnacks.filter(
+        k => spellcasting.filter(s => s === k.name).length === 0
+      );
+    }
+  } else {
+    // Else
+    //choose one knack at random from all (non-expert)
+    let allButExpertKnacks = knacks.filter(k => k.kind !== 'expert');
+    let core =
+      allButExpertKnacks[Math.floor(Math.random() * allButExpertKnacks.length)];
+    charKnacks = [core];
   }
+
+  if (charKnacks.length < 3) {
+    if (
+      charKnacks.filter(k => spellcasting.filter(s => s === k.name).length)
+        .length
+    ) {
+      //if spellcasting:
+      //choose memorization
+      charKnacks.push(knacks.filter(k => k.name === 'Memorization')[0]);
+    } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
+      //elif memorization:
+      //  choose spellcasting at random
+      let spellKnacks = knacks.filter(
+        k => spellcasting.filter(s => s === k.name).length
+      );
+      charKnacks.push(
+        spellKnacks[Math.floor(Math.random() * spellKnacks.length)]
+      );
+    }
+  }
+
+  remainingKnacks = remainingKnacks.filter(
+    k => charKnacks.filter(cK => cK.name === k.name).length === 0
+  );
+
+  if (charKnacks.length == 1) {
+    // If 2 free knacks
+    //  choose one knack at random from remainder (loop) / do magic again
+    charKnacks.push(
+      remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)]
+    );
+    remainingKnacks = remainingKnacks.filter(
+      k => charKnacks.filter(cK => cK.name === k.name).length === 0
+    );
+    if (
+      charKnacks.filter(k => spellcasting.filter(s => s === k.name).length)
+        .length
+    ) {
+      //if spellcasting:
+      //choose memorization
+      charKnacks.push(knacks.filter(k => k.name === 'Memorization')[0]);
+    } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
+      //elif memorization:
+      //  choose spellcasting at random
+      let spellKnacks = knacks.filter(
+        k => spellcasting.filter(s => s === k.name).length
+      );
+      charKnacks.push(
+        spellKnacks[Math.floor(Math.random() * spellKnacks.length)]
+      );
+    } else {
+      // filter out other spellcasting knacks to prevent someone from having it without mem
+      remainingKnacks = remainingKnacks.filter(
+        k => spellcasting.filter(s => s === k.name).length === 0
+      );
+    }
+  }
+
+  if (charKnacks.length === 2) {
+    charKnacks.push(
+      remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)]
+    );
+  }
+
+  //If 1 free knack
+  //  choose one knack at random from remainder minus spellcasting and memorization.
 
   // TODO being clever.
   const shuffled = shuffle([...knacks]);
-  const s0 = shuffled[0];
-  const s1 = shuffled[1];
-  const s2 = shuffled[2];
+  //const s0 = shuffled[0];
+  //const s1 = shuffled[1];
+  //const s2 = shuffled[2];
+  const s0 = charKnacks[0];
+  const s1 = charKnacks[1];
+  const s2 = charKnacks[2];
   return `${s0.verb} ${s0.display}, ${s1.verb != s0.verb ? s1.verb + ' ' : ''}${
-    shuffled[1].display
-  }, and ${s2.verb != s1.verb ? s2.verb + ' ' : ''}${shuffled[2].display}`;
+    s1.display
+  }, and ${s2.verb != s1.verb ? s2.verb + ' ' : ''}${s2.display}`;
 };
 
 const getRandomKnack = () => {
