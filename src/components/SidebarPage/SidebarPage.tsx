@@ -12,7 +12,7 @@ const PageLayout = styled.div`
   }
 `;
 
-const NavWrap = styled.div`
+const SidebarWrap = styled.div`
   margin-left: -1em;
   margin-right: 1em;
   @media (min-width: 768px) {
@@ -34,9 +34,7 @@ const ContentWrap = styled.div`
 const SidebarPage: React.FC<props> = ({ props }: PageProps) => {
   return (
     <PageLayout>
-      <NavWrap>
-        <SidebarNav props={props} />
-      </NavWrap>
+      <SidebarWrap>{props.sidebarChildren}</SidebarWrap>
       <ContentWrap>{props.children}</ContentWrap>
     </PageLayout>
   );

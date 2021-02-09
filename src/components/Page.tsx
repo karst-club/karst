@@ -6,6 +6,7 @@ import { PageProps } from 'gatsby';
 import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
 import SidebarPage from './SidebarPage';
+import SidebarNavPage from './SidebarNavPage';
 
 const PageBody = styled.div`
   padding-left: calc(24px + env(safe-area-inset-left));
@@ -48,6 +49,14 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
           {props.children}
         </>
       );
+    case 'sidebar_image':
+      const sidebarChildren = (
+        <img
+          src={props.pageContext.frontmatter.image}
+          style={{ width: '100%' }}
+        />
+      );
+      return <SidebarPage props={{ sidebarChildren, ...props }} />;
     case 'character':
       slug = 'story/';
       children = (
@@ -93,7 +102,7 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
         </>
       );
   }
-  return <SidebarPage props={{ ...props, slug, children }} />;
+  return <SidebarNavPage props={{ ...props, slug, children }} />;
 };
 
 const Timestamp: React.FC<props> = ({ props }: PageProps) => {
