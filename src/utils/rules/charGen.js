@@ -1,6 +1,7 @@
 import abilities from './abilities';
 import speciesList from './species';
 import knacks from './knacks';
+import names from './names';
 
 function shuffle(array) {
   let m = array.length,
@@ -14,8 +15,6 @@ function shuffle(array) {
   }
   return array;
 }
-
-const names = ['Artai', 'Ragna', 'Wim'];
 
 const spellcasting = ['Deceit', 'Spiritism', 'Thaumaturgy', 'Theurgy'];
 
@@ -144,7 +143,7 @@ const getRandomKnack = () => {
 };
 
 const generate = () => {
-  const name = shuffle([...names])[0];
+  const name = `${shuffle([...names.first])[0]} ${shuffle([...names.last])[0]}`;
   const species = getSpecies();
   const abilityText = getAbilites(species);
   const knackText = getKnacks(abilityText);
