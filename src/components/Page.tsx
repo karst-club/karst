@@ -8,6 +8,8 @@ import CharacterPage from './CharacterPage';
 import SidebarPage from './SidebarPage';
 import SidebarNavPage from './SidebarNavPage';
 
+import generate from '../utils/rules/charGen';
+
 const PageBody = styled.div`
   padding-left: calc(24px + env(safe-area-inset-left));
   padding-right: calc(24px + env(safe-area-inset-right));
@@ -128,6 +130,7 @@ const Page: React.FC<props> = (props: PageProps) => (
         </PageContent>
       </PageContentContainer>
     </PageBody>
+    {generate()}
   </>
 );
 
