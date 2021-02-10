@@ -1,6 +1,7 @@
 import abilities from './abilities';
 import speciesList from './species';
 import knacks from './knacks';
+import itemList from './items';
 import names from './names';
 
 function shuffle(array) {
@@ -138,8 +139,14 @@ const getKnacks = abilities => {
   }, and ${s2.verb != s1.verb ? s2.verb + ' ' : ''}${s2.display}`;
 };
 
-const getRandomKnack = () => {
-  return 'foo';
+const getItems = knacks => {
+  const items = shuffle([...itemList]);
+  const weapons = items.filter(i => i.kind === 'weapon');
+  const wearing = items.filter(i => i.kind === 'armor' || i.kind === 'clothes');
+  const equipment = items.filter(i => i.kind === 'equipment');
+  // TODO: Shields, ammo, two weapons if ranged weapon, heavy armor, money
+
+  return `wield a ${weapons[0].name}, wear ${wearing[0].name}, and have a ${equipment[0].name}, a ${equipment[1].name} and ¢25`;
 };
 
 const generate = () => {
@@ -147,7 +154,8 @@ const generate = () => {
   const species = getSpecies();
   const abilityText = getAbilites(species);
   const knackText = getKnacks(abilityText);
-  return `${name} is a ${abilityText} ${species} who ${knackText}.`;
+  const itemText = getItems(knackText);
+  return `${name} is a ${abilityText} ${species} who ${knackText}. They ${itemText}`;
 };
 
 export default generate;

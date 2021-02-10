@@ -5,10 +5,9 @@ import { PageProps } from 'gatsby';
 
 import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
+import CharacterGeneratorPage from './CharacterGeneratorPage';
 import SidebarPage from './SidebarPage';
 import SidebarNavPage from './SidebarNavPage';
-
-import generate from '../utils/rules/charGen';
 
 const PageBody = styled.div`
   padding-left: calc(24px + env(safe-area-inset-left));
@@ -64,6 +63,14 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
       children = (
         <>
           <CharacterPage props={props} />
+        </>
+      );
+      break;
+    case 'character-generator':
+      slug = 'story/';
+      children = (
+        <>
+          <CharacterGeneratorPage props={props} />
         </>
       );
       break;
@@ -130,7 +137,6 @@ const Page: React.FC<props> = (props: PageProps) => (
         </PageContent>
       </PageContentContainer>
     </PageBody>
-    {generate()}
   </>
 );
 
