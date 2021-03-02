@@ -3,6 +3,7 @@ import speciesList from './species';
 import knacks from './knacks';
 import itemList from './items';
 import names from './names';
+import Character from './Character';
 
 function shuffle(array) {
   let m = array.length,
@@ -23,24 +24,22 @@ const getSpecies = () =>
   speciesList[Math.floor(Math.random() * speciesList.length)];
 
 const getAbilites = species => {
-  const shuffled = shuffle([...abilities]);
-  if (species === 'Visita') {
-    return `Very ${shuffled[0]}`;
-  }
-  return `${shuffled[0]} and ${shuffled[1]}`;
+  const [a, b] = shuffle([...abilities]);
+  return species === 'Visita' ? [a, a] : [a, b];
 };
 
 const getKnacks = abilities => {
   let charKnacks = [];
   let remainingKnacks = [...knacks];
-  if (abilities === 'Very Clever') {
+  const howClever = abilities.filter(a => a === 'Clever').length;
+  if (howClever === 2) {
     // if very clever
     //  choose one core knack 3x
     //  return
     let coreKnacks = knacks.filter(k => k.kind === 'core');
     let core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
     charKnacks = [core, core, core];
-  } else if (abilities.indexOf('Clever') > -1) {
+  } else if (howClever === 1) {
     // else if clever
     //  choose one core knack 2x
     let coreKnacks = knacks.filter(k => k.kind === 'core');
@@ -112,31 +111,21 @@ const getKnacks = abilities => {
     } else {
       // filter out other spellcasting knacks to prevent someone from having it without mem
       remainingKnacks = remainingKnacks.filter(
-        k => spellcasting.filter(s => s === k.name).length === 0
+        k =>
+          ['Memorization', ...spellcasting].filter(s => s === k.name).length ===
+          0
       );
     }
   }
 
   if (charKnacks.length === 2) {
+    //If 1 free knack
+    //  choose one knack at random from remainder minus spellcasting and memorization.
     charKnacks.push(
       remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)]
     );
   }
-
-  //If 1 free knack
-  //  choose one knack at random from remainder minus spellcasting and memorization.
-
-  // TODO being clever.
-  const shuffled = shuffle([...knacks]);
-  //const s0 = shuffled[0];
-  //const s1 = shuffled[1];
-  //const s2 = shuffled[2];
-  const s0 = charKnacks[0];
-  const s1 = charKnacks[1];
-  const s2 = charKnacks[2];
-  return `${s0.verb} ${s0.display}, ${s1.verb != s0.verb ? s1.verb + ' ' : ''}${
-    s1.display
-  }, and ${s2.verb != s1.verb ? s2.verb + ' ' : ''}${s2.display}`;
+  return charKnacks;
 };
 
 const getItems = knacks => {
@@ -144,18 +133,24 @@ const getItems = knacks => {
   const weapons = items.filter(i => i.kind === 'weapon');
   const wearing = items.filter(i => i.kind === 'armor' || i.kind === 'clothes');
   const equipment = items.filter(i => i.kind === 'equipment');
+  const coins = 25;
   // TODO: Shields, ammo, two weapons if ranged weapon, heavy armor, money
-
-  return `wield a ${weapons[0].name}, wear ${wearing[0].name}, and have a ${equipment[0].name}, a ${equipment[1].name} and ¢25`;
+  return {
+    weapons: [weapons[0]],
+    wearing: [wearing[0]],
+    equipment: [equipment[0], equipment[1], equipment[2]],
+    coins,
+  };
 };
 
-const generate = () => {
+const generateCharacter = () => {
   const name = `${shuffle([...names.first])[0]} ${shuffle([...names.last])[0]}`;
+  const level = 1;
   const species = getSpecies();
-  const abilityText = getAbilites(species);
-  const knackText = getKnacks(abilityText);
-  const itemText = getItems(knackText);
-  return `${name} is a ${abilityText} ${species} who ${knackText}. They ${itemText}`;
+  const abilities = getAbilites(species);
+  const knacks = getKnacks(abilities);
+  const items = getItems(knacks);
+  return new Character(name, species, abilities, knacks, items, null);
 };
 
-export default generate;
+export default generateCharacter;
