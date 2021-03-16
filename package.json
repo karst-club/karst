@@ -70,8 +70,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
+    "cy:run": "cypress run --headless",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:run"
   },
   "lint-staged": {
     "*.js": "eslint",
