@@ -1,12 +1,17 @@
 import generateCharacter from '../rules/characterGenerator';
 import Character from '../rules/Character';
 
+const isBrowser = () => typeof window !== 'undefined';
+
 const loadCharacters = () => {
-  const loaded = JSON.parse(localStorage.getItem('characterList')) || [];
-  return loaded.map(
-    ({ name, species, abilities, knacks, items, currentHealth }) =>
-      new Character(name, species, abilities, knacks, items, currentHealth)
-  );
+  if (isBrowser()) {
+    const loaded =
+      JSON.parse(window.localStorage.getItem('characterList')) || [];
+    return loaded.map(
+      ({ name, species, abilities, knacks, items, currentHealth }) =>
+        new Character(name, species, abilities, knacks, items, currentHealth)
+    );
+  } else return [];
 };
 
 const store = {
@@ -14,7 +19,12 @@ const store = {
 };
 
 const saveCharacters = () => {
-  localStorage.setItem('characterList', JSON.stringify(store.characters));
+  if (isBrowser()) {
+    window.localStorage.setItem(
+      'characterList',
+      JSON.stringify(store.characters)
+    );
+  }
 };
 
 export const getCharacters = () => store.characters;
