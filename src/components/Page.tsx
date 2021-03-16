@@ -3,13 +3,15 @@ import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
 import { PageProps } from 'gatsby';
 
-import PageBanner from './PageBanner';
-import PageNav from './PageNav';
+import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
+import CharacterGeneratorPage from './CharacterGeneratorPage';
+import SidebarPage from './SidebarPage';
+import SidebarNavPage from './SidebarNavPage';
 
 const PageBody = styled.div`
-  padding-left: calc(16px + env(safe-area-inset-left));
-  padding-right: calc(16px + env(safe-area-inset-right));
+  padding-left: calc(24px + env(safe-area-inset-left));
+  padding-right: calc(24px + env(safe-area-inset-right));
   @media (min-width: 768px) {
     padding-left: calc(48px + env(safe-area-inset-left));
     padding-right: calc(48px + env(safe-area-inset-right));
@@ -21,7 +23,7 @@ const PageBody = styled.div`
 
 const PageContentContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   @media (min-width: 768px) {
     flex-direction: row;
@@ -29,20 +31,87 @@ const PageContentContainer = styled.div`
 `;
 
 const PageContent = styled.div`
-  padding: 1em;
-  flex-basis: 66%;
+  width: 100%;
 `;
 
-const StyledNav = styled(PageNav)`
+const StyledNav = styled(SiteNav)`
   padding: 1em;
-  flex-basis: 34%;
+  width: 100%;
 `;
 
 const PageLayout: React.FC<props> = ({ props }: PageProps) => {
-  if (props.pageContext.frontmatter.sheet) {
-    return <CharacterPage props={props} />;
+  let slug = '';
+  let children;
+  switch (props.pageContext.frontmatter.page_type) {
+    case 'full':
+      return (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
+    case 'sidebar_image':
+      const sidebarChildren = (
+        <img
+          src={props.pageContext.frontmatter.image}
+          style={{ width: '100%' }}
+        />
+      );
+      return <SidebarPage props={{ sidebarChildren, ...props }} />;
+    case 'character':
+      slug = 'story/';
+      children = (
+        <>
+          <CharacterPage props={props} />
+        </>
+      );
+      break;
+    case 'character-generator':
+      slug = 'story/';
+      children = (
+        <>
+          <CharacterGeneratorPage props={props} />
+        </>
+      );
+      break;
+    case 'rules':
+      slug = 'rulebook/';
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
+      break;
+    case 'story':
+      slug = 'story/';
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
+      break;
+    case 'blog':
+      slug = 'blog/';
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
+      break;
+    case 'worldbook':
+      slug = 'worldbooks/';
+    default:
+      children = (
+        <>
+          <h1>{props.pageContext.frontmatter.title}</h1>
+          {props.children}
+        </>
+      );
   }
-  return <>{props.children}</>;
+  return <SidebarNavPage props={{ ...props, slug, children }} />;
 };
 
 const Timestamp: React.FC<props> = ({ props }: PageProps) => {
@@ -55,18 +124,17 @@ const Timestamp: React.FC<props> = ({ props }: PageProps) => {
   return <></>;
 };
 
+//<Timestamp props={props} />
+
 const Page: React.FC<props> = (props: PageProps) => (
   <>
     <ReactTooltip delayShow={500} />
-    <PageBanner />
     <PageBody>
+      <StyledNav props={props} />
       <PageContentContainer>
         <PageContent>
-          <h1>{props.pageContext.frontmatter.title}</h1>
-          <Timestamp props={props} />
           <PageLayout props={props} />
         </PageContent>
-        <StyledNav props={props} />
       </PageContentContainer>
     </PageBody>
   </>

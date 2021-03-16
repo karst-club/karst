@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Knack from '../../types/Knack';
+import ReactTooltip from 'react-tooltip';
 
 export interface Props {
   knackName: string;
@@ -15,6 +16,8 @@ const KnackDisplay: React.FC<props> = ({ characterKnack }: Props) => {
             level
             effect
             category
+            content
+            prerequisite
             id
           }
         }
@@ -29,14 +32,12 @@ const KnackDisplay: React.FC<props> = ({ characterKnack }: Props) => {
   const knackSpecialty = characterKnack.specialty
     ? `(${characterKnack.specialty})`
     : '';
+  const key = characterKnack.knack
+    .toLowerCase()
+    .replace(/\s/g, '-')
+    .replace(/[^\w-]/g, '');
   return (
-    <li
-      key={characterKnack.knack
-        .toLowerCase()
-        .replace(/\s/g, '-')
-        .replace(/[^\w-]/g, '')}
-      data-tip={toolTip}
-    >
+    <li key={key} data-tip={toolTip}>
       {characterKnack.knack} {knackSpecialty} {knackLevels}
     </li>
   );

@@ -14,10 +14,8 @@ let recursiveTreeBuilder = (mdxNodes, tree, depth, maxDepth) => {
       }
     });
   tree.sort((a, b) => {
-    return (
-      a.frontmatter.menu_order > b.frontmatter.menu_order ||
-      a.frontmatter.pub_date > b.pub_date
-    );
+    return a.frontmatter.menu_order > b.frontmatter.menu_order ? 1 : -1; //||
+    //a.frontmatter.pub_date > b.pub_date
   });
   return;
 };
