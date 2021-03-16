@@ -23,3 +23,6 @@ jobs:
 
       - name: Unit Tests
         run: yarn test
+
+      - name: Build
+        run: yarn gatsby build
