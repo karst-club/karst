@@ -5,6 +5,7 @@ import { PageProps } from 'gatsby';
 
 import SiteNav from './SiteNav';
 import CharacterPage from './CharacterPage';
+import CharacterGeneratorPage from './CharacterGeneratorPage';
 import SidebarPage from './SidebarPage';
 import SidebarNavPage from './SidebarNavPage';
 
@@ -62,6 +63,14 @@ const PageLayout: React.FC<props> = ({ props }: PageProps) => {
       children = (
         <>
           <CharacterPage props={props} />
+        </>
+      );
+      break;
+    case 'character-generator':
+      slug = 'story/';
+      children = (
+        <>
+          <CharacterGeneratorPage props={props} />
         </>
       );
       break;
