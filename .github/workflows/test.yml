@@ -26,3 +26,6 @@ jobs:
 
       - name: Build
         run: yarn gatsby build
+
+      - name: E2E Tests
+        run: yarn test:e2e

@@ -48,14 +48,18 @@
     "typescript": "^4.0.5"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.2",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
+    "cypress": "^6.0.0",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.0",
-    "prettier": "2.1.2"
+    "prettier": "2.1.2",
+    "start-server-and-test": "^1.12.0"
   },
   "scripts": {
     "build": "gatsby build",
@@ -65,7 +69,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "cy:run": "cypress run --headless",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:run"
   },
   "lint-staged": {
     "*.js": "eslint",
