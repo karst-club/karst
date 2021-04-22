@@ -1,0 +1,139 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["orderByRelation"]
+}
+
+model Character {
+  id                Int                 @id @default(autoincrement())
+  name              String
+  about             String?
+  folk              String
+  level             Int
+  coins             Int
+  abilities         Ability[]
+  knacks            Knack[]
+  items             Item[]
+  player            User?               @relation(fields: [playerId], references: [id])
+  playerId          Int?
+  campaignCharacter CampaignCharacter[]
+}
+
+model Ability {
+  id          Int        @id @default(autoincrement())
+  name        String
+  character   Character? @relation(fields: [characterId], references: [id])
+  characterId Int?
+}
+
+model Knack {
+  id          Int        @id @default(autoincrement())
+  name        String
+  character   Character? @relation(fields: [characterId], references: [id])
+  characterId Int?
+}
+
+model Item {
+  id          Int        @id @default(autoincrement())
+  name        String
+  character   Character? @relation(fields: [characterId], references: [id])
+  characterId Int?
+}
+
+model CampaignCharacter {
+  id          Int       @id @default(autoincrement())
+  character   Character @relation(fields: [characterId], references: [id])
+  characterId Int
+  campaign    Campaign  @relation(fields: [campaignId], references: [id])
+  campaignId  Int
+
+  @@map(name: "campaigncharacters")
+}
+
+model Campaign {
+  id           Int                 @id @default(autoincrement())
+  title        String
+  shared       Boolean             @default(false)
+  entries      Entry[]
+  participants Participant[]
+  characters   CampaignCharacter[]
+}
+
+model Entry {
+  id         Int       @id @default(autoincrement())
+  title      String
+  content    String?
+  published  Boolean   @default(false)
+  shared     Boolean   @default(false)
+  campaign   Campaign? @relation(fields: [campaignId], references: [id])
+  campaignId Int?
+  author     User?     @relation(fields: [authorId], references: [id])
+  authorId   Int?
+
+  @@map(name: "entries")
+}
+
+model Participant {
+  id         Int      @id @default(autoincrement())
+  role       String
+  author     User     @relation(fields: [authorId], references: [id])
+  authorId   Int
+  campaign   Campaign @relation(fields: [campaignId], references: [id])
+  campaignId Int
+
+  @@map(name: "participants")
+}
+
+model User {
+  id            Int           @id @default(autoincrement())
+  name          String?
+  email         String?       @unique
+  emailVerified Boolean?
+  image         String?
+  createdAt     DateTime      @default(now()) @map(name: "created_at")
+  updatedAt     DateTime      @updatedAt @map(name: "updated_at")
+  entries       Entry[]
+  characters    Character[]
+  participant   Participant[]
+
+  @@map(name: "users")
+}
+
+model Account {
+  id                 Int       @id @default(autoincrement())
+  compoundId         String    @unique @map(name: "compound_id")
+  userId             Int       @map(name: "user_id")
+  providerType       String    @map(name: "provider_type")
+  providerId         String    @map(name: "provider_id")
+  providerAccountId  String    @map(name: "provider_account_id")
+  refreshToken       String?   @map(name: "refresh_token")
+  accessToken        String?   @map(name: "access_token")
+  accessTokenExpires DateTime? @map(name: "access_token_expires")
+  createdAt          DateTime  @default(now()) @map(name: "created_at")
+  updatedAt          DateTime  @default(now()) @map(name: "updated_at")
+
+
+  @@index([providerAccountId], name: "providerAccountId")
+  @@index([providerId], name: "providerId")
+  @@index([userId], name: "userId")
+  @@map(name: "accounts")
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  userId       Int      @map(name: "user_id")
+  expires      DateTime
+  sessionToken String   @unique @map(name: "session_token")
+  accessToken  String   @unique @map(name: "access_token")
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "sessions")
+}
