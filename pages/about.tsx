@@ -43,10 +43,10 @@ export default function About() {
         We also have a presence on <a href="https://karstclub.itch.io">itch.io</a>, where
         you can download pdfs and other play aids.
       </p>
-
-      <strong>— The Karst Archipelago Historical Society</strong>
+      <p><i>Enjoy.</i></p>
 
       <hr />
+      <br />
 
       <p>© 2020, 2021 The Karst Archipelago Historical Society.</p>
     </SidebarLayout>
