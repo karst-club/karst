@@ -32,12 +32,12 @@ export async function getServerSideProps({ params }) {
     props: {
       articles: [
         {
-          title: 'test',
-          slug: 'foo',
-          content: 'I am content',
-          blurb: 'I am blrub',
+          title: 'Nothing',
+          slug: 'shh',
+          content: 'Nothing to see here.',
+          blurb: '...',
         },
-        { title: 'testoo', slug: 'bar', content: 'da' },
+        { title: 'Blank', slug: 'nil', content: 'Nothing to see here.' },
       ],
     },
   };

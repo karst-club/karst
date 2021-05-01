@@ -34,19 +34,17 @@ export default function About() {
       </p>
       <p>
         To learn about publication guidelines, or if you'd like to see the
-        source code, you can do so at our
-        [github](https://github.com/karst-club/karst).
+        source code, you can do so at our <a href="https://github.com/karst-club/karst">github</a>.
       </p>
       <p>
-        If you'd like to get in touch or follow along, you can find us on
-        [twitter](https://twitter.com/KarstClub).
+        If you'd like to get in touch or follow along, you can find us on <a href="https://twitter.com/KarstClub">twitter</a>.
       </p>
       <p>
-        We also have a presence on [itch.io](https://karstclub.itch.io), where
+        We also have a presence on <a href="https://karstclub.itch.io">itch.io</a>, where
         you can download pdfs and other play aids.
       </p>
 
-        <strong>— The Karst Archipelago Historical Society</strong>
+      <strong>— The Karst Archipelago Historical Society</strong>
 
       <hr />
 
