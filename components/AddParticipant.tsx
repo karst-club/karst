@@ -27,9 +27,10 @@ export default function AddParticipant() {
     <form onSubmit={submitData}>
       <br />
       <p>
-        <label>Invite Author:</label>
+        <label htmlFor="email">Invite Author:</label>
         <br />
         <input
+          name="email"
           onChange={e => setEmail(e.target.value)}
           placeholder="Email"
           type="text"

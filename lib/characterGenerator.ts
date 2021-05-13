@@ -34,21 +34,21 @@ function getAbilites(folk) {
 }
 
 function getKnacks(abilities) {
-  let charKnacks = [];
-  let remainingKnacks = [...knacks];
+  const charKnacks = [];
+  const remainingKnacks = [...knacks];
   const howClever = abilities.filter(a => a === 'clever').length;
   if (howClever === 2) {
     // if very clever
     //  choose one core knack 3x
     //  return
-    let coreKnacks = knacks.filter(k => k.kind === 'core');
-    let core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
+    const coreKnacks = knacks.filter(k => k.kind === 'core');
+    const core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
     charKnacks = [core, core, core];
   } else if (howClever === 1) {
     // else if clever
     //  choose one core knack 2x
-    let coreKnacks = knacks.filter(k => k.kind === 'core');
-    let core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
+    const coreKnacks = knacks.filter(k => k.kind === 'core');
+    const core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
     charKnacks = [core, core];
     if (core.name !== 'Memorization') {
       remainingKnacks = remainingKnacks.filter(
@@ -58,8 +58,8 @@ function getKnacks(abilities) {
   } else {
     // Else
     //choose one knack at random from all (non-expert)
-    let allButExpertKnacks = knacks.filter(k => k.kind !== 'expert');
-    let core =
+    const allButExpertKnacks = knacks.filter(k => k.kind !== 'expert');
+    const core =
       allButExpertKnacks[Math.floor(Math.random() * allButExpertKnacks.length)];
     charKnacks = [core];
   }
@@ -75,7 +75,7 @@ function getKnacks(abilities) {
     } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
       //elif memorization:
       //  choose spellcasting at random
-      let spellKnacks = knacks.filter(
+      const spellKnacks = knacks.filter(
         k => spellcasting.filter(s => s === k.name).length
       );
       charKnacks.push(
@@ -107,7 +107,7 @@ function getKnacks(abilities) {
     } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
       //elif memorization:
       //  choose spellcasting at random
-      let spellKnacks = knacks.filter(
+      const spellKnacks = knacks.filter(
         k => spellcasting.filter(s => s === k.name).length
       );
       charKnacks.push(
