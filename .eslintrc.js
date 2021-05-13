@@ -1,4 +1,3 @@
-
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
@@ -18,9 +17,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: [
-    "prettier",
-  ],
+  plugins: ['prettier'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
