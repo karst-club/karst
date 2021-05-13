@@ -8,10 +8,11 @@ export default function AddCampaignCharacter() {
   const submit = async e => {
     e.preventDefault();
     try {
-      const body = JSON.stringify({
-        campaignId: id,
-        characterId,
-      });
+      const body = JSON.stringify(
+        {
+          campaignId: id,
+          characterId,
+        });
       await fetch('/api/story/character', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
