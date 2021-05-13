@@ -16,7 +16,7 @@ jobs:
         run: yarn
 
       - name: Prettier
-        run: npx prettier --check \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"
+        run: npx prettier --check **/*.{js,jsx,ts,tsx,json,md,mdx}
 
       - name: Lint
         run: yarn lint
