@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
 export default function SidebarList({ title, pages }) {
   const path = useRouter().asPath;
   return (

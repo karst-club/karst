@@ -16,7 +16,7 @@ export default function CharacterSheet({ character, characters }) {
       {characters
         .filter(c => c.name !== character.name)
         .map(c => (
-          <CharacterBlurb character={c} />
+          <CharacterBlurb key={c.name} character={c} />
         ))}
     </>
   );

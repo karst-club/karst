@@ -27,8 +27,9 @@ export default function AddCampaignCharacter() {
     <form onSubmit={submit}>
       <br />
       <p>
-        <label>Add Character:</label>
+        <label htmlFor="characterId">Add Character:</label>
         <input
+          name="characterId"
           onChange={e => setCharacterId(e.target.value)}
           placeholder="Character Id"
           type="text"

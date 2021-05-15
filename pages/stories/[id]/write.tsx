@@ -32,7 +32,6 @@ export default function Write() {
       <form onSubmit={submitData}>
         <h1>Write</h1>
         <input
-          autoFocus
           onChange={e => setTitle(e.target.value)}
           placeholder="Chapter Title"
           type="text"

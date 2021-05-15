@@ -50,7 +50,11 @@ export default function Index() {
     <Layout>
       <div style={{ textAlign: 'center' }}>
         <h1 style={{ fontSize: '9rem', marginBottom: '0em' }}>Karst</h1>
-        <img style={{ maxWidth: '18rem' }} src="/images/icon.png" />
+        <img
+          style={{ maxWidth: '18rem' }}
+          src="/images/icon.png"
+          alt="Lagartos spiritist plays a strange song."
+        />
         {content}
       </div>
     </Layout>

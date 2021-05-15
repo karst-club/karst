@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+/* eslint-disable jsx-a11y/anchor-has-content */
 export default function CustomLink({ href, ...otherProps }) {
   return (
     <>

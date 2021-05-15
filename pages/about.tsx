@@ -3,7 +3,11 @@ import SidebarLayout from '../components/SidebarLayout';
 export default function About() {
   const image = (
     <div>
-      <img style={{ maxWidth: '100%' }} src="/images/mail.png" />
+      <img
+        style={{ maxWidth: '100%' }}
+        src="/images/mail.png"
+        alt="Veldling letter carrier"
+      />
     </div>
   );
   return (
@@ -33,22 +37,25 @@ export default function About() {
         guidelines that are linked to below.
       </p>
       <p>
-        To learn about publication guidelines, or if you'd like to see the
-        source code, you can do so at our
-        [github](https://github.com/karst-club/karst).
+        To learn about publication guidelines, or if you&apos;d like to see the
+        source code, you can do so at our{' '}
+        <a href="https://github.com/karst-club/karst">github</a>.
       </p>
       <p>
-        If you'd like to get in touch or follow along, you can find us on
-        [twitter](https://twitter.com/KarstClub).
+        If you&apos;d like to get in touch or follow along, you can find us on{' '}
+        <a href="https://twitter.com/KarstClub">twitter</a>.
       </p>
       <p>
-        We also have a presence on [itch.io](https://karstclub.itch.io), where
-        you can download pdfs and other play aids.
+        We also have a presence on{' '}
+        <a href="https://karstclub.itch.io">itch.io</a>, where you can download
+        pdfs and other play aids.
       </p>
-
-        <strong>— The Karst Archipelago Historical Society</strong>
+      <p>
+        <i>Enjoy.</i>
+      </p>
 
       <hr />
+      <br />
 
       <p>© 2020, 2021 The Karst Archipelago Historical Society.</p>
     </SidebarLayout>
