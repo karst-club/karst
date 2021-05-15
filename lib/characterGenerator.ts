@@ -34,9 +34,11 @@ function getAbilites(folk) {
 }
 
 function getKnacks(abilities) {
-  const charKnacks = [];
-  const remainingKnacks = [...knacks];
+  let charKnacks = [];
+  let remainingKnacks = [...knacks];
+  let spellKnacks = [];
   const howClever = abilities.filter(a => a === 'clever').length;
+
   if (howClever === 2) {
     // if very clever
     //  choose one core knack 3x
@@ -75,7 +77,7 @@ function getKnacks(abilities) {
     } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
       //elif memorization:
       //  choose spellcasting at random
-      const spellKnacks = knacks.filter(
+      spellKnacks = knacks.filter(
         k => spellcasting.filter(s => s === k.name).length
       );
       charKnacks.push(
@@ -107,7 +109,7 @@ function getKnacks(abilities) {
     } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
       //elif memorization:
       //  choose spellcasting at random
-      const spellKnacks = knacks.filter(
+      spellKnacks = knacks.filter(
         k => spellcasting.filter(s => s === k.name).length
       );
       charKnacks.push(
