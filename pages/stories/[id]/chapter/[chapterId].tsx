@@ -39,11 +39,5 @@ export async function getServerSideProps({ params }) {
       isPublished: true,
     },
   });
-  entry.createdAt = entry.createdAt.toString();
-  entry.updatedAt = entry.updatedAt.toString();
-  chapters.map(c => {
-    c.createdAt = c.createdAt.toString();
-    c.updatedAt = c.updatedAt.toString();
-  });
   return { props: { entry, campaignId, chapters } };
 }

@@ -77,13 +77,5 @@ export async function getServerSideProps({ req }) {
       },
     });
   }
-  campaigns.map(c => {
-    c.createdAt = c.createdAt.toString();
-    c.updatedAt = c.updatedAt.toString();
-  });
-  characters.map(c => {
-    c.createdAt = c.createdAt.toString();
-    c.updatedAt = c.updatedAt.toString();
-  });
   return { props: { campaigns, characters } };
 }

@@ -27,7 +27,5 @@ export default async function handle(req, res) {
       },
     },
   });
-  story.createdAt = story.createdAt.toString();
-  story.updatedAt = story.updatedAt.toString();
   res.json(story);
 }

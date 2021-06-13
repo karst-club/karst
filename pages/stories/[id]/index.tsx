@@ -109,11 +109,5 @@ export async function getServerSideProps({ req, params }) {
       ],
     },
   });
-  campaign.createdAt = campaign.createdAt.toString();
-  campaign.updatedAt = campaign.updatedAt.toString();
-  chapters.map(c => {
-    c.createdAt = c.createdAt.toString();
-    c.updatedAt = c.updatedAt.toString();
-  });
   return { props: { campaign, chapters } };
 }
