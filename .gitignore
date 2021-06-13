@@ -11,3 +11,7 @@ yarn-error.log*
 
 # static folder for DigitalOcean App Platform
 _static
+
+# Jupyter notebook stuff (sarahs gonna sarah)
+*.ipynb
+.ipynb_checkpoints*
