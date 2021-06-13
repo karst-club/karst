@@ -5,6 +5,10 @@ export default async function handle(req, res) {
   // TODO GET, POST, PUT, DELETE, ?HEAD
 
   const session = await getSession({ req });
+  
+  console.log(session);
+  console.log(session.user);
+  console.log(req.body);
 
   const { name, about, folk, level, abilities, knacks, items } = req.body;
   const coins = 1;
