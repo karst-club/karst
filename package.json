@@ -1,6 +1,15 @@
 {
   "name": "karst",
   "version": "0.1.0",
+  "description": "A downtempo post-apocalyptic RPG with themes of adventure, exploration, and soft terror.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karst-club/karst"
+  },
+  "bugs": {
+    "url": "https://github.com/karst-club/karst/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
