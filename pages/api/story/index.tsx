@@ -12,10 +12,10 @@ export default async function handle(req, res) {
     },
   });
 
-  const participant = await prisma.participant.create({
+  const campaignUser = await prisma.campaignUser.create({
     data: {
       role: 'narrator',
-      author: {
+      user: {
         connect: {
           email: session.user.email,
         },
@@ -27,6 +27,7 @@ export default async function handle(req, res) {
       },
     },
   });
-
+  story.createdAt = story.createdAt.toString();
+  story.updatedAt = story.updatedAt.toString();
   res.json(story);
 }

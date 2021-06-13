@@ -7,10 +7,10 @@ export default async function handle(req, res) {
 
   const { campaignId, email } = req.body;
 
-  const result = await prisma.participant.create({
+  const result = await prisma.campaignCharacter.create({
     data: {
       role: 'player',
-      author: {
+      user: {
         connect: { email },
       },
       campaign: {

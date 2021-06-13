@@ -51,6 +51,24 @@ export async function getServerSideProps({ req, params }) {
   const characters = await prisma.character.findMany({
     where: { player: { email: session.user.email } },
   });
+  character.createdAt = character.createdAt.toString();
+  character.updatedAt = character.updatedAt.toString();
+  character.abilities.map(c => {
+    c.createdAt = c.createdAt.toString();
+    c.updatedAt = c.updatedAt.toString();
+  });
+  character.knacks.map(c => {
+    c.createdAt = c.createdAt.toString();
+    c.updatedAt = c.updatedAt.toString();
+  });
+  character.items.map(c => {
+    c.createdAt = c.createdAt.toString();
+    c.updatedAt = c.updatedAt.toString();
+  });
+  // characters.map(c => {
+  //   c.createdAt = c.createdAt.toString()
+  //   c.updatedAt = c.updatedAt.toString()
+  // })
 
   return { props: { character, characters } };
 }

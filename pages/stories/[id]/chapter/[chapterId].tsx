@@ -23,7 +23,7 @@ export default function Entry({ entry, campaignId, chapters }) {
 export async function getServerSideProps({ params }) {
   // TODO protect against can't see
   const campaignId = params.id;
-  const entry = await prisma.entry.findUnique({
+  const entry = await prisma.journalEntry.findUnique({
     where: {
       id: Number(params.chapterId) || -1,
     },
@@ -33,11 +33,17 @@ export async function getServerSideProps({ params }) {
       },
     },
   });
-  const chapters = await prisma.entry.findMany({
+  const chapters = await prisma.journalEntry.findMany({
     where: {
       campaignId: Number(campaignId),
-      published: true,
+      isPublished: true,
     },
+  });
+  entry.createdAt = entry.createdAt.toString();
+  entry.updatedAt = entry.updatedAt.toString();
+  chapters.map(c => {
+    c.createdAt = c.createdAt.toString();
+    c.updatedAt = c.updatedAt.toString();
   });
   return { props: { entry, campaignId, chapters } };
 }

@@ -13,8 +13,8 @@ export default function Story({ campaign, chapters }) {
       <h3>Hello, {session && session.user.name}</h3>
       <h2>Authors</h2>
       <ul>
-        {campaign.participants.map((p, i) => (
-          <li key={`p-${i}`}>{p.author.name}</li>
+        {campaign.users.map((u, i) => (
+          <li key={`u-${i}`}>{u.user.name}</li>
         ))}
       </ul>
       <AddParticipant />
@@ -43,7 +43,7 @@ export default function Story({ campaign, chapters }) {
           <ul>
             {campaign.characters.map((c, i) => (
               <li key={`c-${i}`}>
-                <CustomLink href={`/stories/characters/${c.id}`}>
+                <CustomLink href={`/stories/characters/${c.character.id}`}>
                   {c.character.name}
                 </CustomLink>
               </li>
@@ -75,9 +75,9 @@ export async function getServerSideProps({ req, params }) {
       id: Number(params.id) || -1,
     },
     include: {
-      participants: {
+      users: {
         select: {
-          author: {
+          user: {
             select: {
               name: true,
             },
@@ -89,17 +89,18 @@ export async function getServerSideProps({ req, params }) {
           character: {
             select: {
               name: true,
+              id: true,
             },
           },
         },
       },
     },
   });
-  const chapters = await prisma.entry.findMany({
+  const chapters = await prisma.journalEntry.findMany({
     where: {
       campaignId: Number(params.id) || -1,
       OR: [
-        { published: true },
+        { isPublished: true },
         {
           author: {
             name: session.user.name,
@@ -107,6 +108,12 @@ export async function getServerSideProps({ req, params }) {
         },
       ],
     },
+  });
+  campaign.createdAt = campaign.createdAt.toString();
+  campaign.updatedAt = campaign.updatedAt.toString();
+  chapters.map(c => {
+    c.createdAt = c.createdAt.toString();
+    c.updatedAt = c.updatedAt.toString();
   });
   return { props: { campaign, chapters } };
 }

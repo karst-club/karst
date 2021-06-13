@@ -5,7 +5,7 @@ export default async function handle(req, res) {
   const session = await getSession({ req });
 
   const { campaignId, title, content } = req.body;
-  const result = await prisma.entry.create({
+  const result = await prisma.journalEntry.create({
     data: {
       author: {
         connect: {
@@ -13,8 +13,8 @@ export default async function handle(req, res) {
         },
       },
       title,
-      published: true,
-      shared: true,
+      isPublished: true,
+      isShared: true,
       content,
       campaign: {
         connect: { id: Number(campaignId) },
