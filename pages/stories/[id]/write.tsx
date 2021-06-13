@@ -11,7 +11,6 @@ export default function Write() {
   const submitData = async e => {
     e.preventDefault();
     try {
-      // TODO pass in campaign
       const body = JSON.stringify({
         campaignId: id,
         title,

@@ -1,6 +1,15 @@
 {
   "name": "karst",
   "version": "0.1.0",
+  "description": "A downtempo post-apocalyptic RPG with themes of adventure, exploration, and soft terror.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karst-club/karst"
+  },
+  "bugs": {
+    "url": "https://github.com/karst-club/karst/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -33,10 +42,12 @@
     "prettier": "^2.2.1",
     "prisma": "2.20.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "superjson": "^1.7.4"
   },
   "devDependencies": {
     "@types/react": "^17.0.5",
+    "babel-plugin-superjson-next": "^0.3.0",
     "typescript": "^4.2.4"
   },
   "lint-staged": {

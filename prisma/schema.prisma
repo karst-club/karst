@@ -11,101 +11,139 @@ generator client {
   previewFeatures = ["orderByRelation"]
 }
 
+/// Holds the Characters of karst.
 model Character {
   id                Int                 @id @default(autoincrement())
   name              String
+  /// Short bio of the character
   about             String?
   folk              String
   level             Int
   coins             Int
-  abilities         Ability[]
-  knacks            Knack[]
-  items             Item[]
+  abilities         CharacterAbility[]
+  knacks            CharacterKnack[]
+  items             CharacterItem[]
   player            User?               @relation(fields: [playerId], references: [id])
-  playerId          Int?
+  playerId          Int?                @map(name: "player_id")
   campaignCharacter CampaignCharacter[]
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "characters")
 }
 
-model Ability {
-  id          Int        @id @default(autoincrement())
-  name        String
-  character   Character? @relation(fields: [characterId], references: [id])
-  characterId Int?
+/// Abilities of a character such as "Strong", "Quick" or "Tough"
+model CharacterAbility {
+  id           Int        @id @default(autoincrement())
+  name         String
+  character    Character? @relation(fields: [characterId], references: [id])
+  characterId  Int?     @map(name: "character_id")
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "character_abilities")
 }
 
-model Knack {
-  id          Int        @id @default(autoincrement())
-  name        String
-  character   Character? @relation(fields: [characterId], references: [id])
-  characterId Int?
+/// Knacks of a character, like spellcasting, focus, climbing walls, etc.
+model CharacterKnack {
+  id           Int        @id @default(autoincrement())
+  name         String
+  character    Character? @relation(fields: [characterId], references: [id])
+  characterId  Int?       @map(name: "character_id")
+  createdAt    DateTime   @default(now()) @map(name: "created_at")
+  updatedAt    DateTime   @default(now()) @map(name: "updated_at")
+
+  @@map(name: "character_knacks")
 }
 
-model Item {
-  id          Int        @id @default(autoincrement())
-  name        String
-  character   Character? @relation(fields: [characterId], references: [id])
-  characterId Int?
+/// Items in the game - they represent individual objects, not classes or types of objects. Usually associated to a character.
+model CharacterItem {
+  id           Int        @id @default(autoincrement())
+  name         String
+  character    Character? @relation(fields: [characterId], references: [id])
+  characterId  Int?       @map(name: "character_id")
+  createdAt    DateTime   @default(now()) @map(name: "created_at")
+  updatedAt    DateTime   @default(now()) @map(name: "updated_at")
+
+  @@map(name: "character_items")
 }
 
+/// Many to many link from characters to campaigns
 model CampaignCharacter {
   id          Int       @id @default(autoincrement())
   character   Character @relation(fields: [characterId], references: [id])
-  characterId Int
+  characterId Int       @map(name: "character_id")
   campaign    Campaign  @relation(fields: [campaignId], references: [id])
-  campaignId  Int
+  campaignId  Int       @map(name: "campaign_id")
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
-  @@map(name: "campaigncharacters")
+  @@map(name: "campaign_characters")
 }
 
+/// A shared story involving characters and players
 model Campaign {
   id           Int                 @id @default(autoincrement())
   title        String
   shared       Boolean             @default(false)
-  entries      Entry[]
-  participants Participant[]
+  entries      JournalEntry[]
+  users        CampaignUser[]
   characters   CampaignCharacter[]
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "campaigns")
 }
 
-model Entry {
-  id         Int       @id @default(autoincrement())
-  title      String
-  content    String?
-  published  Boolean   @default(false)
-  shared     Boolean   @default(false)
-  campaign   Campaign? @relation(fields: [campaignId], references: [id])
-  campaignId Int?
-  author     User?     @relation(fields: [authorId], references: [id])
-  authorId   Int?
+/// A journal entry, usually associated to a campaign but could also be made by a user
+model JournalEntry {
+  id           Int       @id @default(autoincrement())
+  title        String
+  content      String?
+  isPublished  Boolean   @default(false) @map(name: "is_published")
+  isShared       Boolean   @default(false) @map(name: "is_shared")
+  campaign     Campaign? @relation(fields: [campaignId], references: [id])
+  campaignId   Int?      @map(name: "campaign_id")
+  author       User      @relation(fields: [authorId], references: [id])
+  authorId     Int       @map(name: "author_id")
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
-  @@map(name: "entries")
+  @@map(name: "journal_entries")
 }
 
-model Participant {
-  id         Int      @id @default(autoincrement())
-  role       String
-  author     User     @relation(fields: [authorId], references: [id])
-  authorId   Int
-  campaign   Campaign @relation(fields: [campaignId], references: [id])
-  campaignId Int
+/// A many-to-many mapping of what players belongs to what campaigns
+model CampaignUser {
+  id           Int        @id @default(autoincrement())
+  /// A role such as participant, GM, spectator, mini-boss...
+  role         String
+  user         User       @relation(fields: [userId], references: [id])
+  userId       Int        @map(name: "user_id")
+  campaign     Campaign   @relation(fields: [campaignId], references: [id])
+  campaignId   Int        @map(name: "campaign_id")
+  createdAt    DateTime   @default(now()) @map(name: "created_at")
+  updatedAt    DateTime   @default(now()) @map(name: "updated_at")
 
-  @@map(name: "participants")
+  @@map(name: "campaign_users")
 }
 
+/// Represents individual users or players
 model User {
   id            Int           @id @default(autoincrement())
   name          String?
   email         String?       @unique
-  emailVerified Boolean?
+  emailVerified Boolean?      @map(name: "email_verified")
   image         String?
   createdAt     DateTime      @default(now()) @map(name: "created_at")
   updatedAt     DateTime      @updatedAt @map(name: "updated_at")
-  entries       Entry[]
+  entries       JournalEntry[]
   characters    Character[]
-  participant   Participant[]
+  campaigns     CampaignUser[]
 
   @@map(name: "users")
 }
 
+/// Provides the SSO interface which associates users with their SSO providers, such as Discord
 model Account {
   id                 Int       @id @default(autoincrement())
   compoundId         String    @unique @map(name: "compound_id")
@@ -119,13 +157,13 @@ model Account {
   createdAt          DateTime  @default(now()) @map(name: "created_at")
   updatedAt          DateTime  @default(now()) @map(name: "updated_at")
 
-
-  @@index([providerAccountId], name: "providerAccountId")
-  @@index([providerId], name: "providerId")
-  @@index([userId], name: "userId")
+  @@index([providerAccountId], name: "provider_account_id")
+  @@index([providerId], name: "provider_id")
+  @@index([userId], name: "user_id")
   @@map(name: "accounts")
 }
 
+/// Cookie that tells the frontend that you're logged in
 model Session {
   id           Int      @id @default(autoincrement())
   userId       Int      @map(name: "user_id")

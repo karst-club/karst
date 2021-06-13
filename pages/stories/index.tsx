@@ -60,9 +60,9 @@ export async function getServerSideProps({ req }) {
   if (session) {
     campaigns = await prisma.campaign.findMany({
       where: {
-        participants: {
+        users: {
           some: {
-            author: {
+            user: {
               email: session.user.email,
             },
           },

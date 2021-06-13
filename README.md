@@ -24,3 +24,9 @@ npm install && docker-compose up -d && npm run setup
 ```
 npm run dev
 ```
+
+## Database Migrations
+
+The current practice is to do these locally with adult supervision.
+
+https://www.prisma.io/docs/concepts/components/prisma-migrate
