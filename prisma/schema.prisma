@@ -24,6 +24,10 @@ model Character {
   player            User?               @relation(fields: [playerId], references: [id])
   playerId          Int?
   campaignCharacter CampaignCharacter[]
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "characters")
 }
 
 model Ability {
@@ -31,6 +35,10 @@ model Ability {
   name        String
   character   Character? @relation(fields: [characterId], references: [id])
   characterId Int?
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "abilities")
 }
 
 model Knack {
@@ -38,6 +46,10 @@ model Knack {
   name        String
   character   Character? @relation(fields: [characterId], references: [id])
   characterId Int?
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "knacks")
 }
 
 model Item {
@@ -45,6 +57,10 @@ model Item {
   name        String
   character   Character? @relation(fields: [characterId], references: [id])
   characterId Int?
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "items")
 }
 
 model CampaignCharacter {
@@ -53,6 +69,8 @@ model CampaignCharacter {
   characterId Int
   campaign    Campaign  @relation(fields: [campaignId], references: [id])
   campaignId  Int
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
   @@map(name: "campaigncharacters")
 }
@@ -64,6 +82,10 @@ model Campaign {
   entries      Entry[]
   participants Participant[]
   characters   CampaignCharacter[]
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "campaigns")
 }
 
 model Entry {
@@ -76,6 +98,8 @@ model Entry {
   campaignId Int?
   author     User?     @relation(fields: [authorId], references: [id])
   authorId   Int?
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
   @@map(name: "entries")
 }
@@ -87,6 +111,8 @@ model Participant {
   authorId   Int
   campaign   Campaign @relation(fields: [campaignId], references: [id])
   campaignId Int
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
   @@map(name: "participants")
 }
@@ -102,6 +128,8 @@ model User {
   entries       Entry[]
   characters    Character[]
   participant   Participant[]
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
   @@map(name: "users")
 }
@@ -118,7 +146,6 @@ model Account {
   accessTokenExpires DateTime? @map(name: "access_token_expires")
   createdAt          DateTime  @default(now()) @map(name: "created_at")
   updatedAt          DateTime  @default(now()) @map(name: "updated_at")
-
 
   @@index([providerAccountId], name: "providerAccountId")
   @@index([providerId], name: "providerId")
