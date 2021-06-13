@@ -128,8 +128,6 @@ model User {
   entries       Entry[]
   characters    Character[]
   participant   Participant[]
-  createdAt    DateTime @default(now()) @map(name: "created_at")
-  updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
   @@map(name: "users")
 }
