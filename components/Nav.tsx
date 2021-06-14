@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import NavLink from './NavLink';
+import UserStatus from './UserStatus';
 
 export const MAIN_NAV = [
   { href: '/', title: 'Karst' },
@@ -30,7 +31,10 @@ export default function Nav() {
   ));
   return (
     <>
-      <nav>{links}</nav>
+      <nav>
+        {links}
+        <UserStatus />
+      </nav>
       <style jsx>{`
         nav {
           display: flex;
