@@ -4,9 +4,9 @@ import UserStatus from './UserStatus';
 
 export const MAIN_NAV = [
   { href: '/', title: 'Karst' },
-  { href: '/rulebook/01-beginnings', title: 'Rulebook' },
+  { href: '/rulebook/01-introduction', title: 'Rulebook' },
   { href: '/worldbooks', title: 'Worldbooks' },
-  { href: '/stories', title: 'Stories' },
+  //{ href: '/stories', title: 'Stories' },
   { href: '/blog', title: 'Blog' },
   { href: '/about', title: 'About' },
 ];
@@ -33,7 +33,7 @@ export default function Nav() {
     <>
       <nav>
         {links}
-        <UserStatus />
+        {/*<UserStatus />*/}
       </nav>
       <style jsx>{`
         nav {

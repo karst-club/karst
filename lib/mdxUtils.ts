@@ -1,9 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 
-// POSTS_PATH is useful when you want to get the path to a specific file
-export const PAGES_PATH = path.join(process.cwd(), 'rulebook');
-export const WORLDBOOKS_PATH = path.join(process.cwd(), 'worldbooks');
+export const BLOG_POSTS_PATH = path.join(process.cwd(), 'content/blog');
+export const PAGES_PATH = path.join(process.cwd(), 'content/rulebook');
+export const WORLDBOOKS_PATH = path.join(process.cwd(), 'content/worldbooks');
+
+export const postsFilePaths = fs
+  .readdirSync(BLOG_POSTS_PATH)
+  .filter(path => /\.mdx?$/.test(path));
 
 export const pageFilePaths = fs
   .readdirSync(PAGES_PATH)

@@ -71,6 +71,7 @@ export default function Styles() {
       }
 
       ul {
+        margin-bottom: 1em;
       }
 
       li {
