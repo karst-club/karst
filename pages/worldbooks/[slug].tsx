@@ -65,7 +65,7 @@ export const getStaticProps = async ({ params }) => {
     const source = fs.readFileSync(path.join(WORLDBOOKS_PATH, filePath));
     const { content, data } = matter(source);
     return {
-      href: `/worldbook/${filePath.replace(/\.mdx?$/, '')}`,
+      href: `/worldbooks/${filePath.replace(/\.mdx?$/, '')}`,
       ...data,
     };
   });
