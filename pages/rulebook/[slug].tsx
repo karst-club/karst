@@ -10,9 +10,13 @@ import CustomLink from '../../components/CustomLink';
 import SidebarLayout from '../../components/SidebarLayout';
 import { pageFilePaths, PAGES_PATH } from '../../lib/mdxUtils';
 import SidebarList from '../../components/SidebarList';
+import TwoColumns from '../../components/TwoColumns';
 
 const components = {
   a: CustomLink,
+  img: image => {
+    return <img src={image.src} style={{ maxWidth: '25em', float: 'right' }} />;
+  },
   //TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
 };

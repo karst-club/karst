@@ -5,6 +5,7 @@ import { postsFilePaths, BLOG_POSTS_PATH } from '../../lib/mdxUtils';
 import ArticleBlurb from '../../components/ArticleBlurb';
 import SidebarLayout from '../../components/SidebarLayout';
 import SidebarList from '../../components/SidebarList';
+import TwoColumns from '../../components/TwoColumns';
 
 export default function Index({ articles }) {
   return (
@@ -19,14 +20,27 @@ export default function Index({ articles }) {
         />
       }
     >
-      <h1>Blog</h1>
-      {articles.map(article => (
-        <ArticleBlurb
-          key={article.slug}
-          {...article.data}
-          href={`/blog/${article.data.slug}`}
-        />
-      ))}
+      <TwoColumns
+        columnOne={
+          <>
+            <h1>Blog</h1>
+            {articles.map(article => (
+              <ArticleBlurb
+                key={article.slug}
+                {...article.data}
+                href={`/blog/${article.data.slug}`}
+              />
+            ))}
+          </>
+        }
+        columnTwo={
+          <img
+            style={{ maxWidth: '100%' }}
+            src="/images/veldling-messenger.png"
+            alt="Veldling letter carrier"
+          />
+        }
+      />
     </SidebarLayout>
   );
 }
