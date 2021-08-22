@@ -32,31 +32,32 @@ export default function Styles() {
 
       h1 {
         color: #851a12;
-        font-size: 4.5em;
+        font-size: 2em;
+        margin-bottom: 1em;
       }
 
       h2 {
-        font-size: 2em;
+        font-size: 1.5em;
         margin-bottom: 0.5em;
       }
 
       h3 {
-        font-size: 1.5em;
-        margin-bottom: 0.5em;
+        font-size: 1.25em;
+        margin-bottom: 0.75em;
       }
 
       h4 {
-        font-size: 1.5em;
+        font-size: 1em;
         margin-bottom: 0.5em;
       }
 
       h5 {
-        font-size: 18px;
+        font-size: 1em;
         margin-bottom: 0.5em;
       }
 
       p {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.5em;
       }
 
       a {

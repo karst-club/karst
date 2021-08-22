@@ -43,7 +43,7 @@ export default function RulebookPage({ source, frontMatter, pages }) {
         }
 
         .post-header {
-          margin-bottom: 2rem;
+          margin-bottom: 1em;
         }
         .description {
           opacity: 0.6;
