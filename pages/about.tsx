@@ -5,7 +5,7 @@ export default function About() {
     <div>
       <img
         style={{ maxWidth: '100%' }}
-        src="/images/mail.png"
+        src="/images/veldling-messenger.png"
         alt="Veldling letter carrier"
       />
     </div>
