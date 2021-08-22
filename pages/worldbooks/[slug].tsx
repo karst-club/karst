@@ -20,7 +20,7 @@ export default function WorldbookPage({ source, frontMatter, pages }) {
   const content = hydrate(source, { components });
 
   return (
-    <SidebarLayout sidebar={<SidebarList title="Chapters" pages={pages} />}>
+    <SidebarLayout sidebar={<SidebarList title="Worldbooks" pages={pages} />}>
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
@@ -65,8 +65,8 @@ export const getStaticProps = async ({ params }) => {
     const source = fs.readFileSync(path.join(WORLDBOOKS_PATH, filePath));
     const { content, data } = matter(source);
     return {
-      title: data.title,
       href: `/worldbook/${filePath.replace(/\.mdx?$/, '')}`,
+      ...data,
     };
   });
 

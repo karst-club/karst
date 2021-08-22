@@ -7,9 +7,9 @@ export default [
     kind: 'core',
   },
   {
-    name: 'Memorization',
-    display: 'able to Memorize a spell',
-    verb: 'is',
+    name: 'Concentration',
+    display: 'Concentrate on a spell',
+    verb: 'can',
     kind: 'core',
   },
   {
@@ -123,9 +123,9 @@ export default [
     kind: 'basic',
   },
   {
-    name: 'Savage Strike',
-    display: 'a Savage Strike',
-    verb: 'has',
+    name: 'Brutal',
+    display: 'Brutal',
+    verb: 'is',
     kind: 'basic',
   },
   {

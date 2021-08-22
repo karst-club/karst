@@ -1,3 +1,7 @@
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
+import { postsFilePaths, BLOG_POSTS_PATH } from '../../lib/mdxUtils';
 import ArticleBlurb from '../../components/ArticleBlurb';
 import SidebarLayout from '../../components/SidebarLayout';
 import SidebarList from '../../components/SidebarList';
@@ -9,8 +13,8 @@ export default function Index({ articles }) {
         <SidebarList
           title="Articles"
           pages={articles.map(article => ({
-            title: article.title,
-            href: `/blog/${article.slug}`,
+            title: article.data.title,
+            href: `/blog/${article.data.slug}`,
           }))}
         />
       }
@@ -19,26 +23,26 @@ export default function Index({ articles }) {
       {articles.map(article => (
         <ArticleBlurb
           key={article.slug}
-          href={`/blog/${article.slug}`}
-          {...article}
+          {...article.data}
+          href={`/blog/${article.data.slug}`}
         />
       ))}
     </SidebarLayout>
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
+  const articles = postsFilePaths.map(filePath => {
+    const source = fs.readFileSync(path.join(BLOG_POSTS_PATH, filePath));
+    const { content, data } = matter(source);
+    return {
+      content,
+      data,
+      filePath,
+    };
+  });
+
   return {
-    props: {
-      articles: [
-        {
-          title: 'Nothing',
-          slug: 'shh',
-          content: 'Nothing to see here.',
-          blurb: '...',
-        },
-        { title: 'Blank', slug: 'nil', content: 'Nothing to see here.' },
-      ],
-    },
+    props: { articles },
   };
 }

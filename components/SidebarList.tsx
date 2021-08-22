@@ -6,13 +6,12 @@ export default function SidebarList({ title, pages }) {
   const path = useRouter().asPath;
   return (
     <>
-      <br />
       <h2>{title}</h2>
       <ul>
         {pages.map(page => (
           <li key={page.href} className={page.href === path ? 'active' : ''}>
             <Link href={page.href}>
-              <a>{page.title}</a>
+              <a>{page.sidebar_title || page.title}</a>
             </Link>
           </li>
         ))}
