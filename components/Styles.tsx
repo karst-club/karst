@@ -37,17 +37,17 @@ export default function Styles() {
       }
 
       h2 {
-        font-size: 1.5em;
+        font-size: 1.75em;
         margin-bottom: 0.5em;
       }
 
       h3 {
-        font-size: 1.25em;
+        font-size: 1.5em;
         margin-bottom: 0.75em;
       }
 
       h4 {
-        font-size: 1em;
+        font-size: 1.25em;
         margin-bottom: 0.5em;
       }
 
