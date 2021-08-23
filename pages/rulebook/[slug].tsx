@@ -15,7 +15,16 @@ import TwoColumns from '../../components/TwoColumns';
 const components = {
   a: CustomLink,
   img: image => {
-    return <img src={image.src} style={{ maxWidth: '25em', float: 'right' }} />;
+    return (
+      <img
+        src={image.src}
+        style={{
+          width: '25em',
+          maxWidth: '100%',
+          float: 'right',
+        }}
+      />
+    );
   },
   //TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
