@@ -12,11 +12,11 @@ You—any individual or entity—may publish your own stories, adventures, suppl
 
 1. You are free to reference and expand upon the Karst setting in your publications.
 2. You may not represent your publication as being approved by the Karst Archipelago Historical Society in any way, shape, or form.
-   - If your publication references the Karst setting, you must make reference to the above in your legal text and on any websites where you sell or give away your work by stating something to the effect of: “This is an independent publication by YOUR NAME and is not affiliated with the Karst Archipelago Historical Society. Karst is a trademark of the Karst Archipelago Historical Society and is used with permission, under license."
-3. You are legally responsible for your works; the Karst Archipelago Historical Society claims no liability for your use of the Karst setting and/or rules.
-4. The Karst Archipelago Historical Society retains the right to deny the use of this license at any time—don’t use Karst to push a bigoted ideology.
 
-All other rights reserved.
+- If your publication references the Karst setting, you must make reference to the preceding points in your legal text and on any websites where you sell or give away your work by stating something to the effect of: “This is an independent publication by YOUR NAME and is not affiliated with the Karst Archipelago Historical Society. Karst is a trademark of the Karst Archipelago Historical Society and is used with permission, under license.”
+
+3. You are legally responsible for your works; the Karst Archipelago Historical Society claims no liability for your use of the Karst setting and/or rules.
+4. The Karst Archipelago Historical Society retains the right to deny the use of this license at any time. Don’t use Karst to push a bigoted ideology.
 
 ## Development Setup
 
