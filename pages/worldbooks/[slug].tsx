@@ -74,7 +74,10 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
-      pages,
+      pages: [
+        { href: '/worldbooks/inspiration', title: 'Inspiration' },
+        ...pages,
+      ],
     },
   };
 };

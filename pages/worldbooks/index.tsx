@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import Link from 'next/link';
 import { worldbookFilePaths, WORLDBOOKS_PATH } from '../../lib/mdxUtils';
 import SidebarLayout from '../../components/SidebarLayout';
 import SidebarList from '../../components/SidebarList';
@@ -42,7 +43,7 @@ export default function Index({ books, upcomingTitles }) {
       <ul>
         {books.map(book => (
           <li>
-            <a href={book.href}>{book.title}</a>
+            <Link href={book.href}>{book.title}</Link>
           </li>
         ))}
       </ul>
@@ -71,5 +72,13 @@ export function getStaticProps() {
 
   const upcomingTitles = ['The Merchant’s Daughter', 'The Tale of Widmer'];
 
-  return { props: { books, upcomingTitles } };
+  return {
+    props: {
+      books: [
+        { href: '/worldbooks/inspiration', title: 'Inspiration' },
+        ...books,
+      ],
+      upcomingTitles,
+    },
+  };
 }

@@ -1,11 +1,15 @@
 import generateCharacter from '../../lib/characterGenerator';
+import generateStory from '../../lib/storyGenerator';
 import SidebarLayout from '../../components/SidebarLayout';
 import Character from '../../components/Character';
 
-export default function Index({ character, quest }) {
+export default function Index({ character, story }) {
   return (
     <SidebarLayout sidebar={''}>
-      <h1>A Random Character</h1>
+      <h1>A Random...</h1>
+      <h2>Story</h2>
+      <p>{story}</p>
+      <h2>Character</h2>
       <Character character={character} />
     </SidebarLayout>
   );
@@ -15,7 +19,7 @@ export async function getServerSideProps() {
   return {
     props: {
       character: generateCharacter(),
-      quest: 'foo',
+      story: generateStory(),
     },
   };
 }

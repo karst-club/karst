@@ -1,46 +1,4 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
-import Link from 'next/link';
-import path from 'path';
-import CustomLink from '../../components/CustomLink';
-import SidebarLayout from '../../components/SidebarLayout';
-import { worldbookFilePaths, WORLDBOOKS_PATH } from '../../lib/mdxUtils';
-import SidebarList from '../../components/SidebarList';
-
-const components = {
-  a: CustomLink,
-  Head,
-};
-
-export default function WorldbookPage({ story, pages }) {
-  return (
-    <SidebarLayout sidebar={<SidebarList title="Worldbooks" pages={pages} />}>
-      <div className="post-header">
-        <h1>Random Story</h1>
-      </div>
-      <main>
-        <p>{story}</p>
-      </main>
-
-      <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
-        }
-      `}</style>
-    </SidebarLayout>
-  );
-}
-
-export const getServerSideProps = async ({ params }) => {
+export default function generateStory() {
   const r = thing => thing[Math.floor(Math.random() * thing.length)];
   // a tale of [emotion]: [quest] involving [2 characters] featuring [feature] and complicated by [complication].
 
@@ -166,18 +124,8 @@ export const getServerSideProps = async ({ params }) => {
 
   //const story = `A tale of ${r(emotions)}: ${r(quests)} involving ${r(characters)} and ${r(characters)} featuring ${r(locations)} and complicated by ${r(complications)}.`;
 
-  const story = `${theme} ${impetus} ${r(quests)}`;
-
-  const pages = worldbookFilePaths.map(filePath => {
-    const source = fs.readFileSync(path.join(WORLDBOOKS_PATH, filePath));
-    const { data } = matter(source);
-    return {
-      href: `/worldbooks/${filePath.replace(/\.mdx?$/, '')}`,
-      ...data,
-    };
-  });
-
-  return {
-    props: { story, pages },
-  };
-};
+  const story = `${theme} ${impetus} ${r(quests)} complicated by ${r(
+    complications
+  )}.`;
+  return story;
+}

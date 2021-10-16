@@ -45,8 +45,8 @@ export default function About() {
         stories, rules, and source material for Karst.
       </p>
       <p>
-        If you do end up wanting to publish things, we have a couple of
-        guidelines that are linked to below.
+        If you do end up wanting to publish things that use the Karst setting,
+        we have a couple of guidelines that are linked to below.
       </p>
       <p>
         To learn about publication guidelines, or if you&apos;d like to see the
