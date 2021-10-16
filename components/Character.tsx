@@ -36,6 +36,7 @@ export default function Character({ character, title }: Props) {
         <strong>Items:</strong>
         <ul>{items}</ul>
         <br />
+        <strong>Coins:</strong> ¢{c.coins}
       </section>
       <style jsx>{`
         header {

@@ -1,15 +1,16 @@
 export default [
+  // CORE
   { name: 'Agility', display: 'Agile', verb: 'is', kind: 'core' },
-  {
-    name: 'Focus',
-    display: 'Focus',
-    verb: 'has',
-    kind: 'core',
-  },
   {
     name: 'Concentration',
     display: 'Concentrate on a spell',
     verb: 'can',
+    kind: 'core',
+  },
+  {
+    name: 'Focus',
+    display: 'Focus',
+    verb: 'has',
     kind: 'core',
   },
   {
@@ -24,6 +25,7 @@ export default [
     verb: 'has',
     kind: 'core',
   },
+  // Odd-Level
   {
     name: 'Banishing',
     display: 'Banish Spirits',
@@ -43,6 +45,12 @@ export default [
     kind: 'odd-level',
   },
   {
+    name: 'Fists of Will',
+    display: 'Fists of Will',
+    verb: 'has',
+    kind: 'odd-level',
+  },
+  {
     name: 'Healing Hands',
     display: 'Healing Hands',
     verb: 'has',
@@ -53,12 +61,6 @@ export default [
     name: 'Song',
     display: 'Sing a Strange Tune',
     verb: 'can',
-    kind: 'odd-level',
-  },
-  {
-    name: 'Fists of Will',
-    display: 'Fists of Will',
-    verb: 'has',
     kind: 'odd-level',
   },
   {
@@ -74,60 +76,7 @@ export default [
     kind: 'odd-level',
   },
   { name: 'Theurgy', display: 'a Theurge', verb: 'is', kind: 'odd-level' },
-  {
-    name: 'Weapon Training',
-    display: 'Trained with a specific kind of Weapon',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Shield Training',
-    display: 'Trained with a Shield',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Archery',
-    display: 'an Archer',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Heavy Armor Training',
-    display: 'trained with Heavy Armor',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Large Weapon Training',
-    display: 'trained with Large Weapons',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Dual Wielding',
-    display: 'Better with a Weapon in Each Hand',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Backstab',
-    display: 'a Backstabber',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Deftness',
-    display: 'Deft',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Brutal',
-    display: 'Brutal',
-    verb: 'is',
-    kind: 'basic',
-  },
+  // Basic
   {
     name: 'Adversorcery',
     display: 'Opposed to Magic',
@@ -135,21 +84,14 @@ export default [
     kind: 'basic',
   },
   {
+    name: 'Aid',
+    display: 'Aid others',
+    verb: 'can',
+    kind: 'basic',
+  },
+  {
     name: 'Alterness',
     display: 'Alert',
-    verb: 'is',
-    kind: 'basic',
-  },
-  { name: 'Bravery', display: 'Brave', verb: 'is', kind: 'basic' },
-  {
-    name: 'Clear-Eyed',
-    display: 'Clear-Eyed',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Fitness',
-    display: 'Fit',
     verb: 'is',
     kind: 'basic',
   },
@@ -160,14 +102,39 @@ export default [
     kind: 'basic',
   },
   {
-    name: 'Fury',
-    display: 'a Furious Heart',
-    verb: 'has',
+    name: 'Archery',
+    display: 'an Archer',
+    verb: 'is',
     kind: 'basic',
   },
   {
-    name: 'Stealth',
-    display: 'quite Sneaky',
+    name: 'Armor Training',
+    display: 'trained with Heavy Armor',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Backstab',
+    display: 'a Backstabber',
+    verb: 'is',
+    kind: 'basic',
+  },
+  { name: 'Bravery', display: 'Brave', verb: 'is', kind: 'basic' },
+  {
+    name: 'Brawling',
+    display: 'a Brawler',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Brutal',
+    display: 'Brutal',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Clear-Eyed',
+    display: 'Clear-Eyed',
     verb: 'is',
     kind: 'basic',
   },
@@ -177,15 +144,51 @@ export default [
     verb: 'is',
     kind: 'basic',
   },
+  //{ TODO NEED TO FIX CHARACTER CREATION TO NOT SELECT UNLESS SPELLCASTER
+  //  name: 'Combat Casting',
+  //  display: '',
+  //  verb: '',
+  //  kind: 'basic'
+  //},
   {
-    name: 'Tumbling',
-    display: 'a Tumbler',
+    name: 'Deftness',
+    display: 'Deft',
     verb: 'is',
     kind: 'basic',
   },
   {
-    name: 'Technically Minded',
-    display: 'Technically Minded',
+    name: 'Dual Wielding',
+    display: 'Better with a Weapon in Each Hand',
+    verb: 'is',
+    kind: 'basic',
+  },
+  //{
+  //  name: 'Echo',
+  //  display: 'cast the same spell twice',
+  //  verb: 'can',
+  //  kind: 'basic',
+  //},
+  {
+    name: 'Fitness',
+    display: 'Fit',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Friend to Animals',
+    display: 'a Friend to Animals',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Fury',
+    display: 'a Furious Heart',
+    verb: 'has',
+    kind: 'basic',
+  },
+  {
+    name: 'Hunting',
+    display: 'a Hunter',
     verb: 'is',
     kind: 'basic',
   },
@@ -196,21 +199,9 @@ export default [
     kind: 'basic',
   },
   {
-    name: 'Reading',
-    display: 'Read many Scripts',
-    verb: 'can',
-    kind: 'basic',
-  },
-  //{ TODO NEED TO FIX CHARACTER CREATION TO NOT SELECT UNLESS SPELLCASTER
-  //  name: 'Combat Casting',
-  //  display: '',
-  //  verb: '',
-  //  kind: 'basic'
-  //},
-  {
-    name: 'Sense Magic',
-    display: 'Sense Magic',
-    verb: 'can',
+    name: 'Large Weapon Training',
+    display: 'trained with Large Weapons',
+    verb: 'is',
     kind: 'basic',
   },
   {
@@ -220,21 +211,59 @@ export default [
     kind: 'basic',
   },
   {
-    name: 'Friend to Animals',
-    display: 'a Friend to Animals',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
-    name: 'Hunting',
-    display: 'a Hunter',
-    verb: 'is',
-    kind: 'basic',
-  },
-  {
     name: 'Navigation',
     display: 'a Navigator',
     verb: 'is',
     kind: 'basic',
   },
+  {
+    name: 'Precision',
+    display: 'a Precise striker',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Read Scripts',
+    display: 'Read many Scripts',
+    verb: 'can',
+    kind: 'basic',
+  },
+  {
+    name: 'Sense Magic',
+    display: 'Sense Magic',
+    verb: 'can',
+    kind: 'basic',
+  },
+  {
+    name: 'Shield Training',
+    display: 'Trained with a Shield',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Stealth',
+    display: 'quite Sneaky',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Technically Minded',
+    display: 'Technically Minded',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Tumbling',
+    display: 'a Tumbler',
+    verb: 'is',
+    kind: 'basic',
+  },
+  {
+    name: 'Weapon Training',
+    display: 'Trained with a specific kind of Weapon',
+    verb: 'is',
+    kind: 'basic',
+  },
+  // Advanced
+  // TODO later
 ];

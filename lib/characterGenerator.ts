@@ -25,6 +25,7 @@ function getFolk() {
 }
 
 function getBackground() {
+  // TODO backgrounds need modifiers (_fruit_ monger, etc)
   return backgrounds[Math.floor(Math.random() * backgrounds.length)];
 }
 
@@ -52,7 +53,7 @@ function getKnacks(abilities) {
     const coreKnacks = knacks.filter(k => k.kind === 'core');
     const core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
     charKnacks = [core, core];
-    if (core.name !== 'Memorization') {
+    if (core.name !== 'Concentration') {
       remainingKnacks = remainingKnacks.filter(
         k => spellcasting.filter(s => s === k.name).length === 0
       );
@@ -73,8 +74,8 @@ function getKnacks(abilities) {
     ) {
       //if spellcasting:
       //choose memorization
-      charKnacks.push(knacks.filter(k => k.name === 'Memorization')[0]);
-    } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
+      charKnacks.push(knacks.filter(k => k.name === 'Concentration')[0]);
+    } else if (charKnacks.filter(k => k.name === 'Concentration').length) {
       //elif memorization:
       //  choose spellcasting at random
       spellKnacks = knacks.filter(
@@ -105,8 +106,8 @@ function getKnacks(abilities) {
     ) {
       //if spellcasting:
       //choose memorization
-      charKnacks.push(knacks.filter(k => k.name === 'Memorization')[0]);
-    } else if (charKnacks.filter(k => k.name === 'Memorization').length) {
+      charKnacks.push(knacks.filter(k => k.name === 'Concentration')[0]);
+    } else if (charKnacks.filter(k => k.name === 'Concentration').length) {
       //elif memorization:
       //  choose spellcasting at random
       spellKnacks = knacks.filter(
@@ -119,11 +120,13 @@ function getKnacks(abilities) {
       // filter out other spellcasting knacks to prevent someone from having it without mem
       remainingKnacks = remainingKnacks.filter(
         k =>
-          ['Memorization', ...spellcasting].filter(s => s === k.name).length ===
-          0
+          ['Concentration', ...spellcasting].filter(s => s === k.name)
+            .length === 0
       );
     }
   }
+
+  // TODO combat casting and echo (need to uncomment them, too)
 
   if (charKnacks.length === 2) {
     //If 1 free knack
@@ -140,8 +143,10 @@ function getItems(knacks) {
   const weapons = items.filter(i => i.kind === 'weapon');
   const wearing = items.filter(i => i.kind === 'armor' || i.kind === 'clothes');
   const equipment = items.filter(i => i.kind === 'equipment');
-  const coins = 25;
+  const coins = 5;
   // TODO: Shields, ammo, two weapons if ranged weapon, heavy armor, money
+  // TODO: don't give out items above ¢50 unless less items
+  // TODO: don't give armor to casters
   return {
     weapons: [weapons[0]],
     wearing: [wearing[0]],
@@ -157,13 +162,8 @@ export default function generateCharacter() {
   const about = getBackground();
   const abilities = getAbilites(folk);
   const knacks = getKnacks(abilities);
-  const i = getItems(knacks);
-  const items = [
-    ...i.weapons,
-    ...i.wearing,
-    ...i.equipment,
-    { name: `¢${i.coins}` },
-  ];
+  const { coins, ...i } = getItems(knacks);
+  const items = [...i.weapons, ...i.wearing, ...i.equipment];
   return {
     name,
     level,
@@ -172,5 +172,6 @@ export default function generateCharacter() {
     abilities: abilities.map(a => ({ name: a })),
     knacks: knacks.map(k => ({ name: k.name.toLowerCase() })),
     items: items.map(i => ({ name: i.name.toLowerCase() })),
+    coins,
   };
 }

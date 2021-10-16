@@ -41,7 +41,8 @@ export default function Nav() {
           padding: 1em 0;
           top: 0;
           justify-content: space-between;
-          background: #fefdf8;
+          /* background: #fefdf8; */
+          background: #fff;
           width: 100%;
         }
 

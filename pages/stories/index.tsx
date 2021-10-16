@@ -1,11 +1,34 @@
+import generateCharacter from '../../lib/characterGenerator';
+import SidebarLayout from '../../components/SidebarLayout';
+import Character from '../../components/Character';
+
+export default function Index({ character, quest }) {
+  return (
+    <SidebarLayout sidebar={''}>
+      <h1>A Random Character</h1>
+      <Character character={character} />
+    </SidebarLayout>
+  );
+}
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      character: generateCharacter(),
+      quest: 'foo',
+    },
+  };
+}
+
+/*
 import { getSession } from 'next-auth/client';
 import prisma from '../../lib/prisma';
 import CharacterBlurb from '../../components/CharacterBlurb';
 import NewCharacter from '../../components/NewCharacter';
 import CreateStory from '../../components/CreateStory';
 import CustomLink from '../../components/CustomLink';
-import SidebarLayout from '../../components/SidebarLayout';
 import UserStatus from '../../components/UserStatus';
+
 
 export default function Index({ campaigns, characters }) {
   let sidebar = (
@@ -79,3 +102,4 @@ export async function getServerSideProps({ req }) {
   }
   return { props: { campaigns, characters } };
 }
+*/

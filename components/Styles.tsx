@@ -17,7 +17,9 @@ export default function Styles() {
         -moz-osx-font-smoothing: grayscale;
         font-family: 'Ibarra Real Nova', serif;
         font-size: 18px;
-        background: #fefdf8;
+        /*background: #fefdf8;*/
+        /* background: #fefdfa; */
+        background: #fff;
         color: #150802;
       }
 
@@ -31,7 +33,7 @@ export default function Styles() {
       }
 
       h1 {
-        color: #851a12;
+        /*color: #851a12;*/
         font-size: 2em;
         margin-bottom: 1em;
       }

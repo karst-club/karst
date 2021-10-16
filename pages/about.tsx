@@ -1,6 +1,18 @@
 import SidebarLayout from '../components/SidebarLayout';
 
 export default function About() {
+  /*
+        <br/><br/>
+      <div
+        style={{ display: 'flex', alignItems: 'center' }}
+      >
+        <img
+          style={{ maxWidth: '15em', margin: '0 auto' }}
+          src="/images/karst-logo-small.png"
+          alt="Karst Archipelago Historical Society Logo"
+        	/>
+      </div>
+  */
   const image = (
     <div>
       <img

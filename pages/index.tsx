@@ -56,6 +56,13 @@ export default function Index() {
           alt="Lagartos spiritist plays a strange song."
         />
         {content}
+        <div>
+          <img
+            style={{ maxWidth: '10em' }}
+            src="/images/karst-logo-small.png"
+            alt="Karst Archipelago Historical Society Logo"
+          />
+        </div>
       </div>
     </Layout>
   );
