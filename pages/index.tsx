@@ -8,9 +8,10 @@ export default function Index() {
         <em>In the center of the Mirror Sea lies the Karst Archipelago.</em>
       </p>
       <p>
-        Once surrounded by the Three Distant Shores,
+        It was once surrounded by the Three Distant Shores, but a generation has
+        now passed
         <br />
-        it has been a generation since the last ships arrived from those faraway
+        since the last ships arrived in the archipelago from those faraway
         lands.
       </p>
       <br />

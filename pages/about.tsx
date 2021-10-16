@@ -57,19 +57,25 @@ export default function About() {
         If you&apos;d like to get in touch or follow along, you can find us on{' '}
         <a href="https://twitter.com/KarstClub">twitter</a>.
       </p>
-      <p>
+      {/*<p>
         We also have a presence on{' '}
         <a href="https://karstclub.itch.io">itch.io</a>, where you can download
         pdfs and other play aids.
-      </p>
+      </p>*/}
       <p>
         <i>Enjoy.</i>
       </p>
 
       <hr />
       <br />
-
-      <p>© 2020, 2021 The Karst Archipelago Historical Society.</p>
+      <p style={{ textAlign: 'center' }}>
+        © 2020, 2021 The Karst Archipelago Historical Society.
+      </p>
+      <img
+        style={{ maxWidth: '10em', display: 'block', margin: '0 auto' }}
+        src="/images/karst-logo-small.png"
+        alt="Karst Archipelago Historical Society Logo"
+      />
     </SidebarLayout>
   );
 }
