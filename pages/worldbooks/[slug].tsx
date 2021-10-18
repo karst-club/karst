@@ -20,7 +20,19 @@ export default function WorldbookPage({ source, frontMatter, pages }) {
   const content = hydrate(source, { components });
 
   return (
-    <SidebarLayout sidebar={<SidebarList title="Worldbooks" pages={pages} />}>
+    <SidebarLayout
+      sidebar={
+        <>
+          <h2>Generators</h2>
+          <ul>
+            <li>
+              <Link href="/worldbooks/inspiration">Characters & Stories</Link>
+            </li>
+          </ul>
+          <SidebarList title="Worldbooks" pages={pages} />
+        </>
+      }
+    >
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
@@ -74,10 +86,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
-      pages: [
-        { href: '/worldbooks/inspiration', title: 'Inspiration' },
-        ...pages,
-      ],
+      pages,
     },
   };
 };

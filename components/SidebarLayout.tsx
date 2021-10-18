@@ -30,7 +30,7 @@ export default function SidebarLayout({ children, sidebar }) {
 
           .sidebar {
             width: 33%;
-            margin-top: 1em;
+            margin-top: 2em;
           }
 
           .sidebar-inside {

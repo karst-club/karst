@@ -8,7 +8,17 @@ import SidebarList from '../../components/SidebarList';
 import TwoColumns from '../../components/TwoColumns';
 
 export default function Index({ books, upcomingTitles }) {
-  const sidebar = <SidebarList title="Worldbooks" pages={books} />;
+  const sidebar = (
+    <>
+      <h2>Generators</h2>
+      <ul>
+        <li>
+          <Link href="/worldbooks/inspiration">Characters & Stories</Link>
+        </li>
+      </ul>
+      <SidebarList title="Worldbooks" pages={books} />
+    </>
+  );
   return (
     <SidebarLayout sidebar={sidebar}>
       <TwoColumns
@@ -74,10 +84,7 @@ export function getStaticProps() {
 
   return {
     props: {
-      books: [
-        { href: '/worldbooks/inspiration', title: 'Inspiration' },
-        ...books,
-      ],
+      books,
       upcomingTitles,
     },
   };
