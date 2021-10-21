@@ -14,12 +14,18 @@ export default function About() {
       </div>
   */
   const image = (
-    <div>
-      <img
-        style={{ maxWidth: '100%' }}
-        src="/images/veldling-messenger.png"
-        alt="Veldling letter carrier"
-      />
+    <div className="sidebar-image">
+      <img src="/images/by-the-sea.jpg" alt="Lagartos netmakers by the sea." />
+      <style jsx>{`
+        .sidebar-image > img {
+          max-width: 100%;
+        }
+        @media (min-width: 768px) {
+          .sidebar-image {
+            margin-top: -1.5em;
+          }
+        }
+      `}</style>
     </div>
   );
   return (
@@ -68,14 +74,32 @@ export default function About() {
 
       <hr />
       <br />
-      <p style={{ textAlign: 'center' }}>
+      <p className="copyright">
         © 2020, 2021 The Karst Archipelago Historical Society.
       </p>
       <img
-        style={{ maxWidth: '10em', display: 'block', margin: '0 auto' }}
+        className="logo-image"
         src="/images/karst-logo-small.png"
         alt="Karst Archipelago Historical Society Logo"
       />
+      <style jsx>{`
+        .copyright {
+          text-align: center;
+        }
+        .logo-image {
+          max-width: 10em;
+          display: block;
+          margin: 0 auto;
+        }
+        .sidebar-image > img {
+          max-width: 100%;
+        }
+        @media (min-width: 768px) {
+          .sidebar-image {
+            margin-top: -1.5em;
+          }
+        }
+      `}</style>
     </SidebarLayout>
   );
 }

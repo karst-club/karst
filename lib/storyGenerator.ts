@@ -115,6 +115,15 @@ export default function generateStory() {
     'cultural mores',
   ];
 
+  const complicationsFirst = [
+    'The quest is complicated by',
+    'The protagonists are stifled by',
+    'Complicating the matter is',
+    'Obstacles include',
+    'The problem:',
+    "Of couse, it would be a lot easier if it weren't for",
+  ];
+
   const theme = `A ${r(songs)} of ${r(emotions)}:`;
 
   const impetus =
@@ -124,7 +133,8 @@ export default function generateStory() {
 
   //const story = `A tale of ${r(emotions)}: ${r(quests)} involving ${r(characters)} and ${r(characters)} featuring ${r(locations)} and complicated by ${r(complications)}.`;
 
-  const story = `${theme} ${impetus} ${r(quests)} complicated by ${r(
+  // TODO: Locations.
+  const story = `${theme} ${impetus} ${r(quests)}. ${r(complicationsFirst)} ${r(
     complications
   )}.`;
   return story;
