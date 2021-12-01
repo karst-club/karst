@@ -29,26 +29,17 @@ function getBackground() {
   return backgrounds[Math.floor(Math.random() * backgrounds.length)];
 }
 
-function getAbilites(folk) {
-  const [a, b] = shuffle([...abilities]);
-  return folk === 'visita' ? [a, a] : [a, b];
+function getAbilites() {
+  return shuffle([...abilities]).slice(0, 2);
 }
 
 function getKnacks(abilities) {
   let charKnacks = [];
   let remainingKnacks = [...knacks];
   let spellKnacks = [];
-  const howClever = abilities.filter(a => a === 'clever').length;
+  const clever = abilities.filter(a => a === 'clever').length === 1;
 
-  if (howClever === 2) {
-    // if very clever
-    //  choose one core knack 3x
-    //  return
-    const coreKnacks = knacks.filter(k => k.kind === 'core');
-    const core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
-    charKnacks = [core, core, core];
-  } else if (howClever === 1) {
-    // else if clever
+  if (clever) {
     //  choose one core knack 2x
     const coreKnacks = knacks.filter(k => k.kind === 'core');
     const core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
@@ -60,31 +51,30 @@ function getKnacks(abilities) {
     }
   } else {
     // Else
-    //choose one knack at random from all (non-expert)
-    const allButExpertKnacks = knacks.filter(k => k.kind !== 'expert');
-    const core =
-      allButExpertKnacks[Math.floor(Math.random() * allButExpertKnacks.length)];
-    charKnacks = [core];
+    //choose one knack at random from all (non-advanced)
+    const allButAdvancedKnacks = knacks.filter(k => k.kind !== 'advanced');
+    const firstKnack =
+      allButAdvancedKnacks[
+        Math.floor(Math.random() * allButAdvancedKnacks.length)
+      ];
+    charKnacks = [firstKnack];
   }
 
-  if (charKnacks.length < 3) {
-    if (
-      charKnacks.filter(k => spellcasting.filter(s => s === k.name).length)
-        .length
-    ) {
-      //if spellcasting:
-      //choose memorization
-      charKnacks.push(knacks.filter(k => k.name === 'Concentration')[0]);
-    } else if (charKnacks.filter(k => k.name === 'Concentration').length) {
-      //elif memorization:
-      //  choose spellcasting at random
-      spellKnacks = knacks.filter(
-        k => spellcasting.filter(s => s === k.name).length
-      );
-      charKnacks.push(
-        spellKnacks[Math.floor(Math.random() * spellKnacks.length)]
-      );
-    }
+  if (
+    charKnacks.filter(k => spellcasting.filter(s => s === k.name).length).length
+  ) {
+    //if spellcasting:
+    //choose memorization
+    charKnacks.push(knacks.filter(k => k.name === 'Concentration')[0]);
+  } else if (charKnacks.filter(k => k.name === 'Concentration').length) {
+    //elif memorization:
+    //  choose spellcasting at random
+    spellKnacks = knacks.filter(
+      k => spellcasting.filter(s => s === k.name).length
+    );
+    charKnacks.push(
+      spellKnacks[Math.floor(Math.random() * spellKnacks.length)]
+    );
   }
 
   remainingKnacks = remainingKnacks.filter(

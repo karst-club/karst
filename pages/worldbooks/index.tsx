@@ -10,12 +10,12 @@ import TwoColumns from '../../components/TwoColumns';
 export default function Index({ books, upcomingTitles }) {
   const sidebar = (
     <>
-      <h2>Generators</h2>
+      {/*<h2>Generators</h2>
       <ul>
         <li>
           <Link href="/worldbooks/inspiration">Characters & Stories</Link>
         </li>
-      </ul>
+      </ul>*/}
       <SidebarList title="Worldbooks" pages={books} />
     </>
   );
@@ -39,6 +39,20 @@ export default function Index({ books, upcomingTitles }) {
               always welcome—after a cursory review by the Historical Society,
               of course.
             </p>
+            <h2>Recovered Texts:</h2>
+            <ul>
+              {books.map(book => (
+                <li>
+                  <Link href={book.href}>{book.title}</Link>
+                </li>
+              ))}
+            </ul>
+            <h2>Current & Future Research:</h2>
+            <ul>
+              {upcomingTitles.map(title => (
+                <li>{title}</li>
+              ))}
+            </ul>
           </>
         }
         columnTwo={
@@ -49,20 +63,6 @@ export default function Index({ books, upcomingTitles }) {
           />
         }
       />
-      <h2>Recovered Texts:</h2>
-      <ul>
-        {books.map(book => (
-          <li>
-            <Link href={book.href}>{book.title}</Link>
-          </li>
-        ))}
-      </ul>
-      <h2>Current & Future Research:</h2>
-      <ul>
-        {upcomingTitles.map(title => (
-          <li>{title}</li>
-        ))}
-      </ul>
     </SidebarLayout>
   );
 }

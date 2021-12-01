@@ -35,9 +35,9 @@ export default function WorldbookPage({ character, story, pages }) {
       */
       }
     >
-      <div className="post-header">
+      {/*}<div className="post-header">
         <h1>Inspiration: Characters & Stories</h1>
-      </div>
+      </div>*/}
       <main>
         <TwoColumns
           columnOne={
