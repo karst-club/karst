@@ -150,7 +150,7 @@ export default function generateCharacter() {
   const level = 1;
   const folk = getFolk();
   const about = getBackground();
-  const abilities = getAbilites(folk);
+  const abilities = getAbilites();
   const knacks = getKnacks(abilities);
   const { coins, ...i } = getItems(knacks);
   const items = [...i.weapons, ...i.wearing, ...i.equipment];
