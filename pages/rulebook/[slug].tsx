@@ -19,9 +19,10 @@ const components = {
       <img
         src={image.src}
         style={{
+          display: 'block',
           width: '25em',
           maxWidth: '100%',
-          float: 'right',
+          /*float: 'right',*/
         }}
       />
     );
