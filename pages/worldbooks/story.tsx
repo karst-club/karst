@@ -22,9 +22,9 @@ export default function WorldbookPage({ character, story, pages }) {
   return (
     <SidebarLayout
       sidebar={
-        <br /> /*
         <>
-          <h2>Generators</h2>
+          <br />
+          <h2>Inspiration</h2>
           <ul>
             <li>
               <Link href="/worldbooks/inspiration">Characters & Stories</Link>
@@ -32,7 +32,6 @@ export default function WorldbookPage({ character, story, pages }) {
           </ul>
           <SidebarList title="Worldbooks" pages={pages} />
         </>
-      */
       }
     >
       {/*}<div className="post-header">

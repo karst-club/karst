@@ -23,7 +23,8 @@ export default function WorldbookPage({ source, frontMatter, pages }) {
     <SidebarLayout
       sidebar={
         <>
-          <h2>Generators</h2>
+          <br />
+          <h2>Inspiration</h2>
           <ul>
             <li>
               <Link href="/worldbooks/inspiration">Characters & Stories</Link>

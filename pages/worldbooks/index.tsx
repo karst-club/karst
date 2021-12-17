@@ -10,12 +10,13 @@ import TwoColumns from '../../components/TwoColumns';
 export default function Index({ books, upcomingTitles }) {
   const sidebar = (
     <>
-      {/*<h2>Generators</h2>
+      <br />
+      <h2>Inspiration</h2>
       <ul>
         <li>
           <Link href="/worldbooks/inspiration">Characters & Stories</Link>
         </li>
-      </ul>*/}
+      </ul>
       <SidebarList title="Worldbooks" pages={books} />
     </>
   );
