@@ -1,6 +1,6 @@
 export default [
   // CORE
-  { name: 'Agility', display: 'Agile', verb: 'is', kind: 'core' },
+  { name: 'Agility', display: 'Agile', verb: 'are', kind: 'core' },
   {
     name: 'Concentration',
     display: 'Concentrate on a spell',
