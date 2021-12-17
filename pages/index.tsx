@@ -4,13 +4,13 @@ export default function Index() {
   const content = (
     <div style={{ textAlign: 'center' }}>
       <br />
-      <p>
+      <p style={{ textAlign: 'center' }}>
         <em>
           In the center of the Mirror Sea, beneath the Impossibly Blue Sky, lies
           the Karst Archipelago.
         </em>
       </p>
-      <p>
+      <p style={{ textAlign: 'center' }}>
         It was once surrounded by the Three Distant Shores, but a generation has
         now passed
         <br />
@@ -18,34 +18,36 @@ export default function Index() {
         lands.
       </p>
       <br />
-      <p>
+      <p style={{ textAlign: 'center' }}>
         <em>Life has gone on for the folk out here.</em>
       </p>
-      <p>
+      <p style={{ textAlign: 'center' }}>
         Small communities, island kingdoms, and nation states have formed
         <br />
         out of old refugee settlements, pirate camps, and trading outposts.
       </p>
       <br />
-      <p>
+      <p style={{ textAlign: 'center' }}>
         <em>Much remains unexplored.</em>
       </p>
-      <p>
+      <p style={{ textAlign: 'center' }}>
         Ancient ruins, lost treasure, and uncharted islands beckon.
         <br />
         Yet… there is a peculiar and sorrowful feeling here.
       </p>
       <br />
-      <p>
+      <p style={{ textAlign: 'center' }}>
         <em>
           Tragedy has befallen the Karst Archipelago,
           <br />
           grasping it in a slow, tender, and fatal embrace.
         </em>
       </p>
-      <p>The end is near, but it is still a few chapters away.</p>
+      <p style={{ textAlign: 'center' }}>
+        The end is near, but it is still a few chapters away.
+      </p>
       <br />
-      <p>
+      <p style={{ textAlign: 'center' }}>
         <b>Welcome, fellow authors.</b>
       </p>
     </div>
