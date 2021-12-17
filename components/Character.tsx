@@ -1,15 +1,19 @@
+import characterBlurb from '../lib/characterBlurb';
+
 export type Props = {
   character: any;
   title?: boolean;
 };
 
 export default function Character({ character, title }: Props) {
+  return <p>{characterBlurb(character)}</p>;
+  /*
   const c = character;
   const abilities = c.abilities.map((ability, i) => (
     <li key={`${c.name}-a-${i}`}>{ability.name}</li>
   ));
-  const knacks = c.knacks.map((knack, i) => (
-    <li key={`${c.name}-k-${i}`}>{knack.name}</li>
+  const knacks = Object.keys(c.knacks).map((k, i) => (
+    <li key={`${c.name}-k-${i}`}>{knacks[k].name}</li>
   ));
   const items = c.items.map((item, i) => (
     <li key={`${c.name}-i-${i}`}>{item.name}</li>
@@ -19,7 +23,7 @@ export default function Character({ character, title }: Props) {
       {title ? <h1>{c.name}</h1> : <h3>{c.name}</h3>}
       <p>
         <em>
-          {c.folk} {c.about}
+          {c.folk} {c.background}
         </em>
       </p>
       <section>
@@ -46,4 +50,5 @@ export default function Character({ character, title }: Props) {
       `}</style>
     </>
   );
+  */
 }

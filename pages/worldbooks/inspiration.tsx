@@ -39,20 +39,10 @@ export default function WorldbookPage({ character, story, pages }) {
         <h1>Inspiration: Characters & Stories</h1>
       </div>
       <main>
-        <TwoColumns
-          columnOne={
-            <>
-              <h2>A Character</h2>
-              <Character character={character} />
-            </>
-          }
-          columnTwo={
-            <>
-              <h2>A Story</h2>
-              <p>{story}</p>
-            </>
-          }
-        />
+        <h2>A Character</h2>
+        <Character character={character} />
+        <h2>A Story</h2>
+        <p>{story}</p>
       </main>
 
       <style jsx>{`

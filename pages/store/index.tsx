@@ -1,90 +1,63 @@
-import SidebarLayout from '../../components/SidebarLayout';
+import React from 'react';
+import { loadStripe } from '@stripe/stripe-js';
 
-export default function Store() {
-  /*
-        <br/><br/>
-      <div
-        style={{ display: 'flex', alignItems: 'center' }}
-      >
-        <img
-          style={{ maxWidth: '15em', margin: '0 auto' }}
-          src="/images/karst-logo-small.png"
-          alt="Karst Archipelago Historical Society Logo"
-        	/>
-      </div>
-  */
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
+export default function PreviewPage() {
+  React.useEffect(() => {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+    if (query.get('success')) {
+      console.log('Order placed! You will receive an email confirmation.');
+    }
+
+    if (query.get('canceled')) {
+      console.log(
+        'Order canceled -- continue to shop around and checkout when you’re ready.'
+      );
+    }
+  }, []);
+
   return (
-    <SidebarLayout sidebar={<br />}>
-      <h1>Buy the Book</h1>
-      <p>
-        <em>
-          A downtempo post-apocalyptic role playing game with themes of
-          adventure, exploration, and soft terror.
-        </em>
-      </p>
-      <p>
-        Karst is a way to create stories. This site contains the rules and
-        setting of Karst, stories that have been created with it, and perhaps
-        some notes about how and why this all came to be.
-      </p>
-      <p>
-        Some day we may create more tools for creating stories and put them here
-        as well.
-      </p>
-      <p>
-        We highly encourage you to create, share, and even publish your own
-        stories, rules, and source material for Karst.
-      </p>
-      <p>
-        If you do end up wanting to publish things that use the Karst setting,
-        we have a couple of guidelines that are linked to below.
-      </p>
-      <p>
-        To learn about publication guidelines, or if you&apos;d like to see the
-        source code, you can do so at our{' '}
-        <a href="https://github.com/karst-club/karst">github</a>.
-      </p>
-      <p>
-        If you&apos;d like to get in touch or follow along, you can find us on{' '}
-        <a href="https://twitter.com/KarstClub">twitter</a>.
-      </p>
-      {/*<p>
-        We also have a presence on{' '}
-        <a href="https://karstclub.itch.io">itch.io</a>, where you can download
-        pdfs and other play aids.
-      </p>*/}
-      <p>
-        <i>Enjoy.</i>
-      </p>
-
-      <hr />
-      <br />
-      <p className="copyright">
-        © 2020, 2021 The Karst Archipelago Historical Society.
-      </p>
-      <img
-        className="logo-image"
-        src="/images/karst-logo-small.png"
-        alt="Karst Archipelago Historical Society Logo"
-      />
-      <style jsx>{`
-        .copyright {
-          text-align: center;
-        }
-        .logo-image {
-          max-width: 10em;
-          display: block;
-          margin: 0 auto;
-        }
-        .sidebar-image > img {
-          max-width: 100%;
-        }
-        @media (min-width: 768px) {
-          .sidebar-image {
-            margin-top: -1.5em;
+    <p>SOON</p>
+    /*
+    <form action="/api/checkout_sessions" method="POST">
+      <section>
+        <button type="submit" role="link">
+          Checkout
+        </button>
+      </section>
+      <style jsx>
+        {`
+          section {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 112px;
+            border-radius: 6px;
+            justify-content: space-between;
           }
-        }
-      `}</style>
-    </SidebarLayout>
+          button {
+            height: 36px;
+            background: #556cd6;
+            border-radius: 4px;
+            color: white;
+            border: 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+          }
+          button:hover {
+            opacity: 0.8;
+          }
+        `}
+      </style>
+    </form>
+    */
   );
 }

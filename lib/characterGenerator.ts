@@ -34,7 +34,7 @@ function getAbilites() {
 }
 
 function getKnacks(abilities) {
-  let charKnacks = [];
+  let charKnacks = {};
   let remainingKnacks = [...knacks];
   let spellKnacks = [];
   const clever = abilities.filter(a => a === 'clever').length === 1;
@@ -43,8 +43,12 @@ function getKnacks(abilities) {
     //  choose one core knack 2x
     const coreKnacks = knacks.filter(k => k.kind === 'core');
     const core = coreKnacks[Math.floor(Math.random() * coreKnacks.length)];
-    charKnacks = [core, core];
+    charKnacks[core.name] = {
+      level: 2,
+      ...core,
+    };
     if (core.name !== 'Concentration') {
+      /// Filter out spellcasting knacks if there's no room for them
       remainingKnacks = remainingKnacks.filter(
         k => spellcasting.filter(s => s === k.name).length === 0
       );
@@ -57,55 +61,75 @@ function getKnacks(abilities) {
       allButAdvancedKnacks[
         Math.floor(Math.random() * allButAdvancedKnacks.length)
       ];
-    charKnacks = [firstKnack];
+    charKnacks[firstKnack.name] = {
+      level: 1,
+      ...firstKnack,
+    };
   }
 
   if (
-    charKnacks.filter(k => spellcasting.filter(s => s === k.name).length).length
+    Object.keys(charKnacks).filter(
+      k => spellcasting.filter(s => s === k).length
+    ).length
   ) {
     //if spellcasting:
     //choose memorization
-    charKnacks.push(knacks.filter(k => k.name === 'Concentration')[0]);
-  } else if (charKnacks.filter(k => k.name === 'Concentration').length) {
+    const concentration = knacks.filter(k => k.name === 'Concentration')[0];
+    charKnacks[concentration.name] = {
+      level: 1,
+      ...concentration,
+    };
+  } else if (
+    Object.keys(charKnacks).filter(k => k === 'Concentration').length
+  ) {
     //elif memorization:
     //  choose spellcasting at random
     spellKnacks = knacks.filter(
       k => spellcasting.filter(s => s === k.name).length
     );
-    charKnacks.push(
-      spellKnacks[Math.floor(Math.random() * spellKnacks.length)]
-    );
+    const spellKnack =
+      spellKnacks[Math.floor(Math.random() * spellKnacks.length)];
+    charKnacks[spellKnack.name] = {
+      level: 1,
+      ...spellKnack,
+    };
   }
 
   remainingKnacks = remainingKnacks.filter(
-    k => charKnacks.filter(cK => cK.name === k.name).length === 0
+    k => Object.keys(charKnacks).filter(cK => cK === k.name).length === 0
   );
 
-  if (charKnacks.length == 1) {
+  if (
+    Object.keys(charKnacks).reduce((i, ck) => i + charKnacks[ck].level, 0) == 1
+  ) {
     // If 2 free knacks
     //  choose one knack at random from remainder (loop) / do magic again
-    charKnacks.push(
-      remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)]
-    );
+    const knackTwo =
+      remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)];
+    charKnacks[knackTwo.name] = { level: 1, ...knackTwo };
     remainingKnacks = remainingKnacks.filter(
-      k => charKnacks.filter(cK => cK.name === k.name).length === 0
+      k => Object.keys(charKnacks).filter(cK => cK === k.name).length === 0
     );
     if (
-      charKnacks.filter(k => spellcasting.filter(s => s === k.name).length)
-        .length
+      Object.keys(charKnacks).filter(
+        k => spellcasting.filter(s => s === k).length
+      ).length
     ) {
       //if spellcasting:
       //choose memorization
-      charKnacks.push(knacks.filter(k => k.name === 'Concentration')[0]);
-    } else if (charKnacks.filter(k => k.name === 'Concentration').length) {
+      const concen = knacks.filter(k => k.name === 'Concentration')[0];
+      charKnacks[concen.name] = { level: 1, ...concen };
+    } else if (
+      Object.keys(charKnacks).filter(k => k === 'Concentration').length
+    ) {
       //elif memorization:
       //  choose spellcasting at random
       spellKnacks = knacks.filter(
         k => spellcasting.filter(s => s === k.name).length
       );
-      charKnacks.push(
-        spellKnacks[Math.floor(Math.random() * spellKnacks.length)]
-      );
+      const spellK =
+        spellKnacks[Math.floor(Math.random() * spellKnacks.length)];
+      charKnacks[spellK.name] = { level: 1, ...spellK };
     } else {
       // filter out other spellcasting knacks to prevent someone from having it without mem
       remainingKnacks = remainingKnacks.filter(
@@ -118,12 +142,14 @@ function getKnacks(abilities) {
 
   // TODO combat casting and echo (need to uncomment them, too)
 
-  if (charKnacks.length === 2) {
+  if (
+    Object.keys(charKnacks).reduce((i, ck) => i + charKnacks[ck].level, 0) === 2
+  ) {
     //If 1 free knack
     //  choose one knack at random from remainder minus spellcasting and memorization.
-    charKnacks.push(
-      remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)]
-    );
+    const knackThree =
+      remainingKnacks[Math.floor(Math.random() * remainingKnacks.length)];
+    charKnacks[knackThree.name] = { level: 1, ...knackThree };
   }
   return charKnacks;
 }
@@ -149,7 +175,7 @@ export default function generateCharacter() {
   const name = `${shuffle([...names.first])[0]} ${shuffle([...names.last])[0]}`;
   const level = 1;
   const folk = getFolk();
-  const about = getBackground();
+  const background = getBackground();
   const abilities = getAbilites();
   const knacks = getKnacks(abilities);
   const { coins, ...i } = getItems(knacks);
@@ -158,9 +184,10 @@ export default function generateCharacter() {
     name,
     level,
     folk,
-    about,
+    background,
     abilities: abilities.map(a => ({ name: a })),
-    knacks: knacks.map(k => ({ name: k.name.toLowerCase() })),
+    knacks,
+    //knacks: knacks.map(k => ({ name: k.name.toLowerCase() })),
     items: items.map(i => ({ name: i.name.toLowerCase() })),
     coins,
   };

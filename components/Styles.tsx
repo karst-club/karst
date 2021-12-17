@@ -21,6 +21,12 @@ export default function Styles() {
         /* background: #fefdfa; */
         background: #fff;
         color: #150802;
+        scrollbar-gutter: stable both-edges;
+      }
+
+      body {
+        max-width: 1080px;
+        margin: 0 auto;
       }
 
       h1,
@@ -60,6 +66,7 @@ export default function Styles() {
 
       p {
         margin-bottom: 1.5em;
+        text-align: justify;
       }
 
       a {

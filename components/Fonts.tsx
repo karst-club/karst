@@ -11,28 +11,28 @@ export default function Fonts() {
 
       @font-face {
         font-family: 'Ibarra Real Nova';
-        src: url('/IbarraRealNova-Regular.woff2') format('woff2');
+        src: url('/IbarraRealNova-Regular-400.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'Ibarra Real Nova';
-        src: url('/IbarraRealNova-SemiBoldItalic.woff2') format('woff2');
+        src: url('/IbarraRealNova-Italic-400.woff2') format('woff2');
         font-weight: normal;
         font-style: italic;
       }
 
       @font-face {
         font-family: 'Ibarra Real Nova';
-        src: url('/IbarraRealNova-SemiBold.woff2') format('woff2');
+        src: url('/IbarraRealNova-Bold-700.woff2') format('woff2');
         font-weight: bold;
         font-style: normal;
       }
 
       @font-face {
         font-family: 'Ibarra Real Nova';
-        src: url('/IbarraRealNova-BoldItalic.woff2') format('woff2');
+        src: url('/IbarraRealNova-BoldItalic-700.woff2') format('woff2');
         font-weight: bold;
         font-style: italic;
       }

@@ -5,7 +5,10 @@ export default function Index() {
     <div style={{ textAlign: 'center' }}>
       <br />
       <p>
-        <em>In the center of the Mirror Sea lies the Karst Archipelago.</em>
+        <em>
+          In the center of the Mirror Sea, beneath the Impossibly Blue Sky, lies
+          the Karst Archipelago.
+        </em>
       </p>
       <p>
         It was once surrounded by the Three Distant Shores, but a generation has

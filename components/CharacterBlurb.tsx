@@ -8,7 +8,7 @@ export default function CharacterBlurb({ character }) {
       </CustomLink>
       <p>
         <em>
-          {character.folk} {character.about}
+          {character.folk} {character.background}
         </em>
       </p>
     </article>
