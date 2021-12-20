@@ -10,14 +10,15 @@ export default function generateStory() {
   const songs = ['ballad', 'requiem'];
 
   const emotions = [
-    'Love',
-    'Loss',
     'Greed',
     'Glory',
+    'Hope',
+    'Loss',
+    'Love',
     'Respect',
     'Temptation',
-    'Wonder',
     'Vengeance',
+    'Wonder',
   ];
 
   const characters = [

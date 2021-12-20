@@ -1,6 +1,12 @@
 export default [
   // CORE
-  { name: 'Agility', display: 'Agile', verb: 'are', kind: 'core' },
+  {
+    name: 'Agility',
+    display: 'Agile',
+    verb: 'are',
+    gVerb: 'is',
+    kind: 'core',
+  },
   {
     name: 'Concentration',
     display: 'Concentrate on a spell',
@@ -42,6 +48,7 @@ export default [
     name: 'Deceit',
     display: 'Deceitful',
     verb: 'are',
+    gVerb: 'is',
     kind: 'odd-level',
   },
   {
@@ -56,7 +63,13 @@ export default [
     verb: 'have',
     kind: 'odd-level',
   },
-  { name: 'Luck', display: 'Lucky', verb: 'are', kind: 'odd-level' },
+  {
+    name: 'Luck',
+    display: 'Lucky',
+    verb: 'are',
+    gVerb: 'is',
+    kind: 'odd-level',
+  },
   {
     name: 'Song',
     display: 'Sing a Strange Tune',
@@ -67,20 +80,29 @@ export default [
     name: 'Spiritism',
     display: 'a Practitioner of Spiritism',
     verb: 'are',
+    gVerb: 'is',
     kind: 'odd-level',
   },
   {
     name: 'Thaumaturgy',
     display: 'a Thaumaturge',
     verb: 'are',
+    gVerb: 'is',
     kind: 'odd-level',
   },
-  { name: 'Theurgy', display: 'a Theurge', verb: 'are', kind: 'odd-level' },
+  {
+    name: 'Theurgy',
+    display: 'a Theurge',
+    verb: 'are',
+    gVerb: 'is',
+    kind: 'odd-level',
+  },
   // Basic
   {
     name: 'Adversorcery',
     display: 'Opposed to Magic',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
@@ -93,6 +115,7 @@ export default [
     name: 'Alterness',
     display: 'Alert',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
@@ -105,18 +128,21 @@ export default [
     name: 'Archery',
     display: 'an Archer',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Armor Training',
     display: 'trained with Heavy Armor',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Backstab',
     display: 'a Backstabber',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   { name: 'Bravery', display: 'Brave', verb: 'are', kind: 'basic' },
@@ -124,27 +150,31 @@ export default [
     name: 'Brawling',
     display: 'a Brawler',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Brutal',
     display: 'Brutal',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Clear-Eyed',
     display: 'Clear-Eyed',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Climbing',
     display: 'good at Climbing',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
-  //{ TODO NEED TO FIX CHARACTER CREATION TO NOT SELECT UNLESS SPELLCASTER
+  //{ //TODO NEED TO FIX CHARACTER CREATION TO NOT SELECT UNLESS SPELLCASTER
   //  name: 'Combat Casting',
   //  display: '',
   //  verb: '',
@@ -154,14 +184,17 @@ export default [
     name: 'Deftness',
     display: 'Deft',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Dual Wielding',
     display: 'Better with a Weapon in Each Hand',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
+  //TODO NEED TO FIX CHARACTER CREATION TO NOT SELECT UNLESS SPELLCASTER AND NOT UNTIL LEVEL 2
   //{
   //  name: 'Echo',
   //  display: 'cast the same spell twice',
@@ -172,12 +205,14 @@ export default [
     name: 'Fitness',
     display: 'Fit',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Friend to Animals',
     display: 'a Friend to Animals',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
@@ -190,6 +225,7 @@ export default [
     name: 'Hunting',
     display: 'a Hunter',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
@@ -202,6 +238,7 @@ export default [
     name: 'Large Weapon Training',
     display: 'trained with Large Weapons',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
@@ -214,12 +251,14 @@ export default [
     name: 'Navigation',
     display: 'a Navigator',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Precision',
     display: 'a Precise striker',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
@@ -238,30 +277,35 @@ export default [
     name: 'Shield Training',
     display: 'Trained with a Shield',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Stealth',
     display: 'quite Sneaky',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Technically Minded',
     display: 'Technically Minded',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Tumbling',
     display: 'a Tumbler',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   {
     name: 'Weapon Training',
     display: 'Trained with a specific kind of Weapon',
     verb: 'are',
+    gVerb: 'is',
     kind: 'basic',
   },
   // Advanced

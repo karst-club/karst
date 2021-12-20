@@ -91,13 +91,13 @@ export default [
     name: 'Spear',
     cost: 20,
     kind: 'weapon',
-    traits: ['Six-sided Damage Dice', 'Long', 'Throwable'],
+    traits: ['Six-sided Damage Dice', 'Long', 'Throwable', 'Two-handed'],
   },
   {
     name: 'Staff',
     cost: 5,
     kind: 'weapon',
-    traits: ['Four-sided Damage Dice'],
+    traits: ['Four-sided Damage Dice', 'Two-handed'],
   },
   {
     name: 'Sword',
