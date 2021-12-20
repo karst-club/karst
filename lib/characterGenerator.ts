@@ -337,9 +337,9 @@ function getEquipment(knacks, remainingChoices) {
 
 function getItems(knacks) {
   let remainingChoices = 5;
-  let weapons = null;
-  let wearing = null;
-  let equipment = null;
+  let weapons = [];
+  let wearing = [];
+  let equipment = [];
   [weapons, remainingChoices] = getWeapons(knacks, remainingChoices);
   [wearing, remainingChoices] = getWearing(knacks, remainingChoices);
   [equipment, remainingChoices] = getEquipment(knacks, remainingChoices);
