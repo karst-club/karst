@@ -53,8 +53,8 @@ function filterNonsenseKnacks(knackList, knacks) {
       k => k.name !== 'Combat Casting' && k.name !== 'Echo'
     );
   if (
-    keys.indexOf('Dual Wielding' > -1) ||
-    keys.indexOf('Shield Training' > -1)
+    keys.indexOf('Dual Wielding') > -1 ||
+    keys.indexOf('Shield Training') > -1
   )
     knackList = knackList.filter(k => k.name !== 'Large Weapon Training');
   if (keys.indexOf('Large Weapon Training') > -1)
@@ -62,9 +62,9 @@ function filterNonsenseKnacks(knackList, knacks) {
       k => k.name !== 'Dual Wielding' && k.name !== 'Shield Training'
     );
   if (
-    keys.indexOf('Concentration' > -1) ||
-    keys.indexOf('Climbing') ||
-    keys.indexOf('Deftness')
+    keys.indexOf('Concentration') > -1 ||
+    keys.indexOf('Climbing') > -1 ||
+    keys.indexOf('Deftness') > -1
   )
     knackList = knackList.filter(k => k.name !== 'Armor Training');
   if (keys.indexOf('Armor Training') > -1)
@@ -74,7 +74,7 @@ function filterNonsenseKnacks(knackList, knacks) {
         k.name !== 'Deftness' &&
         k.name !== 'Climbing'
     );
-  if (keys.indexOf('Fists of Will' > -1))
+  if (keys.indexOf('Fists of Will') > -1)
     knackList = knackList.filter(
       k =>
         k.name !== 'Large Weapon Training' &&
