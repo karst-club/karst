@@ -1,3 +1,4 @@
+// @ts-nocheck
 import abilities from './rules/abilities';
 import backgrounds from './rules/backgrounds';
 import folkList from './rules/folk';
