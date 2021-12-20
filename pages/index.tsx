@@ -55,9 +55,9 @@ export default function Index() {
   return (
     <Layout>
       <div style={{ textAlign: 'center' }}>
-        <h1 style={{ fontSize: '9rem', marginBottom: '0em' }}>Karst</h1>
+        <h1 style={{ fontSize: '7.5rem', marginBottom: '0em' }}>Karst</h1>
         <img
-          style={{ maxWidth: '20em' }}
+          style={{ maxWidth: '18em' }}
           src="/images/lagartos-spiritist.png"
           alt="Lagartos spiritist plays a strange song."
         />
