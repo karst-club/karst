@@ -48,7 +48,6 @@ export default function Nav() {
 
         @media (max-width: 767px) {
           nav {
-            margin-left: -1rem;
             flex-direction: column;
             text-align: center;
           }

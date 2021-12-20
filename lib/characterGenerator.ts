@@ -305,9 +305,9 @@ function getWearing(knacks, remainingChoices) {
   return [wearing, remainingChoices - quantity];
 }
 
-function getEquipment(knacks, remainingChoices) {
+function getEquipment(knacks, remainingChoices, weapons) {
   // X if shield training get shield
-  // X if two-handed (not bow), no shield
+  // if two-handed (not bow), no shield
   // if artisan's clothes get tools
   let quantity =
     remainingChoices === 3 && Math.random() < 0.25
@@ -315,9 +315,10 @@ function getEquipment(knacks, remainingChoices) {
       : remainingChoices;
 
   const shield = Object.keys(knacks).indexOf('Shield Training') > -1;
-  console.log(shield);
-  // TODO pass in weapons and look for two-handed, instead
-  const twoHanded = Object.keys(knacks).indexOf('Large Weapon Training') > -1;
+  const twoHanded =
+    weapons.filter(w => w.traits.indexOf('Two-handed') > -1).length > 0;
+
+  // TODO check for bow / large bow and get arrows.
 
   const equipmentList = shuffle([...itemList]).filter(
     i => i.kind === 'equipment'
@@ -326,10 +327,10 @@ function getEquipment(knacks, remainingChoices) {
   if (shield) {
     const shieldIndex = equipmentList.map(i => i.name).indexOf('Shield');
     equipment.push(equipmentList.splice(shieldIndex, 1)[0]);
-    console.log(equipment);
     quantity--;
     remainingChoices--;
   }
+  // TODO remove shield if two handed
   for (let x = 0; x < quantity; x++) {
     equipment.push(equipmentList[x]);
   }
@@ -343,7 +344,11 @@ function getItems(knacks) {
   let equipment = [];
   [weapons, remainingChoices] = getWeapons(knacks, remainingChoices);
   [wearing, remainingChoices] = getWearing(knacks, remainingChoices);
-  [equipment, remainingChoices] = getEquipment(knacks, remainingChoices);
+  [equipment, remainingChoices] = getEquipment(
+    knacks,
+    remainingChoices,
+    weapons
+  );
   const coins = 5 + remainingChoices * 20;
   // TODO: don't give out items above ¢50 unless less items
   // TODO: Shields, ammo, two weapons if ranged weapon, heavy armor, money
