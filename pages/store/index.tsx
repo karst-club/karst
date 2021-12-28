@@ -13,11 +13,11 @@ export default function PreviewPage() {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
     if (query.get('success')) {
-      console.log('Order placed! You will receive an email confirmation.');
+      window.alert('Order placed! You will receive an email confirmation.');
     }
 
     if (query.get('canceled')) {
-      console.log(
+      window.alert(
         'Order canceled -- continue to shop around and checkout when you’re ready.'
       );
     }
@@ -95,9 +95,12 @@ export default function PreviewPage() {
             />
             <input type="hidden" name="itemKey" value="book_NA" />
             <section>
-              <button type="submit" role="link">
+              <span style={{ textAlign: 'center', paddingBottom: '0.5em' }}>
+                COMING SOON
+              </span>
+              {/*<button type="submit" role="link">
                 Buy the Hardcover Edition
-              </button>
+              </button>*/}
             </section>
             <br />
             <p>

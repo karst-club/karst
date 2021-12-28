@@ -1,4 +1,12 @@
 import prisma from '../../../lib/prisma';
+import AWS from 'aws-sdk';
+
+const spacesEndpoint = new AWS.Endpoint('sfo3.digitaloceanspaces.com');
+const s3 = new AWS.S3({
+  endpoint: spacesEndpoint,
+  accessKeyId: process.env.SPACES_ACCESS_KEY,
+  secretAccessKey: process.env.SPACES_SECRET_ACCESS_KEY,
+});
 
 export default async function handler(req, res) {
   console.log(req.query);
@@ -13,12 +21,19 @@ export default async function handler(req, res) {
   const item = await prisma.shopItem.findUnique({
     where: { id: purchase.itemId },
   });
-  //console.log(item);
-
-  res.json({
-    email: user.email,
-    item: item.name,
-  });
+  if (item.slug === 'pdf') {
+    const url = s3.getSignedUrl('getObject', {
+      Bucket: 'karst',
+      Key: 'Karst.pdf',
+      Expires: 60 * 5,
+    });
+    res.redirect(303, url);
+  } else {
+    res.json({
+      email: user.email,
+      item: item.name,
+    });
+  }
   //res.status(200).end();
   // Look up purchase history for email & itemKey.
   // (maybe) look up any presigned urls that already exist and grab if not expired?
