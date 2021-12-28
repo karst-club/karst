@@ -17,7 +17,7 @@ async function findItem(session) {
   const items = await stripe.checkout.sessions.listLineItems(session.id);
   console.log(items);
   const products = items.data.map(i => i.price.product);
-  const product = await prisma.shopItem.find({
+  const product = await prisma.shopItem.findMany({
     where: {
       productId: products[0],
     },
