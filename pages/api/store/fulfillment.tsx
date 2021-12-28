@@ -45,13 +45,13 @@ async function findItem(session) {
 }
 
 async function recordPurchase(recipient, product) {
-  const user = await prisma.User.findUnique({
+  const user = await prisma.user.findUnique({
     where: { email: recipient },
   });
   const hmac = createHmac('sha256', purchaseHashSecret);
   hmac.update(`${recipient}:${product.slug}`);
   const purchaseHash = hmac.digest('hex');
-  const result = await prisma.Purchase.create({
+  const result = await prisma.purchase.create({
     data: {
       user: {
         connect: { id: user.id },
