@@ -24,6 +24,15 @@ export default function Styles() {
         scrollbar-gutter: stable both-edges;
       }
 
+      /*
+      @media (prefers-color-scheme: dark) {
+        html {
+          background: #150802;
+          color: #fff;
+        }
+      }
+      */
+
       body {
         max-width: 1080px;
         margin: 0 auto;

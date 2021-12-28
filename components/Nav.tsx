@@ -5,7 +5,7 @@ import UserStatus from './UserStatus';
 export const MAIN_NAV = [
   { href: '/', title: 'Karst' },
   { href: '/rulebook/01-introduction', title: 'Rulebook' },
-  { href: '/worldbooks', title: 'Worldbooks' },
+  { href: '/worldbooks', title: 'Inspiration' },
   //{ href: '/stories', title: 'Stories' },
   { href: '/blog', title: 'Blog' },
   { href: '/about', title: 'About' },
@@ -45,6 +45,15 @@ export default function Nav() {
           background: #fff;
           width: 100%;
         }
+
+        /*
+        @media (prefers-color-scheme: dark) {
+          nav {
+            background: #150802;
+            color: #fff;
+          }
+        }
+        */
 
         @media (max-width: 767px) {
           nav {

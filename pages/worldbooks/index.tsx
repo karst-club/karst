@@ -25,7 +25,7 @@ export default function Index({ books, upcomingTitles }) {
       <TwoColumns
         columnOne={
           <>
-            <h1>Worldbooks & Tales</h1>
+            <h1>Inspiration & Tales</h1>
             <p>
               These texts—first person accounts from the Archipelago—have been
               recovered and translated by the Karst Archipelago Historical

@@ -284,6 +284,7 @@ function getWearing(knacks, remainingChoices) {
   // X if deft no armor
   // X if climbing, no medium or heavy
   // X if heavy armor, find heavy armor
+  // TODO no medium+ armor if sneaky
   // else 25/25/25/25 clothes/light/medium/heavy
   let wearingList = shuffle([...itemList]).filter(
     i => i.kind === 'armor' || i.kind === 'clothes'
@@ -315,6 +316,7 @@ function getEquipment(knacks, remainingChoices, weapons) {
       : remainingChoices;
 
   const shield = Object.keys(knacks).indexOf('Shield Training') > -1;
+  // TODO okay to have shield if two-handed is a bow
   const twoHanded =
     weapons.filter(w => w.traits.indexOf('Two-handed') > -1).length > 0;
 

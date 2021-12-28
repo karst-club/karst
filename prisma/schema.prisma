@@ -127,6 +127,31 @@ model CampaignUser {
   @@map(name: "campaign_users")
 }
 
+/// A physical or digital item for sale in the gift shop
+model ShopItem {
+  id			Int			@id @default(autoincrement())
+  name			String
+  slug			String
+  isDigital		Boolean?	@map(name: "is_digital")
+  purchases		Purchase[]
+  
+  @@map(name: "shop_items")
+}
+
+/// The record of a purchase of a shop item by a user
+model Purchase {
+  id			Int			@id @default(autoincrement())
+  user          User    	@relation(fields: [userId], references: [id])
+  userId        Int     	@map(name: "user_id")
+  item			ShopItem	@relation(fields: [itemId], references: [id])
+  itemId		Int			@map(name: "item_id")
+  purchasedAt   DateTime	@default(now()) @map(name: "purchased_at")
+  downloadCount Int		  	@map(name: "download_count")
+  purchaseHash  String?		@map(name: "purchase_hash")
+  
+  @@map(name: "purchases")
+}
+
 /// Represents individual users or players
 model User {
   id            Int           @id @default(autoincrement())
@@ -139,6 +164,7 @@ model User {
   entries       JournalEntry[]
   characters    Character[]
   campaigns     CampaignUser[]
+  purchases		Purchase[]
 
   @@map(name: "users")
 }
