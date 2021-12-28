@@ -81,7 +81,7 @@ async function sendMail(recipient, product, purchase) {
     to: `${recipient}`,
     subject: `Thank you for your purchase of ${product.name}`,
     text: `Thank you for purchasing ${product.name}! Your download hash is ${purchase.purchaseHash}`,
-    html: `<h1>Thank you for purchasing ${product.name}!</h1> <p>Your download link is <a href="${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}>ready</a>"</p>`,
+    html: `<h1>Thank you for purchasing ${product.name}!</h1> <p>Your <a href="${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}">download link</a> is ready.</p>`,
   });
   //console.log(`sent ${info.messageId}`);
 }
