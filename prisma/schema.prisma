@@ -132,6 +132,7 @@ model ShopItem {
   id			Int			@id @default(autoincrement())
   name			String
   slug			String
+  productId		String		@map(name: "product_id")
   isDigital		Boolean?	@map(name: "is_digital")
   purchases		Purchase[]
   

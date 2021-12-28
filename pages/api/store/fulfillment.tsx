@@ -1,6 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_API_KEY);
 import getRawBody from 'raw-body';
 import nodemailer from 'nodemailer';
+import { createHmac } from 'crypto';
 import prisma from '../../../lib/prisma';
 
 export const config = {
@@ -10,13 +11,18 @@ export const config = {
 };
 
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+const purchaseHashSecret = process.env.SHOP_PURCHASE_HASH_SECRET;
 
-async function findItems(session) {
+async function findItem(session) {
   const items = await stripe.checkout.sessions.listLineItems(session.id);
   console.log(items);
   const products = items.data.map(i => i.price.product);
-  // TODO look up products by id.
-  return products;
+  const product = await prisma.shopItem.findUnique({
+    where: {
+      productId: products[0],
+    },
+  });
+  return product;
   /*
   {
   object: 'list',
@@ -38,9 +44,29 @@ async function findItems(session) {
 */
 }
 
-async function recordPurchase() {}
+async function recordPurchase(recipient, product) {
+  const user = await prisma.User.findUnique({
+    where: { email: recipient },
+  });
+  const hmac = createHmac('sha256', purchaseHashSecret);
+  hmac.update(`${recipent}:${item.slug}`);
+  const purchaseHash = hmac.digest('hex');
+  const result = await prisma.Purchase.create({
+    data: {
+      user: {
+        connect: { id: user.id },
+      },
+      item: {
+        connect: { productId: item.productId },
+      },
+      downloadCount: 0,
+      purchaseHash,
+    },
+  });
+  return result;
+}
 
-async function sendMail(recipient) {
+async function sendMail(recipient, product, purchase) {
   let transporter = nodemailer.createTransport({
     host: process.env.EMAIL_SMTP_HOST,
     secure: true,
@@ -54,20 +80,22 @@ async function sendMail(recipient) {
   let info = await transporter.sendMail({
     from: 'caz <caz@vonkow.com>',
     to: `${recipient}`,
-    subject: 'test',
-    text: 'test',
-    html: '<h1>test</h1>',
+    subject: `Thank you for your purchase of ${product.name}`,
+    text: `Thank you for purchasing ${product.name}! Your download hash is ${purchase.purchaseHash}`,
+    html: `<h1>Thank you for purchasing ${product.name}! Your download hash is ${purchase.purchaseHash}</h1>`,
   });
   console.log(`sent ${info.messageId}`);
 }
 
 async function fulfillOrder(session) {
-  const items = await findItems(session); // TODO return ids from database
+  const recipient = session.customer_details.email;
+  const product = await findItem(session);
+  const purchase = await recordPurchase(recipient, product);
+  await sendMail(recipient, product, purchase);
   // Log purchase // TODO save user and item ids in db
   // hash email and product return
   // Email download link
   // Send request to physical fulfillment if needed
-  const recipient = session.customer_details.email;
   // await sendMail(recipient); // TODO send in items.
   //console.log(session);
 
