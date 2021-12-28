@@ -57,7 +57,7 @@ async function recordPurchase(recipient, product) {
         connect: { id: user.id },
       },
       item: {
-        connect: { productId: item.productId },
+        connect: { productId: product.productId },
       },
       downloadCount: 0,
       purchaseHash,
