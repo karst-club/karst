@@ -17,7 +17,7 @@ async function findItem(session) {
   const items = await stripe.checkout.sessions.listLineItems(session.id);
   console.log(items);
   const products = items.data.map(i => i.price.product);
-  const product = await prisma.shopItem.findUnique({
+  const product = await prisma.ShopItem.findUnique({
     where: {
       productId: products[0],
     },
