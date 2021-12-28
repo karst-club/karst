@@ -49,7 +49,7 @@ async function recordPurchase(recipient, product) {
     where: { email: recipient },
   });
   const hmac = createHmac('sha256', purchaseHashSecret);
-  hmac.update(`${recipient}:${item.slug}`);
+  hmac.update(`${recipient}:${product.slug}`);
   const purchaseHash = hmac.digest('hex');
   const result = await prisma.Purchase.create({
     data: {
