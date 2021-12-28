@@ -15,8 +15,7 @@ const purchaseHashSecret = process.env.SHOP_PURCHASE_HASH_SECRET;
 
 async function findItem(session) {
   const items = await stripe.checkout.sessions.listLineItems(session.id);
-  console.log(items);
-  const products = items.data.map(i => i.price.product);
+  const products = items.data.map(i => i.price.id); // TODO fix items to have product not price in them>
   const product = await prisma.shopItem.findMany({
     where: {
       productId: products[0],
@@ -57,7 +56,7 @@ async function recordPurchase(recipient, product) {
         connect: { id: user.id },
       },
       item: {
-        connect: { productId: product.productId },
+        connect: { id: product.id },
       },
       downloadCount: 0,
       purchaseHash,
@@ -78,13 +77,13 @@ async function sendMail(recipient, product, purchase) {
   });
 
   let info = await transporter.sendMail({
-    from: 'caz <caz@vonkow.com>',
+    from: `caz <${process.env.EMAIL_USERNAME}>`,
     to: `${recipient}`,
     subject: `Thank you for your purchase of ${product.name}`,
     text: `Thank you for purchasing ${product.name}! Your download hash is ${purchase.purchaseHash}`,
-    html: `<h1>Thank you for purchasing ${product.name}! Your download hash is ${purchase.purchaseHash}</h1>`,
+    html: `<h1>Thank you for purchasing ${product.name}!</h1> <p>Your download link is <a href="${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}>ready</a>"</p>`,
   });
-  console.log(`sent ${info.messageId}`);
+  //console.log(`sent ${info.messageId}`);
 }
 
 async function fulfillOrder(session) {
