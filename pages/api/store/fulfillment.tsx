@@ -44,9 +44,16 @@ async function findItem(session) {
 }
 
 async function recordPurchase(recipient, product) {
-  const user = await prisma.user.findUnique({
+  let user = await prisma.user.findUnique({
     where: { email: recipient },
   });
+  if (user === null) {
+    user = await prisma.user.create({
+      data: {
+        email: recipient,
+      },
+    });
+  }
   const hmac = createHmac('sha256', purchaseHashSecret);
   hmac.update(`${recipient}:${product.slug}`);
   const purchaseHash = hmac.digest('hex');

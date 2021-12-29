@@ -52,7 +52,7 @@ export default function PreviewPage() {
         </>
       }
     >
-      <h1>The Historical Societey Gift Shop</h1>
+      <h1>The Historical Society Gift Shop</h1>
       <p>
         Welcome to the Gift Shop. Here, you can purchase the complete edition of
         Karst in PDF or Hardcover. All proceeds go to the funding of futher
