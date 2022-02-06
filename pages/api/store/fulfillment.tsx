@@ -81,7 +81,7 @@ async function sendMail(recipient, product, purchase) {
     text,
     html,
   });
-  //console.log(`sent ${info.messageId}`);
+  console.log(`sent ${info.messageId}`);
 }
 
 async function fulfillOrder(session) {
