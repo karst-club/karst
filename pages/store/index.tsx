@@ -168,11 +168,9 @@ export default function PreviewPage() {
         </p>
         <ul>
           <li>
-            <a href="">Karst on DriveThruRPG</a>
+            <a href="https://karstclub.itch.io/karst">Karst on itch.io</a>
           </li>
-          <li>
-            <a href="">Karst on itch.io</a>
-          </li>
+          <li>Karst on DriveThruRPG (Coming Soon™)</li>
         </ul>
         {/*</div>*/}
       </div>
