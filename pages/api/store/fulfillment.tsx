@@ -53,18 +53,17 @@ async function recordPurchase(recipient, product) {
   return result;
 }
 
-const email_templates = {
-  pdf: {
-    text: `Thank you for purchasing the digital edition of Karst! Your download link is ${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}`,
-    html: `<h1>Thank you for purchasing the digital edition of Karst!</h1> <p>Your <a href="${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}">download link</a> is ready.</p>`,
-  },
-  book_NA: {
-    text: `Thank you for purchasing the hardcover edition of Karst! You will receive another email and a link for the digital edition when it has shipped.`,
-    html: `<h1>Thank you for purchasing the hardcover edition of Karst!</h1><p>You will receive another email and a link for the digital edition when it has shipped.</p>`,
-  },
-};
-
 async function sendMail(recipient, product, purchase) {
+  const email_templates = {
+    pdf: {
+      text: `Thank you for purchasing the digital edition of Karst! Your download link is ${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}`,
+      html: `<h1>Thank you for purchasing the digital edition of Karst!</h1> <p>Your <a href="${process.env.BASE_URL}/api/store/downloader?hash=${purchase.purchaseHash}">download link</a> is ready.</p>`,
+    },
+    book_NA: {
+      text: `Thank you for purchasing the hardcover edition of Karst! You will receive another email and a link for the digital edition when it has shipped.`,
+      html: `<h1>Thank you for purchasing the hardcover edition of Karst!</h1><p>You will receive another email and a link for the digital edition when it has shipped.</p>`,
+    },
+  };
   let transporter = nodemailer.createTransport({
     host: process.env.EMAIL_SMTP_HOST,
     secure: true,
@@ -76,7 +75,7 @@ async function sendMail(recipient, product, purchase) {
   });
   const { html, text } = email_templates[product.slug];
   let info = await transporter.sendMail({
-    from: `caz <${process.env.EMAIL_USERNAME}>`,
+    from: `The Karst Archipelago Historical Society <${process.env.SEND_ADDRESS}>`,
     to: `${recipient}`,
     subject: `Thank you for your purchase of ${product.name}`,
     text,
