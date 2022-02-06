@@ -27,7 +27,11 @@ export default function PreviewPage() {
     <SidebarLayout
       sidebar={
         <>
-          <h1>Newsletter</h1>
+          <div className="sidebar-image">
+            <img src="/images/store.png" alt="Serpos shopkeeper." />
+          </div>
+          <br />
+          <h1 style={{ marginBottom: '0' }}>Newsletter</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: `
@@ -60,8 +64,8 @@ export default function PreviewPage() {
         stay informed and abreast of new discoveries and publications about the
         Archipelago.
       </p>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ width: '16em' }}>
+      <div className="shop-container">
+        {/**<div className='shop-listing'>
           <form action="/api/store/checkout_sessions" method="POST">
             <h2 style={{ textAlign: 'center' }}>PDF</h2>
             <img
@@ -84,36 +88,117 @@ export default function PreviewPage() {
               in Porta Cortu, a mini-gazzetteer.
             </p>
           </form>
-        </div>
-        <div style={{ width: '16em' }}>
-          <form action="/api/store/checkout_sessions" method="POST">
-            <h2 style={{ textAlign: 'center' }}>Hardcover</h2>
-            <img
-              style={{ maxWidth: '16em' }}
-              src="/images/Cover-small.png"
-              alt="Karst PDF Cover"
-            />
-            <input type="hidden" name="itemKey" value="book_NA" />
-            <section>
-              <span style={{ textAlign: 'center', paddingBottom: '0.5em' }}>
+        </div>*/}
+        {/*<div className='shop-listing'>*/}
+        <form action="/api/store/checkout_sessions" method="POST">
+          <h2 style={{ textAlign: 'center' }}>Hardcover</h2>
+          <img
+            style={{ maxWidth: '16em', margin: '0 auto', display: 'block' }}
+            src="/images/Cover-small.png"
+            alt="Karst PDF Cover"
+          />
+          <input type="hidden" name="itemKey" value="book_NA" />
+          <section>
+            {/*<span style={{ textAlign: 'center', paddingBottom: '0.5em' }}>
                 COMING SOON
-              </span>
-              {/*<button type="submit" role="link">
-                Buy the Hardcover Edition
-              </button>*/}
-            </section>
-            <br />
-            <p>
-              Karst, the Complete Edition, in a deluxe hardcover format. This
-              limited-edition hardback tome is sustainably printed by Hemlock,
-              one of North America's most progressive and sustainable print
-              providers. Purchase includes the PDF edition.
-            </p>
-          </form>
-        </div>
+              </span>*/}
+            <button type="submit" role="link">
+              Buy the Hardcover Edition
+            </button>
+          </section>
+          <br />
+          <p>
+            Karst, the Complete Edition, in a deluxe hardcover format. This
+            illustrated tome contains dozens of works of art, the complete set
+            of rules, playing advice, and information about the Karst
+            Archipelago. Also included within its 96 pages are the adventure
+            Shipwrecked on Gygalos Island and Things to Do in Porta Cortu, a
+            mini-gazzetteer that outlines one of the Karst Archipelago's most
+            famous ports of call.
+          </p>
+          <p>
+            This limited-edition, linen-wrapped hardback tome is printed by
+            Hemlock, one of North America's most progressive and sustainable
+            print providers. Purchase also includes the PDF edition, fulfulled
+            via Itch.io and DriveThroughRPG.
+          </p>
+          <p>
+            <em>
+              <strong>Note: </strong>
+              Shipping to begin no earlier than Feb 9th, 2022. Currently only
+              available to US and Canadian customer.
+            </em>
+          </p>
+          <p>
+            Karst will soon be available from a number of fine retailers of
+            bespoke role playing games and other sundries.
+          </p>
+        </form>
+        <h2 style={{ textAlign: 'center' }}>Digital</h2>
+        <form action="/api/store/checkout_sessions" method="POST">
+          <input type="hidden" name="itemKey" value="pdf" />
+          <section>
+            <button type="submit" role="link">
+              Buy the PDF
+            </button>
+          </section>
+          <br />
+        </form>
+        <p>
+          Karst, the Complete Edition, in digital format. This PDF edition of
+          Karst contains everything in the hardcover edition, but it's made out
+          of zeros and ones instead of paper and ink. You can purchase the
+          digital edition right here on the Karst site and a download link will
+          be sent to your inbox.
+        </p>
+        <p>
+          <em>
+            <strong>Note: </strong>
+            This website's PDF fulfillment technology is homemade; if you run
+            into any issues, don't hesitate to reach out by replying to the
+            email that includes the download link.
+          </em>
+        </p>
+        <p>
+          If you'd like a slightly less bespoke experience, or just prefer
+          having all your digital RPGs in one place, Karst is also available in
+          digital format from itch.io and DriveThruRPG. Purchase at any of these
+          locations not only entitles you to a copy of Karst in PDF format, but
+          also in ePUB, when it becomes available (Spring 2022).
+        </p>
+        <ul>
+          <li>
+            <a href="">Karst on DriveThruRPG</a>
+          </li>
+          <li>
+            <a href="">Karst on itch.io</a>
+          </li>
+        </ul>
+        {/*</div>*/}
       </div>
       <style jsx>
         {`
+          .shop-container {
+            /*display: flex;*/
+          }
+          @media (max-width: 1024px) {
+            .shop-container {
+              /*flex-direction: column;*/
+            }
+            .shop-listing {
+              align-self: center;
+            }
+          }
+
+          @media (min-width: 1025px) {
+            .shop-container {
+              /*flex-direction: row;*/
+              justify-content: space-between;
+            }
+          }
+          .shop-listing {
+            width: 16em;
+          }
           section {
             background: #ffffff;
             display: flex;
@@ -121,6 +206,7 @@ export default function PreviewPage() {
             width: 16em;
             border-radius: 6px;
             justify-content: space-between;
+            margin: 1em auto 0 auto;
           }
           button {
             height: 36px;
@@ -135,6 +221,14 @@ export default function PreviewPage() {
           }
           button:hover {
             opacity: 0.8;
+          }
+          .sidebar-image > img {
+            max-width: 100%;
+          }
+          @media (min-width: 768px) {
+            .sidebar-image {
+              margin-top: -1.5em;
+            }
           }
         `}
       </style>

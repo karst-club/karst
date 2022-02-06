@@ -99,22 +99,36 @@ export default function generateStory() {
     `solve a dispute between ${charGroup()} and ${charGroup()}`, // between characters or groups
     `guard ${charGroupItem()}`, // character group or item  // from
     `broker a trade between ${charGroup()} and ${charGroup()}`, // between
-    `apprehend ${charGroup()}`, // add an adjective?
+    `apprehend ${charGroup()} who can be found in ${r(locations)}`, // add an adjective?
     `defeat a monster or adversary`, // monster or character
-    `solve a mystery`, // involving???
+    `solve a mystery in ${r(locations)}`, // involving???
     `escape a danger`, // danger
     `win a competition against ${charGroup()}`, // competition of
-    `discover something new`, // involving ???
+    `discover something in ${r(locations)}`, // involving ???
   ];
 
   const complications = [
     'a rivalry',
     'natural obstacles',
     'magical obstacles',
-    'authority',
+    'a local authority',
     'public sentiment',
     'cultural mores',
+    'the spirits below',
+    'a force beyond comprehension',
+    'deceit',
+    'the echoes of the past',
+    'inclement weather',
+    'the fact that time is running out',
+    'a dispute between islands',
   ];
+
+  const theme = `A ${r(songs)} of ${r(emotions)}:`;
+
+  const impetus =
+    Math.round(Math.random()) === 0
+      ? `${r(characters)} ${r(compulsions)}`
+      : `The characters must`;
 
   const complicationsFirst = [
     'The quest is complicated by',
@@ -124,13 +138,6 @@ export default function generateStory() {
     'The problem:',
     "Of couse, it would be a lot easier if it weren't for",
   ];
-
-  const theme = `A ${r(songs)} of ${r(emotions)}:`;
-
-  const impetus =
-    Math.round(Math.random()) === 0
-      ? `${r(characters)} ${r(compulsions)}`
-      : `The characters must`;
 
   //const story = `A tale of ${r(emotions)}: ${r(quests)} involving ${r(characters)} and ${r(characters)} featuring ${r(locations)} and complicated by ${r(complications)}.`;
 

@@ -95,7 +95,7 @@ export default function About() {
       <hr />
       <br />
       <p className="copyright">
-        © 2020, 2021 The Karst Archipelago Historical Society.
+        © 2020, 2021, 2022 The Karst Archipelago Historical Society.
       </p>
       <img
         className="logo-image"

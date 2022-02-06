@@ -96,6 +96,7 @@ export default function Styles() {
       li {
         list-style-position: inside;
         list-style-type: none;
+        text-align: justify;
       }
 
       li:before {

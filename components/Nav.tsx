@@ -7,7 +7,8 @@ export const MAIN_NAV = [
   { href: '/rulebook/01-introduction', title: 'Rulebook' },
   { href: '/worldbooks', title: 'Inspiration' },
   //{ href: '/stories', title: 'Stories' },
-  { href: '/blog', title: 'Blog' },
+  //{ href: '/blog', title: 'Blog' },
+  { href: '/store', title: 'Gift Shop' },
   { href: '/about', title: 'About' },
 ];
 

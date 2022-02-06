@@ -40,7 +40,7 @@ export default [
   },
   {
     name: 'Channel Essence',
-    display: 'Channel their Essence',
+    display: 'Channel Essence',
     verb: 'can',
     kind: 'odd-level',
   },
