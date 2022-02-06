@@ -60,8 +60,9 @@ export default function About() {
         <a href="https://github.com/karst-club/karst">github</a>.
       </p>
       <p>
-        If you&apos;d like to get in touch or follow along, you can find us on{' '}
-        <a href="https://twitter.com/KarstClub">twitter</a>.
+        If you&apos;d like to get in touch or follow along, you can join our{' '}
+        <a href="https://discord.gg/ZXzFyX6zkt">Discord community</a> or find us
+        on <a href="https://twitter.com/KarstClub">Twitter</a>.
       </p>
       {/*<p>
         We also have a presence on{' '}
