@@ -75,7 +75,7 @@ async function sendMail(recipient, product, purchase) {
   });
   const { html, text } = email_templates[product.slug];
   let info = await transporter.sendMail({
-    from: `The Karst Archipelago Historical Society <${process.env.SEND_ADDRESS}>`,
+    from: `The Karst Archipelago Historical Society <${process.env.EMAIL_SEND_ADDRESS}>`,
     to: `${recipient}`,
     subject: `Thank you for your purchase of ${product.name}`,
     text,
