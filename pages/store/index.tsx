@@ -113,20 +113,20 @@ export default function PreviewPage() {
             of rules, playing advice, and information about the Karst
             Archipelago. Also included within its 96 pages are the adventure
             Shipwrecked on Gygalos Island and Things to Do in Porta Cortu, a
-            mini-gazzetteer that outlines one of the Karst Archipelago's most
+            mini-gazetteer that outlines one of the Karst Archipelago's most
             famous ports of call.
           </p>
           <p>
             This limited-edition, linen-wrapped hardback tome is printed by
             Hemlock, one of North America's most progressive and sustainable
-            print providers. Purchase also includes the PDF edition, fulfulled
+            print providers. Purchase also includes the PDF edition, fulfilled
             via Itch.io and DriveThroughRPG.
           </p>
           <p>
             <em>
               <strong>Note: </strong>
               Shipping to begin no earlier than Feb 9th, 2022. Currently only
-              available to US and Canadian customer.
+              available to US and Canadian customers.
             </em>
           </p>
           <p>
