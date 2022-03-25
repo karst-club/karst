@@ -125,14 +125,40 @@ export default function PreviewPage() {
           <p>
             <em>
               <strong>Note: </strong>
-              Shipping to begin no earlier than Feb 9th, 2022. Currently only
-              available to US and Canadian customers.
+              Shipping currently only available for US customers.
             </em>
           </p>
           <p>
-            Karst will soon be available from a number of fine retailers of
-            bespoke role playing games and other sundries.
+            Karst is available from a number of fine retailers of bespoke role
+            playing games and other sundries, both in the US and Canada.
           </p>
+          <p>
+            <strong>Retailers:</strong>
+          </p>
+          <ul>
+            <li>
+              <a href="https://lfosr.com">L.F. OSR</a>
+            </li>
+            <li>
+              <a href="https://exaltedfuneral.com">Exalted Funeral</a>
+            </li>
+            <li>
+              <a href="https://spearwitch.com">Spear Witch</a>
+            </li>
+            <li>
+              <a href="https://nobleknight.com">Noble Knight Games</a>
+            </li>
+            <li>
+              <a href="https://www.fourroguestrading.co">
+                Four Rogues Trading Co
+              </a>{' '}
+              - Canadian Retailer
+            </li>
+            <li>
+              <a href="https://rattiincantati.com">Ratti Incantati</a> -
+              Canadian Retailer
+            </li>
+          </ul>
         </form>
         <h2 style={{ textAlign: 'center' }}>Digital</h2>
         <form action="/api/store/checkout_sessions" method="POST">
