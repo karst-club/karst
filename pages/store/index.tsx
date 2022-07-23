@@ -64,20 +64,6 @@ export default function PreviewPage() {
         stay informed and abreast of new discoveries and publications about the
         Archipelago.
       </p>
-      <p>
-        <strong>
-          Given the Russian invasion of Ukraine, 33% of all Hardcover proceeds
-          and 100% of all Digital proceeds via the Gift Shop will be donated to
-          humanitarian aid for Ukrainian citizens via the{' '}
-          <a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-rahunok-dlya-gumanitarnoyi-dopomogi-ukrayintsyam-postrajdalim-vid-rosiyskoyi-agresiyi">
-            National Bank of Ukraine
-          </a>
-          .
-        </strong>{' '}
-        Not only do we stand with Ukraine because it is the right thing to do,
-        but also because Karst would not exist without our wonderful artist,
-        Anastasia, who is Ukranian.
-      </p>
       <div className="shop-container">
         {/**<div className='shop-listing'>
           <form action="/api/store/checkout_sessions" method="POST">
