@@ -60,7 +60,10 @@ export default function Index() {
           property="og:title"
           content="Karst: A role playing game of discovery and soft horror"
         />
-        <meta property="og:image" content="/images/karst.jpg" />
+        <meta
+          property="og:image"
+          content="https://karst.club/images/karst.jpg"
+        />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="530" />
       </Head>
