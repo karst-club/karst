@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../components/Layout';
 
 export default function Index() {
@@ -53,23 +54,34 @@ export default function Index() {
     </div>
   );
   return (
-    <Layout>
-      <div style={{ textAlign: 'center' }}>
-        <h1 style={{ fontSize: '7.5rem', marginBottom: '0em' }}>Karst</h1>
-        <img
-          style={{ maxWidth: '18em' }}
-          src="/images/lagartos-spiritist.png"
-          alt="Lagartos spiritist plays a strange song."
+    <>
+      <Head>
+        <meta
+          property="og:title"
+          content="Karst: A role playing game of discovery and soft horror"
         />
-        {content}
-        <div>
+        <meta property="og:image" content="/images/karst.jpg" />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="530" />
+      </Head>
+      <Layout>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '7.5rem', marginBottom: '0em' }}>Karst</h1>
           <img
-            style={{ maxWidth: '10em' }}
-            src="/images/karst-logo-small.png"
-            alt="Karst Archipelago Historical Society Logo"
+            style={{ maxWidth: '18em' }}
+            src="/images/lagartos-spiritist.png"
+            alt="Lagartos spiritist plays a strange song."
           />
+          {content}
+          <div>
+            <img
+              style={{ maxWidth: '10em' }}
+              src="/images/karst-logo-small.png"
+              alt="Karst Archipelago Historical Society Logo"
+            />
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 }

@@ -3,6 +3,13 @@ import { Provider } from 'next-auth/client';
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <meta
+        property="og:title"
+        content="Karst: A role playing game of discovery and soft horror"
+      />
+      <meta property="og:image" content="/images/karst.jpg" />
+      <meta property="og:image:width" content="600" />
+      <meta property="og:image:height" content="530" />
       <Provider session={pageProps.session}>
         <Component {...pageProps} />
       </Provider>
